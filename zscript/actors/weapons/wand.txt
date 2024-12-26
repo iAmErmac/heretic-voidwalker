@@ -1,5 +1,5 @@
 
-Class HVRWand : HereticVRWeapon
+Class HVRWand : HereticVRWeapon replaces GoldWand
 {
 	Default
 	{
@@ -54,8 +54,10 @@ Class HVRWand : HereticVRWeapon
 	Ready:
 		TNT1 A 0;
 		GWND A 0 A_SetExtraModel("NHGW");
-		###3 # 0 A_Overlay(2001, "Crystal");
-		#### # 1 A_WeaponReady;
+		#### # 1 {
+			A_WeaponReady();
+			A_Overlay(2001, "Crystal");
+		}
 		Loop;
 	Deselect:
 		GWND C 0 A_SetExtraModel("NHGW");

@@ -388,7 +388,7 @@ Class HereticVRWeapon : HereticWeapon
 	{
 		Super.Tick();
 		
-		if(owner.player.readyweapon == self) return;
+		if(owner && owner.player && owner.player.readyweapon == self) return;
 		
 		if(GetAge() && GetAge() % 10 == 0)
 		{

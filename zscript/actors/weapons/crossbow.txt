@@ -1,0 +1,114 @@
+
+Class HVRCrossbow : HereticVRWeapon replaces Crossbow
+{
+	Default
+	{
+	Weapon.SelectionOrder 800;
+	Weapon.AmmoUse 1;
+	Weapon.AmmoGive 10;
+	Weapon.AmmoType "CrossbowAmmo";
+	Weapon.SisterWeapon "HVRCrossbowPowered";
+	Inventory.PickupMessage "$TXT_WPNCROSSBOW";
+	Tag "$TAG_CROSSBOW";
+	}
+	
+	action void A_FireCrossbowX ()
+	{
+		if (player == null)
+		{
+			return;
+		}
+		int alflags = 0;
+		Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		if (weapon != null)
+		{
+			alflags |= weapon.bOffhandWeapon ? ALF_ISOFFHAND : 0;
+			if (!weapon.DepleteAmmo (weapon.bAltFire))
+				return;
+		}
+		SpawnPlayerMissile ("CrossbowFX1", aimflags: alflags);
+		SpawnPlayerMissile ("CrossbowFX3", angle - 4.5, aimflags: alflags);
+		SpawnPlayerMissile ("CrossbowFX3", angle + 4.5, aimflags: alflags);
+	}
+
+	States
+	{
+	Spawn:
+		WBOW A -1;
+		Stop;
+	Ready:
+		TNT1 A 0;
+		CRBW A 0 A_SetExtraModel("NHBW");
+		#### # 1 A_WeaponReady;
+		Loop;
+	Deselect:
+		CRBW A 0 A_SetExtraModel("NHBW");
+		#### # 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Lower;
+		Loop;
+		#### # 1 A_Lower (120);
+		Loop;
+	Select:
+		CRBW A 0 A_SetExtraModel("NHBW");
+		#### # 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Raise;
+		Loop;
+		#### # 1 A_Raise (120);
+		Loop;
+	Fire:
+		CRBW A 0 A_SetExtraModel("NHBW");
+		#### BE 1;
+		#### # 0 A_FireCrossbowX;
+		#### FGHIJKLMN 2;
+		#### A 6;
+		#### # 5 A_ReFire;
+		Goto Ready;
+	Placeholder:
+		NHBW ABCDFGHIJKLMN 1;
+	}
+}
+
+Class HVRCrossbowPowered : HVRCrossbow
+{
+	Default
+	{
+	+WEAPON.POWERED_UP
+	Weapon.AmmoGive 0;
+	Weapon.SisterWeapon "HVRCrossbow";
+	Tag "$TAG_CROSSBOWP";
+	}
+	
+	action void A_FireCrossbowX2()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		int alflags = 0;
+		Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		if (weapon != null)
+		{
+			alflags |= weapon.bOffhandWeapon ? ALF_ISOFFHAND : 0;
+			if (!weapon.DepleteAmmo (weapon.bAltFire))
+				return;
+		}
+		SpawnPlayerMissile ("CrossbowFX2", aimflags: alflags);
+		SpawnPlayerMissile ("CrossbowFX2", angle - 4.5, aimflags: alflags);
+		SpawnPlayerMissile ("CrossbowFX2", angle + 4.5, aimflags: alflags);
+		SpawnPlayerMissile ("CrossbowFX3", angle - 9., aimflags: alflags);
+		SpawnPlayerMissile ("CrossbowFX3", angle + 9., aimflags: alflags);
+	}
+
+	States
+	{
+	Fire:
+		CRBW A 0 A_SetExtraModel("NHBW");
+		#### BE 1;
+		#### # 0 A_FireCrossbowX;
+		#### FGHIJKLMN 2;
+		#### A 1;
+		#### # 4 A_ReFire;
+		Goto Ready;
+	}
+}

@@ -28,3 +28,26 @@ material texture "models/weapons/wand/hand.png"
 {
 	shader "shaders/SimSun.fp"
 }
+
+//crossbow
+
+material texture "models/weapons/crossbow/boules.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/cross.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/crossl.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/crossmet.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}

@@ -84,6 +84,12 @@ Texture "models/weapons/staff/electro.png"
 
 	
 Texture "models/weapons/staff/elc1.png"
-    pic "models/weapons/staff/elc1.png" tics 1
+    pic "models/weapons/staff/elc1.png" tics 2
     pic "models/weapons/staff/elc2.png" tics 2
     pic "models/weapons/staff/elc3.png" tics 2
+
+	
+Texture "models/weapons/crossbow/lc1x.png"
+    pic "models/weapons/crossbow/lc1x.png" tics 2
+    pic "models/weapons/crossbow/lc2x.png" tics 2
+    pic "models/weapons/crossbow/lc3x.png" tics 2
