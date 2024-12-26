@@ -1,0 +1,7 @@
+
+user int hvr_weaponmodel	= 1;
+user int hvr_pickupmodel	= 1;
+user bool hvr_flashsprite	= true;
+user bool hvr_fastswitch	= true;
+user int hvr_holohud		= 1;
+user bool hvr_music 		= true;

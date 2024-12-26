@@ -1,0 +1,4 @@
+Gameinfo
+{
+	AddEventHandlers = "HVROffhandFistHandler", "HVRMusicHandler", "HVRHapticHelper"
+}

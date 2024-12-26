@@ -1,0 +1,95 @@
+// Copyright 2018-2020 Alexander Kromm (m8f/mmaulwurff)
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/
+//
+// This cvar loader is taken from laser sight mod by Alexander Kromm (m8f/mmaulwurff)
+
+class hvr_Settings
+{
+  int weaponModel()   					{ return weaponModelCvar.getInt();   	}
+  int pickupModel()   					{ return pickupModelCvar.getInt();   	}
+  bool flashSprite()   					{ return flashSpriteCvar.getBool();   	}
+  bool weaponSwitch()   				{ return weaponSwitchCvar.getBool();   	}
+  int holoHUD()   						{ return holoHUDCvar.getInt();   	}
+  
+  //int vrControlScheme() 				{ return controlSchemeCvar.isDefined() ? controlSchemeCvar.getInt() : 0; }
+
+  static
+  hvr_Settings of()
+  {
+    let result = new("hvr_Settings");
+
+    result.weaponModelCvar 		   		= hvr_CVar.of("hvr_weaponmodel");
+    result.pickupModelCvar 		   		= hvr_CVar.of("hvr_pickupmodel");
+    result.flashSpriteCvar 		   		= hvr_CVar.of("hvr_flashsprite");
+    result.weaponSwitchCvar   			= hvr_CVar.of("hvr_fastswitch");
+    result.holoHUDCvar   				= hvr_CVar.of("hvr_holohud");
+
+    return result;
+  }
+
+  private hvr_CVar weaponModelCvar;
+  private hvr_CVar pickupModelCvar;
+  private hvr_CVar flashSpriteCvar;
+  private hvr_CVar weaponSwitchCvar;
+  private hvr_CVar holoHUDCvar;
+  
+  private hvr_CVar controlSchemeCvar;
+
+} // class hvr_Settings
+
+/**
+ * This class provides access to a user or server Cvar.
+ *
+ * Accessing Cvars through this class is faster because calling Cvar.GetCvar()
+ * is costly. This class caches the result of Cvar.GetCvar() and handles
+ * loading a savegame.
+ */
+class hvr_CVar
+{
+
+// public: /////////////////////////////////////////////////////////////////////
+
+  static
+  hvr_CVar of(String name)
+  {
+    let result = new("hvr_CVar");
+    result._name = name;
+    return result;
+  }
+
+  bool   isDefined() { load(); return (_cvar != NULL);   }
+
+  String getString() { load(); return _cvar.GetString(); }
+  bool   getBool()   { load(); return _cvar.GetInt();    }
+  int    getInt()    { load(); return _cvar.GetInt();    }
+  double getDouble() { load(); return _cvar.GetFloat();  }
+
+// private: ////////////////////////////////////////////////////////////////////
+
+  private
+  void load()
+  {
+    if (_cvar == NULL)
+    {
+      PlayerInfo player = players[consolePlayer];
+
+      _cvar = Cvar.GetCvar(_name, player);
+    }
+  }
+
+  private String         _name;
+  private transient Cvar _cvar;
+
+} // class hvr_CVar

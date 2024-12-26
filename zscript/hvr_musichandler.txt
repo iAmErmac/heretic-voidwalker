@@ -1,0 +1,45 @@
+
+class HVRMusicHandler : EventHandler
+{
+	override void WorldTick()
+	{
+		if(Level.Time && Level.Time % 100 == 0)
+		{
+			loadConfig();
+			
+			if(playRemastered)
+				ChangeMusic();
+			else
+				ResetMusic();
+		}
+	}
+	
+	override void WorldLoaded(WorldEvent e)
+	{	
+		loadConfig();
+		levelMusic = Level.Music;
+		if(playRemastered) ChangeMusic();
+	}
+	
+	void loadConfig()
+	{
+		Playerinfo player = players[consoleplayer];
+		playRemastered = CVar.GetCVar("hvr_music", player).GetBool();
+	}
+	
+	void ChangeMusic()
+	{
+		if(levelMusic.Length() > 0)
+		{
+			S_ChangeMusic("rmx" .. levelMusic.Mid(3));
+		}
+	}
+	
+	void ResetMusic()
+	{
+		S_ChangeMusic(levelMusic);
+	}
+	
+	String levelMusic;
+	bool playRemastered;
+}

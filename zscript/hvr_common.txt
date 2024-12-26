@@ -1,0 +1,105 @@
+
+Class HVROffhandFistHandler : Eventhandler
+{
+	override void WorldTick()
+	{
+		if(_isTitlemap) return;
+		
+		Playerinfo player = Players[ConsolePlayer];
+		if(!player) return;
+		
+		if(level.time > 35)
+		{
+			let weap = Weapon(player.mo.FindInventory("HVRStaff"));
+			weap.bNohandswitch = true;
+			
+			if(!player.ReadyWeapon)
+			{
+				weap.bOffhandweapon = false;
+				player.ReadyWeapon = weap;
+				player.PendingWeapon = weap;
+				player.mo.BringUpWeapon();
+			}
+			else if(!player.OffhandWeapon)
+			{
+				weap.bOffhandweapon = true;
+				player.OffhandWeapon = weap;
+				player.PendingWeapon = weap;
+				player.mo.BringUpWeapon();
+			}
+		}
+	}
+
+	override void WorldLoaded(WorldEvent event)
+	{
+		_isTitlemap = CheckTitlemap();
+	}
+
+	private static bool CheckTitlemap()
+	{
+		bool isTitlemap = (level.mapname == "TITLEMAP");
+		return isTitlemap;
+	}
+	
+	private bool _isTitlemap;
+}
+
+Class HVRHapticHelper : EventHandler
+{
+	static void BuzzHand(int hand = 0)
+	{
+		Let player = Players[ConsolePlayer].mo;
+		if(!player || player.health < 1) return;
+		
+		player.LineAttack(0, 0, 0, 1, "melee", "HVRhapticDummyPuff", LAF_NOIMPACTDECAL | LAF_NOINTERACT | LAF_NORANDOMPUFFZ | (hand ? LAF_ISOFFHAND : 0));
+	}
+	
+	static void Buzz()
+	{
+		HVRHapticHelper.BuzzHand();
+		HVRHapticHelper.BuzzHand(1);
+	}
+	
+	static void BuzzOffhand()
+	{
+		HVRHapticHelper.BuzzHand(1);
+	}
+	
+	static void BuzzWeapon(Weapon weap)
+	{
+		if(!weap || !weap.owner) return;
+		
+		int hand = weap.bOffhandWeapon ? 1 : 0;
+		HVRHapticHelper.BuzzHand(hand);
+	}
+}
+
+Class HVRhapticDummyPuff : Actor
+{
+	Default
+	{
+		Mass        0;
+		Radius      1;
+		Height      2;
+		Damage 		1;
+		DamageType "Melee";
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+BLOODLESSIMPACT;
+		+PUFFONACTORS;
+		+DONTSPLASH;
+		+NOTRIGGER;
+		+NOTARGET;
+		+FORCEXYBILLBOARD;
+		+NOTONAUTOMAP;
+		+SKYEXPLODE;
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 1;
+		stop;
+	}
+}

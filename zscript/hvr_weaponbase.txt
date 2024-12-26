@@ -1,0 +1,575 @@
+
+Class HereticVRWeapon : HereticWeapon
+{
+	protected bool showHands;
+	protected int pickupModel;
+	protected bool showFLashSprite;
+	protected bool fastSwitchWeapon;
+	protected int HoloHUD;
+	protected int vrControlScheme;
+	protected hvr_Settings _settings;
+	
+	action void A_ReplaceSprite(String myvar, String ssprite, bool pickup=false, float sscale=0.7)
+	{
+		int readsetting = CVar.FindCVar(myvar).GetInt();
+		int wsprite = GetSpriteIndex(ssprite);
+
+		if (readsetting && readsetting > 0 && wsprite != -1) {
+			
+			if(pickup)
+			{
+				invoker.sprite = wsprite;
+				invoker.A_SetScale(sscale);
+			}
+			else
+			{
+				if(player)
+				{
+					int mainhand = !invoker.bOffhandWeapon;
+					if(mainhand)
+						Player.GetPSprite(PSP_WEAPON).sprite = wsprite;
+					else
+						Player.GetPSprite(PSP_OFFHANDWEAPON).sprite = wsprite;
+				}
+			}
+		}
+	}
+	
+	override void PostBeginPlay()
+	{
+		getModSettings();
+	}
+	
+	protected void getModSettings()
+	{
+		_settings = hvr_Settings.of();
+		
+		showHands 				= _settings.weaponModel();
+		pickupModel 			= _settings.pickupModel();
+		showFLashSprite 		= _settings.flashSprite();
+		fastSwitchWeapon 		= _settings.weaponSwitch();
+		HoloHUD 				= _settings.holoHUD();
+		
+		//vrControlScheme 		= _settings.vrControlScheme();
+	}
+	
+	enum WHUDLayers
+	{
+        //for off hand
+        PSP_HoloBracer 			= 1070,
+        PSP_HoloHPBar 			= 1071,
+        PSP_HoloShieldbar 		= 1072,
+        PSP_HoloAmmobar1 		= 1073,
+        PSP_HoloAmmobar2 		= 1074
+	}
+	
+	protected void GetHoloBracer()
+	{
+		let player = owner.player;
+		if(player && player.mo && player.mo.health > 0)
+		{
+			let  wsprite = "RUNE";
+			
+			if(owner.player.mo.countinv("powerweaponlevel2"))
+				wsprite =  "RUN2";
+		
+			PSprite psp = player.GetPSprite(PSP_HoloBracer);
+			if(psp)
+			{
+				psp.Caller = self;
+				psp.SetState(ResolveState("HoloBracer"));
+				if(psp.CurState != null) {
+					int sprite = GetSpriteIndex(wsprite);
+					if(sprite > -1) {
+						psp.sprite = sprite;
+					}
+				}
+			}
+		}
+	}
+	
+	protected void GetHPBar()
+	{
+		let player = owner.player;
+		if(player)
+		{
+			let health = player.mo.health;
+			let  wsprite = "H100";
+			
+			if(health < 100)
+				wsprite = "H095";
+			if(health < 95)
+				wsprite = "H090";
+			if(health < 90)
+				wsprite = "H085";
+			if(health < 85)
+				wsprite = "H080";
+			if(health < 80)
+				wsprite = "H075";
+			if(health < 75)
+				wsprite = "H070";
+			if(health < 70)
+				wsprite = "H065";
+			if(health < 65)
+				wsprite = "H060";
+			if(health < 60)
+				wsprite = "H055";
+			if(health < 55)
+				wsprite = "H050";
+			if(health < 50)
+				wsprite = "H045";
+			if(health < 45)
+				wsprite = "H040";
+			if(health < 40)
+				wsprite = "H035";
+			if(health < 35)
+				wsprite = "H030";
+			if(health < 30)
+				wsprite = "H025";
+			if(health < 25)
+				wsprite = "H020";
+			if(health < 20)
+				wsprite = "H015";
+			if(health < 15)
+				wsprite = "H010";
+			if(health < 10)
+				wsprite = "H005";
+			if(health < 5 && health > 0)
+				wsprite = "H001";
+			if(health < 1)
+				wsprite = "H000";
+				
+			bool pGod = player.mo.bInvulnerable || (owner.player.cheats & (CF_GODMODE | CF_GODMODE2));
+			if(pGod)
+				wsprite = "HGOD";
+			
+			PSprite psp = player.GetPSprite(PSP_HoloHPBar);
+			if(psp)
+			{
+				psp.Caller = self;
+				psp.SetState(ResolveState("Holobar1"));
+				if(psp.CurState != null) {
+					int sprite = GetSpriteIndex(wsprite);
+					if(sprite > -1) {
+						psp.sprite = sprite;
+					}
+				}
+			}
+		}
+	}
+	
+	protected void GetShieldBar()
+	{
+		let player = owner.player;
+		if(player)
+		{
+			let shield = player.mo.countinv("basicarmor") / 2; //since max armor is 200, rounding up for 100 percent
+			let  wsprite = "A100";
+			
+			if(shield < 100)
+				wsprite = "A095";
+			if(shield < 95)
+				wsprite = "A090";
+			if(shield < 90)
+				wsprite = "A085";
+			if(shield < 85)
+				wsprite = "A080";
+			if(shield < 80)
+				wsprite = "A075";
+			if(shield < 75)
+				wsprite = "A070";
+			if(shield < 70)
+				wsprite = "A065";
+			if(shield < 65)
+				wsprite = "A060";
+			if(shield < 60)
+				wsprite = "A055";
+			if(shield < 55)
+				wsprite = "A050";
+			if(shield < 50)
+				wsprite = "A045";
+			if(shield < 45)
+				wsprite = "A040";
+			if(shield < 40)
+				wsprite = "A035";
+			if(shield < 35)
+				wsprite = "A030";
+			if(shield < 30)
+				wsprite = "A025";
+			if(shield < 25)
+				wsprite = "A020";
+			if(shield < 20)
+				wsprite = "A015";
+			if(shield < 15)
+				wsprite = "A010";
+			if(shield < 10)
+				wsprite = "A005";
+			if(shield < 5 && shield > 0)
+				wsprite = "A001";
+			if(shield*2 < 1)
+				wsprite = "A000";
+				
+			bool pGod = player.mo.bInvulnerable || (owner.player.cheats & (CF_GODMODE | CF_GODMODE2));
+			if(pGod)
+				wsprite = "AGOD";
+			
+			PSprite psp = player.GetPSprite(PSP_HoloShieldbar);
+			if(psp)
+			{
+				psp.Caller = self;
+				psp.SetState(ResolveState("Holobar2"));
+				if(psp.CurState != null) {
+					int sprite = GetSpriteIndex(wsprite);
+					if(sprite > -1) {
+						psp.sprite = sprite;
+					}
+				}
+			}
+		}
+	}
+	
+	protected void GetAmmoBar1()
+	{
+		let player = owner.player;
+		if(player && player.offhandweapon && player.offhandweapon == self)
+		{
+			let ammo = player.offhandweapon.Ammo1;
+			float playerammo = 0;
+			if(ammo1)
+			{
+				playerammo = (float(ammo1.amount) / float(ammo1.maxamount)) * 100.0;
+			}
+			
+			let  wsprite = "M100";
+			
+			if(playerammo < 100)
+				wsprite = "M095";
+			if(playerammo < 95)
+				wsprite = "M090";
+			if(playerammo < 90)
+				wsprite = "M085";
+			if(playerammo < 85)
+				wsprite = "M080";
+			if(playerammo < 80)
+				wsprite = "M075";
+			if(playerammo < 75)
+				wsprite = "M070";
+			if(playerammo < 70)
+				wsprite = "M065";
+			if(playerammo < 65)
+				wsprite = "M060";
+			if(playerammo < 60)
+				wsprite = "M055";
+			if(playerammo < 55)
+				wsprite = "M050";
+			if(playerammo < 50)
+				wsprite = "M045";
+			if(playerammo < 45)
+				wsprite = "M040";
+			if(playerammo < 40)
+				wsprite = "M035";
+			if(playerammo < 35)
+				wsprite = "M030";
+			if(playerammo < 30)
+				wsprite = "M025";
+			if(playerammo < 25)
+				wsprite = "M020";
+			if(playerammo < 20)
+				wsprite = "M015";
+			if(playerammo < 15)
+				wsprite = "M010";
+			if(playerammo < 10)
+				wsprite = "M005";
+			if(playerammo < 5 && playerammo > 0)
+				wsprite = "M001";
+			if(playerammo < 1)
+				wsprite = "M000";
+			
+			PSprite psp = player.GetPSprite(PSP_HoloAmmobar1);
+			if(psp)
+			{
+				psp.Caller = self;
+				psp.SetState(ResolveState("Holobar3"));
+				if(psp.CurState != null) {
+					int sprite = GetSpriteIndex(wsprite);
+					if(sprite > -1) {
+						psp.sprite = sprite;
+					}
+				}
+			}
+		}
+	}
+	
+	protected void GetAmmoBar2()
+	{
+		let player = owner.player;
+		if(player && player.offhandweapon && player.offhandweapon == self && player.readyweapon)
+		{
+			let ammo1 = player.readyweapon.Ammo1;
+			float playerammo = 0;
+			if(ammo1)
+			{
+				playerammo = (float(ammo1.amount) / float(ammo1.maxamount)) * 100.0;
+			}
+			
+			let  wsprite = "M2FL";
+			
+			if(playerammo < 100)
+				wsprite = "M295";
+			if(playerammo < 95)
+				wsprite = "M290";
+			if(playerammo < 90)
+				wsprite = "M285";
+			if(playerammo < 85)
+				wsprite = "M280";
+			if(playerammo < 80)
+				wsprite = "M275";
+			if(playerammo < 75)
+				wsprite = "M270";
+			if(playerammo < 70)
+				wsprite = "M265";
+			if(playerammo < 65)
+				wsprite = "M260";
+			if(playerammo < 60)
+				wsprite = "M255";
+			if(playerammo < 55)
+				wsprite = "M250";
+			if(playerammo < 50)
+				wsprite = "M245";
+			if(playerammo < 45)
+				wsprite = "M240";
+			if(playerammo < 40)
+				wsprite = "M235";
+			if(playerammo < 35)
+				wsprite = "M230";
+			if(playerammo < 30)
+				wsprite = "M225";
+			if(playerammo < 25)
+				wsprite = "M220";
+			if(playerammo < 20)
+				wsprite = "M215";
+			if(playerammo < 15)
+				wsprite = "M210";
+			if(playerammo < 10)
+				wsprite = "M205";
+			if(playerammo < 5 && playerammo > 0)
+				wsprite = "M201";
+			if(playerammo < 1)
+				wsprite = "M200";
+			
+			PSprite psp = player.GetPSprite(PSP_HoloAmmobar2);
+			if(psp)
+			{
+				psp.Caller = self;
+				psp.SetState(ResolveState("Holobar4"));
+				if(psp.CurState != null) {
+					int sprite = GetSpriteIndex(wsprite);
+					if(sprite > -1) {
+						psp.sprite = sprite;
+					}
+				}
+			}
+		}
+	}
+	
+	protected void clearHoloHud(playerinfo player)
+	{
+		let pspr = player.FindPSprite(PSP_HoloBracer);
+		if(pspr) pspr.Destroy();
+		let pspr2 = player.FindPSprite(PSP_HoloHPBar);
+		if(pspr2) pspr2.Destroy();
+		let pspr3 = player.FindPSprite(PSP_HoloShieldbar);
+		if(pspr3) pspr3.Destroy();
+		let pspr4 = player.FindPSprite(PSP_HoloAmmobar1);
+		if(pspr4) pspr4.Destroy();
+		let pspr5 = player.FindPSprite(PSP_HoloAmmobar2);
+		if(pspr5) pspr5.Destroy();
+	}
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if(owner.player.readyweapon == self) return;
+		
+		if(GetAge() && GetAge() % 10 == 0)
+		{
+			getModSettings();
+		}
+		
+		if(!owner || !owner.player) return;
+		
+		if(HoloHUD > 0 && owner.player.health > 0)
+		{
+			if(owner.player.offhandweapon == self)
+			{
+				if(HoloHUD == 1)
+				{
+					GetHoloBracer();
+				}
+				else
+				{
+					let pspr = owner.player.FindPSprite(PSP_HoloBracer);
+					if(pspr) pspr.Destroy();
+				}
+				
+				GetHPBar();
+				GetShieldBar();
+				GetAmmoBar1();
+				GetAmmoBar2();
+			}
+		}
+		else
+		{
+			clearHoloHud(owner.player);
+		}
+	}
+	
+	States
+	{
+		HoloBracer:
+			RUNE A 1 Bright;
+			Loop;
+		Holobar1:
+			H100 A 1 Bright;
+			Loop;
+		Holobar2:
+			A100 A 1 Bright;
+			Loop;
+		Holobar3:
+			M100 A 1 Bright;
+			Loop;
+		Holobar4:
+			M2FL A 1 Bright;
+			Loop;
+		Dummy: //just so engine stop complaining about not using sprites defined in modeldefs
+			RUNE A 1;
+			RUN2 A 1;
+			HGOD A 1;
+			H100 A 1;
+			H095 A 1;
+			H090 A 1;
+			H085 A 1;
+			H080 A 1;
+			H075 A 1;
+			H070 A 1;
+			H065 A 1;
+			H060 A 1;
+			H055 A 1;
+			H050 A 1;
+			H045 A 1;
+			H040 A 1;
+			H035 A 1;
+			H030 A 1;
+			H025 A 1;
+			H020 A 1;
+			H015 A 1;
+			H010 A 1;
+			H005 A 1;
+			H001 A 1;
+			H000 A 1;
+			AGOD A 1;
+			A100 A 1;
+			A095 A 1;
+			A090 A 1;
+			A085 A 1;
+			A080 A 1;
+			A075 A 1;
+			A070 A 1;
+			A065 A 1;
+			A060 A 1;
+			A055 A 1;
+			A050 A 1;
+			A045 A 1;
+			A040 A 1;
+			A035 A 1;
+			A030 A 1;
+			A025 A 1;
+			A020 A 1;
+			A015 A 1;
+			A010 A 1;
+			A005 A 1;
+			A001 A 1;
+			A000 A 1;
+			M100 A 1;
+			M095 A 1;
+			M090 A 1;
+			M085 A 1;
+			M080 A 1;
+			M075 A 1;
+			M070 A 1;
+			M065 A 1;
+			M060 A 1;
+			M055 A 1;
+			M050 A 1;
+			M045 A 1;
+			M040 A 1;
+			M035 A 1;
+			M030 A 1;
+			M025 A 1;
+			M020 A 1;
+			M015 A 1;
+			M010 A 1;
+			M005 A 1;
+			M001 A 1;
+			M000 A 1;
+			M2FL A 1;
+			M295 A 1;
+			M290 A 1;
+			M285 A 1;
+			M280 A 1;
+			M275 A 1;
+			M270 A 1;
+			M265 A 1;
+			M260 A 1;
+			M255 A 1;
+			M250 A 1;
+			M245 A 1;
+			M240 A 1;
+			M235 A 1;
+			M230 A 1;
+			M225 A 1;
+			M220 A 1;
+			M215 A 1;
+			M210 A 1;
+			M205 A 1;
+			M201 A 1;
+			M200 A 1;
+	}
+}
+
+class HVRDUmmyPuff1 : Actor
+{
+	Default
+	{
+	Radius 1;
+	Height 1;
+	Speed 0;
+	Damage 0;
+	+GHOST;
+	+NOGRAVITY;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(developer == 1, "showDot");
+		TNT1 A 2;
+		Stop;
+	ShowDot:
+		TNT1 A 2 A_SpawnParticle("FF 00 00", SPF_FULLBRIGHT, 1, 5);
+		Stop;
+	}
+}
+
+Class HVRDummyPuff2 : HVRDUmmyPuff1
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 2 A_SpawnParticle("FF 00 00", SPF_FULLBRIGHT, 1, 5);
+		Stop;
+	}
+}

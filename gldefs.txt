@@ -1,0 +1,3 @@
+
+#include "gldefs/brightmaps.txt"
+#include "gldefs/shades.txt"

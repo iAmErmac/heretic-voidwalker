@@ -1,0 +1,307 @@
+
+//Holo bracer
+
+material texture "models/weapons/overlay/bracer_rune_1a.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/bracer_rune_2a.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/bracer_rune_3a.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_a.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_b.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_c.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_d.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_e.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_f.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_g.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_h.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_i.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_j.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_k.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_l.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_m.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_n.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_o.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_p.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_q.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_r.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_s.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_t.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_u.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/hpbar_god.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_a.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_b.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_c.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_d.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_e.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_f.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_g.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_h.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_i.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_j.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_k.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_l.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_m.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_n.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_o.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_p.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_q.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_r.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_s.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_t.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_u.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/shieldbar_god.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_a.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_b.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_c.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_d.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_e.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_f.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_g.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_h.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_i.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_j.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_k.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_l.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_m.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_n.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_o.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_p.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_q.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_r.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_s.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_t.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/overlay/ammobar_u.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+
+
+// staff
+
+material texture "models/weapons/staff/electro.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/staff/electro1.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/staff/electro2.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/staff/elc1.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/staff/elc2.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/staff/elc3.png"
+{
+	brightmap "models/common/common_bm.png"
+}
+material texture "models/weapons/staff/RuneShield.png"
+{
+	brightmap "models/common/common_bm.png"
+}

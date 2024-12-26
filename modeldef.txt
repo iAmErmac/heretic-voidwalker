@@ -1,0 +1,3 @@
+
+#include "modeldefs/weapons/staff.txt"
+#include "modeldefs/weapons/wand.txt"

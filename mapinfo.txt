@@ -1,0 +1,3 @@
+
+include "configs/mapinfo_gameinfo.txt"
+include "configs/mapinfo_skills.txt"

@@ -1,0 +1,149 @@
+
+Class HVRWand : HereticVRWeapon
+{
+	Default
+	{
+	+BLOODSPLATTER
+	Weapon.SelectionOrder 2000;
+	Weapon.AmmoGive 25;
+	Weapon.AmmoUse 1;
+	Weapon.AmmoType "GoldWandAmmo";
+	Weapon.SisterWeapon "HVRWandPowered";
+	Inventory.PickupMessage "$TXT_WPNGOLDWAND";
+	Obituary "$OB_MPGOLDWAND";
+	Tag "$TAG_GOLDWAND";
+	}
+	
+	action void A_FireGoldWandX ()
+	{
+		if (player == null)
+		{
+			return;
+		}
+		int alflags = 0;
+		int laflags = 0;
+		Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		if (weapon != null)
+		{
+			alflags |= weapon.bOffhandWeapon ? ALF_ISOFFHAND : 0;
+			laflags |= weapon.bOffhandWeapon ? LAF_ISOFFHAND : 0;
+			if (!weapon.DepleteAmmo (weapon.bAltFire))
+				return;
+		}
+		double pitch = BulletSlope(aimflags: alflags);
+		int damage = random[FireGoldWand](7, 14);
+		double ang = angle;
+		if (player.refire)
+		{
+			ang += Random2[FireGoldWand]() * (5.625 / 256);
+
+			if (GetCVar ("vertspread") && !sv_novertspread)
+			{
+				pitch += Random2[FireGoldWand]() * (3.549 / 256);
+			}
+		}
+		LineAttack(ang, PLAYERMISSILERANGE, pitch, damage, 'Hitscan', "GoldWandPuff1", laflags);
+		A_StartSound("weapons/wandhit", CHAN_WEAPON);
+	}
+
+	States
+	{
+	Spawn:
+		GWAN A -1;
+		Stop;
+	Ready:
+		GWND A 1 A_WeaponReady;
+		GWND A 0 A_Overlay(2001, "Crystal");
+		Loop;
+	Deselect:
+		GWND C 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		GWND C 1 A_Lower;
+		Loop;
+		GWND C 1 A_Lower (120);
+		Loop;
+	Select:
+		GWND C 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		GWND C 1 A_Raise;
+		Loop;
+		GWND C 1 A_Raise (120);
+		Loop;
+	Fire:
+		GWND A 0 A_Overlay(2001, "CrystalGlow");
+		GWND A 3 ;
+		GWND A 0 A_GunFlash("Flash");
+		GWND B 5 A_FireGoldWandX;
+		GWND A 3;
+		GWND A 0 A_ReFire;
+		Goto Ready;
+	Crystal:
+		CRST A 1;
+		Stop;
+	CrystalGlow:
+		CRST A 3;
+		CRST B 5 Bright;
+		CRST A 4;
+		Stop;
+	Flash:
+		GWFL B 1 Bright A_Light1;
+		TNT1 A 1;
+		GWFL CDE 1 Bright A_Light2;
+		GWFL FG 1 Bright A_Light1;
+		Goto LightDone;
+	}
+}
+
+Class HVRWandPowered : HVRWand
+{
+	Default
+	{
+	+WEAPON.POWERED_UP
+	Weapon.AmmoGive 0;
+	Weapon.SisterWeapon "HVRWand";
+	Obituary "$OB_MPPGOLDWAND";
+	Tag "$TAG_GOLDWANDP";
+	}
+	
+	action void A_FireGoldWand2X ()
+	{
+		if (player == null)
+		{
+			return;
+		}
+		int hand = 0;
+		int laflags = 0;
+		int alflags = 0;
+		Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		if (weapon != null)
+		{
+			hand = weapon.bOffhandWeapon ? 1 : 0;
+			laflags |= hand ? LAF_ISOFFHAND : 0;
+			alflags |= hand ? ALF_ISOFFHAND : 0;
+			if (!weapon.DepleteAmmo (weapon.bAltFire))
+				return;
+		}
+		double pitch = BulletSlope(aimflags: alflags);
+
+		SpawnPlayerMissile("GoldWandFX2", angle - (45. / 8), aimflags: alflags);
+		SpawnPlayerMissile("GoldWandFX2", angle + (45. / 8), aimflags: alflags);
+		double ang = angle - (45. / 8);
+		for(int i = 0; i < 5; i++)
+		{
+			int damage = random[FireGoldWand](1, 8);
+			LineAttack (ang, PLAYERMISSILERANGE, pitch, damage, 'Hitscan', "GoldWandPuff2", laflags);
+			ang += ((45. / 8) * 2) / 4;
+		}
+		A_StartSound("weapons/wandhit", CHAN_WEAPON);
+	}
+	
+	States
+	{
+	Fire:
+		GWND A 0 A_Overlay(2001, "CrystalGlow");
+		GWND A 3 ;
+		GWND A 0 A_GunFlash("Flash");
+		GWND B 5 A_FireGoldWand2X;
+		GWND A 3;
+		GWND A 0 A_ReFire;
+		Goto Ready;
+	}
+}

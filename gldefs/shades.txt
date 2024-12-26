@@ -1,0 +1,30 @@
+
+//staff
+
+material texture "models/weapons/staff/baton.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/staff/ambou.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/staff/bag.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/staff/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+//wand
+
+material texture "models/weapons/wand/wand.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/wand/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}

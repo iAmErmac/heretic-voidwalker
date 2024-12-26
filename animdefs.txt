@@ -1,0 +1,89 @@
+
+Texture "models/weapons/overlay/bracer_rune_1a.png"
+    pic "models/weapons/overlay/bracer_rune_1a.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1b.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1c.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1d.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1e.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1f.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1g.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1h.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1i.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1j.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1k.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1l.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1m.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1n.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1o.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1p.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1q.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1r.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1s.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1t.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1u.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1v.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_1w.png" tics 6
+	
+	
+Texture "models/weapons/overlay/bracer_rune_2a.png"
+    pic "models/weapons/overlay/bracer_rune_2w.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2v.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2u.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2t.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2s.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2r.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2q.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2p.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2o.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2n.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2m.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2l.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2k.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2j.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2i.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2h.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2g.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2f.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2e.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2d.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2c.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2b.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_2a.png" tics 6
+	
+
+Texture "models/weapons/overlay/bracer_rune_3a.png"
+    pic "models/weapons/overlay/bracer_rune_3a.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3b.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3c.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3d.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3e.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3f.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3g.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3h.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3i.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3j.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3k.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3l.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3m.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3n.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3o.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3p.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3q.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3r.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3s.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3t.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3u.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3v.png" tics 6
+    pic "models/weapons/overlay/bracer_rune_3w.png" tics 6
+
+	
+Texture "models/weapons/staff/electro.png"
+    pic "models/weapons/staff/electro.png" tics 2
+    pic "models/weapons/staff/electro1.png" tics 2
+    pic "models/weapons/staff/electro2.png" tics 2
+
+	
+Texture "models/weapons/staff/elc1.png"
+    pic "models/weapons/staff/elc1.png" tics 1
+    pic "models/weapons/staff/elc2.png" tics 2
+    pic "models/weapons/staff/elc3.png" tics 2

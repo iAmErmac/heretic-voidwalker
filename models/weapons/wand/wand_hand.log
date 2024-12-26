@@ -1,0 +1,22 @@
+########################BEGIN########################
+Exporting hand
+Exported UVMap coordinates for hand
+Exported 10 frame(s) for hand
+Header Information
+Ident: IDP3
+Version: 15
+Name: 
+Flags: 0
+Number of Frames: 10
+Number of Tags: 0
+Number of Surfaces: 1
+Number of Skins: 0
+Offset Frames: 108
+Offset Tags: 668
+Offset Surfaces: 668
+Offset end: 27076
+Total Shaders: 1
+Total Triangles: 360
+Total Vertices: 249
+MD3 saved to D:\git_projects\Heretic Assets\Wand\wand_hand.md3
+Elapsed 0.32812 seconds
