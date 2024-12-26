@@ -52,28 +52,33 @@ Class HVRWand : HereticVRWeapon
 		GWAN A -1;
 		Stop;
 	Ready:
-		GWND A 1 A_WeaponReady;
-		GWND A 0 A_Overlay(2001, "Crystal");
+		TNT1 A 0;
+		GWND A 0 A_SetExtraModel("NHGW");
+		###3 # 0 A_Overlay(2001, "Crystal");
+		#### # 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		GWND C 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
-		GWND C 1 A_Lower;
+		GWND C 0 A_SetExtraModel("NHGW");
+		#### # 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Lower;
 		Loop;
-		GWND C 1 A_Lower (120);
+		#### # 1 A_Lower (120);
 		Loop;
 	Select:
-		GWND C 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
-		GWND C 1 A_Raise;
+		GWND C 0 A_SetExtraModel("NHGW");
+		#### # 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Raise;
 		Loop;
-		GWND C 1 A_Raise (120);
+		#### # 1 A_Raise (120);
 		Loop;
 	Fire:
-		GWND A 0 A_Overlay(2001, "CrystalGlow");
-		GWND A 3 ;
-		GWND A 0 A_GunFlash("Flash");
-		GWND B 5 A_FireGoldWandX;
-		GWND A 3;
-		GWND A 0 A_ReFire;
+		GWND A 0 A_SetExtraModel("NHGW");
+		#### # 0 A_Overlay(2001, "CrystalGlow");
+		#### # 3 ;
+		#### # 0 A_GunFlash("Flash");
+		#### B 5 A_FireGoldWandX;
+		#### A 3;
+		#### # 0 A_ReFire;
 		Goto Ready;
 	Crystal:
 		CRST A 1;
@@ -89,6 +94,9 @@ Class HVRWand : HereticVRWeapon
 		GWFL CDE 1 Bright A_Light2;
 		GWFL FG 1 Bright A_Light1;
 		Goto LightDone;
+	Placeholder:
+		NHGW ABC 1;
+		Stop;
 	}
 }
 
@@ -138,12 +146,13 @@ Class HVRWandPowered : HVRWand
 	States
 	{
 	Fire:
-		GWND A 0 A_Overlay(2001, "CrystalGlow");
-		GWND A 3 ;
-		GWND A 0 A_GunFlash("Flash");
-		GWND B 5 A_FireGoldWand2X;
-		GWND A 3;
-		GWND A 0 A_ReFire;
+		GWND A 0 A_SetExtraModel("NHGW");
+		#### # 0 A_Overlay(2001, "CrystalGlow");
+		#### # 3 ;
+		#### # 0 A_GunFlash("Flash");
+		#### B 5 A_FireGoldWand2X;
+		#### A 3;
+		#### # 0 A_ReFire;
 		Goto Ready;
 	}
 }

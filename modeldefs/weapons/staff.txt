@@ -21,6 +21,28 @@ Model HVRStaff
 	FrameIndex STFF H 0 7	FrameIndex STFF H 1 7
 }
 
+//without hand
+
+Model HVRStaff
+{ 
+	Path "models/weapons/staff"
+	Model 0 "staff.md3"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+
+	//Ready
+	FrameIndex NHST A 0 0
+	
+	//Fire
+	FrameIndex NHST B 0 1
+	FrameIndex NHST C 0 2
+	FrameIndex NHST D 0 3
+	FrameIndex NHST E 0 4
+	FrameIndex NHST F 0 5
+	FrameIndex NHST G 0 6
+	FrameIndex NHST H 0 7
+}
+
 //Shield mode
 
 Model HVRStaff
@@ -60,6 +82,32 @@ Model HVRStaffPowered
 	FrameIndex STFF F 0 5	FrameIndex STFF F 1 5	FrameIndex STFF F 2 5	FrameIndex STFF F 3 5
 	FrameIndex STFF G 0 6	FrameIndex STFF G 1 6	FrameIndex STFF G 2 6	FrameIndex STFF G 3 6
 	FrameIndex STFF H 0 7	FrameIndex STFF H 1 7	FrameIndex STFF H 2 7	FrameIndex STFF H 3 7
+}
+
+//without hand
+
+Model HVRStaffPowered
+{ 
+	Path "models/weapons/staff"
+	Model 0 "staff.md3"
+	Model 1 "staff_electric.md3"
+	Skin 1 "electro.png"
+	Model 2 "staff_puff.md3"
+	Skin 2 "elc1.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+
+	//Ready
+	FrameIndex NHST A 0 0	FrameIndex NHST A 1 0	FrameIndex NHST A 2 99
+	
+	//Fire
+	FrameIndex NHST B 0 1	FrameIndex NHST B 1 1	FrameIndex NHST B 2 99
+	FrameIndex NHST C 0 2	FrameIndex NHST C 1 2	FrameIndex NHST C 2 99
+	FrameIndex NHST D 0 3	FrameIndex NHST D 1 3	FrameIndex NHST D 2 99
+	FrameIndex NHST E 0 4	FrameIndex NHST E 1 4	FrameIndex NHST E 2 99
+	FrameIndex NHST F 0 5	FrameIndex NHST F 1 5	FrameIndex NHST F 2 5
+	FrameIndex NHST G 0 6	FrameIndex NHST G 1 6	FrameIndex NHST G 2 6
+	FrameIndex NHST H 0 7	FrameIndex NHST H 1 7	FrameIndex NHST H 2 7
 }
 
 //Shield mode

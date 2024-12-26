@@ -21,6 +21,28 @@ Model HVRWand
 	FrameIndex GWND C 0 0	FrameIndex GWND C 1 0	FrameIndex GWND C 2 0
 }
 
+//without hand
+
+Model HVRWand
+{ 
+	Path "models/weapons/wand"
+	Model 0 "wand.md3"
+	Skin 0 "wand.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+
+	//Ready
+	FrameIndex NHGW A 0 0
+	
+	//Fire
+	Skin 0 "wand_glow.png"
+	FrameIndex NHGW B 0 0
+	
+	Model 1 "wand_crystal.md3"
+	Skin 1 "crystal.png"
+	FrameIndex NHGW C 0 0	FrameIndex NHGW C 1 0
+}
+
 //crystal
 
 Model HVRWand
@@ -79,6 +101,32 @@ Model HVRWandPowered
 	//Fire
 	Skin 0 "wand_glow.png"
 	FrameIndex GWND B 0 0	FrameIndex GWND B 1 0
+	
+	Model 2 "wand_crystal.md3"
+	Skin 2 "crystal.png"
+	FrameIndex GWND C 0 0	FrameIndex GWND C 1 0	FrameIndex GWND C 2 0
+}
+
+//without hand
+
+Model HVRWandPowered
+{ 
+	Path "models/weapons/wand"
+	Model 0 "wand.md3"
+	Skin 0 "wand.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+
+	//Ready
+	FrameIndex NHGW A 0 0
+	
+	//Fire
+	Skin 0 "wand_glow.png"
+	FrameIndex NHGW B 0 0
+	
+	Model 1 "wand_crystal.md3"
+	Skin 1 "crystal.png"
+	FrameIndex NHGW C 0 0	FrameIndex NHGW C 1 0
 }
 
 //crystal
