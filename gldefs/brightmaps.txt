@@ -316,3 +316,22 @@ material texture "models/weapons/gauntlet/sparkr.png"
 {
 	brightmap "models/common/fullbright.png"
 }
+
+// skullrod
+
+material texture "models/weapons/skullrod/skull_fx1.png"
+{
+	brightmap "models/weapons/skullrod/skull_fx1_bm.png"
+}
+material texture "models/weapons/skullrod/skull_fx2.png"
+{
+	brightmap "models/weapons/skullrod/skull_fx2_bm.png"
+}
+material texture "models/weapons/skullrod/skull_fx3.png"
+{
+	brightmap "models/weapons/skullrod/skull_fx3_bm.png"
+}
+material texture "models/weapons/skullrod/skull_fx4.png"
+{
+	brightmap "models/weapons/skullrod/skull_fx4_bm.png"
+}

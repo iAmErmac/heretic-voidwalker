@@ -105,3 +105,9 @@ Texture "models/weapons/crossbow/lc1x.png"
     pic "models/weapons/crossbow/lc1x.png" tics 2
     pic "models/weapons/crossbow/lc2x.png" tics 2
     pic "models/weapons/crossbow/lc3x.png" tics 2
+
+	
+Texture "models/weapons/blaster/claw1-fx1.png"
+    pic "models/weapons/blaster/claw1-fx1.png" tics 1
+    pic "models/weapons/blaster/claw1-fx2.png" tics 1
+    pic "models/weapons/blaster/claw1-fx3.png" tics 1

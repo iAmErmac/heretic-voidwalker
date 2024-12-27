@@ -66,3 +66,56 @@ material texture "models/weapons/crossbow/hand.png"
 {
 	shader "shaders/SimSun.fp"
 }
+
+//crossbow
+
+material texture "models/weapons/crossbow/boules.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/cross.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/crossl.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/crossmet.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/crossbow/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+//dragonclaw
+
+material texture "models/weapons/blaster/bracer.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/blaster/claw1.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/blaster/claw2.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/blaster/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+//hellstaff
+
+material texture "models/weapons/skullrod/g_skull.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/skullrod/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}

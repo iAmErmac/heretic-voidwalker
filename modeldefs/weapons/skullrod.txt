@@ -1,178 +1,145 @@
 
-Model HVRGauntlets
+Model HVRSkullRod
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
+	Path "models/weapons/skullrod"
+	Model 0 "skullrod.md3"
+	Skin 0 "g_skull.png"
+	Model 1 "horns.md3"
+	Skin 1 "g_skull.png"
+	Model 2 "staff_hand.md3"
+	Skin 2 "hand.png"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0
+	FrameIndex HROD A 0 0	FrameIndex HROD A 1 0	FrameIndex HROD A 2 0
 	
 	//Fire
-	FrameIndex GAUN B 0 1
-	FrameIndex GAUN C 0 2
+	Skin 1 "skull_fx1.png"
+	FrameIndex HROD B 0 0	FrameIndex HROD B 1 0	FrameIndex HROD B 2 0
 }
 
-Model HVRGauntlets
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "spark.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
-	
-	NOINTERPOLATION
+//without hand
 
-	//Hold
-	FrameIndex GAUN D 0 2	FrameIndex GAUN D 1 0
-	FrameIndex GAUN E 0 2	FrameIndex GAUN E 1 1
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 2
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 3
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 4
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 5
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 6
-}
-
-Model OffhandGauntlet
+Model HVRSkullRod
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
+	Path "models/weapons/skullrod"
+	Model 0 "skullrod.md3"
+	Skin 0 "g_skull.png"
+	Model 1 "horns.md3"
+	Skin 1 "g_skull.png"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0
+	FrameIndex NHRD A 0 0	FrameIndex NHRD A 1 0
 	
 	//Fire
-	FrameIndex GAUN B 0 1
-	FrameIndex GAUN C 0 2
+	Skin 1 "skull_fx1.png"
+	FrameIndex NHRD B 0 0	FrameIndex NHRD B 1 0
 }
 
-Model OffhandGauntlet
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "spark.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
-	
-	NOINTERPOLATION
+//flash
 
-	//Hold
-	FrameIndex GAUN D 0 2	FrameIndex GAUN D 1 0
-	FrameIndex GAUN E 0 2	FrameIndex GAUN E 1 1
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 2
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 3
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 4
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 5
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 6
-}
-
-Model HVRGauntletsPowered
+Model HVRSkullRod
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "redglow.md3"
-	Skin 1 "sparkr.png"
+	Path "models/weapons/skullrod"
+	Model 0 "staff_flash.md3"
+	Skin 0 "wand-splash1.png"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0	FrameIndex GAUN A 1 0
-	FrameIndex GAUN B 0 0	FrameIndex GAUN B 1 1
-	FrameIndex GAUN C 0 0	FrameIndex GAUN C 1 2
+	FrameIndex HRFL A 0 0
 }
 
-Model HVRGauntletsPowered
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Skin 0 "sparkr.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
-	
-	//Fire
-	FrameIndex GAUN D 0 1
-	FrameIndex GAUN E 0 2
-}
 
-Model HVRGauntletsPowered
+Model HVRSkullRodPowered
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "sparkr.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
-	
-	NOINTERPOLATION
-
-	//Hold
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 0
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 1
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 2
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 3
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 4
-	FrameIndex GAUN K 0 2	FrameIndex GAUN K 1 5
-	FrameIndex GAUN L 0 2	FrameIndex GAUN L 1 6
-}
-
-Model OffhandGauntletPowered
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "redglow.md3"
-	Skin 1 "sparkr.png"
+	Path "models/weapons/skullrod"
+	Model 0 "skullrod.md3"
+	Skin 0 "g_skull.png"
+	Model 1 "horns.md3"
+	Skin 1 "g_skull.png"
+	Model 2 "staff_hand.md3"
+	Skin 2 "hand.png"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0	FrameIndex GAUN A 1 0
-	FrameIndex GAUN B 0 0	FrameIndex GAUN B 1 1
-	FrameIndex GAUN C 0 0	FrameIndex GAUN C 1 2
-}
-
-Model OffhandGauntletPowered
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Skin 0 "sparkr.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	FrameIndex HROD A 0 0	FrameIndex HROD A 1 0	FrameIndex HROD A 2 0
 	
 	//Fire
-	FrameIndex GAUN D 0 1
-	FrameIndex GAUN E 0 2
+	Skin 1 "skull_fx1.png"
+	FrameIndex HROD B 0 0	FrameIndex HROD B 1 0	FrameIndex HROD B 2 0
+	
+	Skin 1 "skull_fx2.png"
+	FrameIndex HROD C 0 0	FrameIndex HROD C 1 0	FrameIndex HROD C 2 0
+	
+	Skin 1 "skull_fx3.png"
+	FrameIndex HROD D 0 0	FrameIndex HROD D 1 0	FrameIndex HROD D 2 0
+	
+	Skin 1 "skull_fx4.png"
+	FrameIndex HROD E 0 0	FrameIndex HROD E 1 0	FrameIndex HROD E 2 0
 }
 
-Model OffhandGauntletPowered
+//without hand
+
+Model HVRSkullRodPowered
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "sparkr.png"
+	Path "models/weapons/skullrod"
+	Model 0 "skullrod.md3"
+	Skin 0 "g_skull.png"
+	Model 1 "horns.md3"
+	Skin 1 "g_skull.png"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
-	
-	NOINTERPOLATION
 
-	//Hold
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 0
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 1
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 2
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 3
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 4
-	FrameIndex GAUN K 0 2	FrameIndex GAUN K 1 5
-	FrameIndex GAUN L 0 2	FrameIndex GAUN L 1 6
+	//Ready
+	FrameIndex NHRD A 0 0	FrameIndex NHRD A 1 0
+	
+	//Fire
+	Skin 1 "skull_fx1.png"
+	FrameIndex NHRD B 0 0	FrameIndex NHRD B 1 0
+	
+	Skin 1 "skull_fx2.png"
+	FrameIndex NHRD C 0 0	FrameIndex NHRD C 1 0
+	
+	Skin 1 "skull_fx3.png"
+	FrameIndex NHRD D 0 0	FrameIndex NHRD D 1 0
+	
+	Skin 1 "skull_fx4.png"
+	FrameIndex NHRD E 0 0	FrameIndex NHRD E 1 0
+}
+
+//flash
+
+Model HVRSkullRodPowered
+{ 
+	Path "models/weapons/skullrod"
+	Model 0 "staff_flash.md3"
+	Skin 0 "wand-splash1.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+
+	//Ready
+	FrameIndex HRFL A 0 0
+	
+	//Fire
+	Model 1 "staff_flash2.md3"
+	Skin 1 "wand-splash1.png"
+	FrameIndex HRFL B 0 0	FrameIndex HRFL B 1 0
+	
+	//Fire
+	Model 0 "staff_flash2.md3"
+	Model 1 "staff_flash3.md3"
+	FrameIndex HRFL C 0 0	FrameIndex HRFL C 1 0
 }
 
 
 //overlay
 
-Model OffhandGauntlet
+Model HVRSkullRod
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_ring1.md3"
@@ -188,7 +155,7 @@ Model OffhandGauntlet
 	FrameIndex RUN2 A 0 0	FrameIndex RUN2 A 1 0
 }
 
-Model OffhandGauntlet
+Model HVRSkullRod
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar1.md3"
@@ -267,7 +234,7 @@ Model OffhandGauntlet
 	FrameIndex HGOD A 0 0
 }
 
-Model OffhandGauntlet
+Model HVRSkullRod
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar2.md3"
@@ -346,7 +313,7 @@ Model OffhandGauntlet
 	FrameIndex AGOD A 0 0
 }
 
-Model OffhandGauntlet
+Model HVRSkullRod
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar3.md3"
@@ -422,7 +389,7 @@ Model OffhandGauntlet
 	FrameIndex M000 A 0 0
 }
 
-Model OffhandGauntlet
+Model HVRSkullRod
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar4.md3"
@@ -498,8 +465,7 @@ Model OffhandGauntlet
 	FrameIndex M200 A 0 0
 }
 
-
-Model OffhandGauntletPowered
+Model HVRSkullRodPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_ring1.md3"
@@ -515,7 +481,7 @@ Model OffhandGauntletPowered
 	FrameIndex RUN2 A 0 0	FrameIndex RUN2 A 1 0
 }
 
-Model OffhandGauntletPowered
+Model HVRSkullRodPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar1.md3"
@@ -594,7 +560,7 @@ Model OffhandGauntletPowered
 	FrameIndex HGOD A 0 0
 }
 
-Model OffhandGauntletPowered
+Model HVRSkullRodPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar2.md3"
@@ -673,7 +639,7 @@ Model OffhandGauntletPowered
 	FrameIndex AGOD A 0 0
 }
 
-Model OffhandGauntletPowered
+Model HVRSkullRodPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar3.md3"
@@ -749,7 +715,7 @@ Model OffhandGauntletPowered
 	FrameIndex M000 A 0 0
 }
 
-Model OffhandGauntletPowered
+Model HVRSkullRodPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar4.md3"

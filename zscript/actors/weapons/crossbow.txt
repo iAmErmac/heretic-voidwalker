@@ -105,7 +105,7 @@ Class HVRCrossbowPowered : HVRCrossbow
 	Fire:
 		CRBW A 0 A_SetExtraModel("NHBW");
 		#### BE 1;
-		#### # 0 A_FireCrossbowX;
+		#### # 0 A_FireCrossbowX2;
 		#### FGHIJKLMN 2;
 		#### A 1;
 		#### # 4 A_ReFire;

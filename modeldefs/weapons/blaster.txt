@@ -1,178 +1,105 @@
 
-Model HVRGauntlets
+Model HVRBlaster
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
+	Path "models/weapons/blaster"
+	Model 0 "dragonclaw.md3"
+	Model 1 "claw_hand.md3"
+	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0
+	FrameIndex BLSR A 0 0	FrameIndex BLSR A 1 0
 	
 	//Fire
-	FrameIndex GAUN B 0 1
-	FrameIndex GAUN C 0 2
+	FrameIndex BLSR B 0 0	FrameIndex BLSR B 0 0
 }
 
-Model HVRGauntlets
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "spark.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
-	
-	NOINTERPOLATION
+//without hand
 
-	//Hold
-	FrameIndex GAUN D 0 2	FrameIndex GAUN D 1 0
-	FrameIndex GAUN E 0 2	FrameIndex GAUN E 1 1
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 2
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 3
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 4
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 5
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 6
-}
-
-Model OffhandGauntlet
+Model HVRBlaster
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
+	Path "models/weapons/blaster"
+	Model 0 "dragonclaw.md3"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0
+	FrameIndex NHBL A 0 0
 	
 	//Fire
-	FrameIndex GAUN B 0 1
-	FrameIndex GAUN C 0 2
+	FrameIndex NHBL B 0 0
 }
 
-Model OffhandGauntlet
+//flash
+
+Model HVRBlaster
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "spark.png"
+	Path "models/weapons/blaster"
+	Model 0 "claw_fx.md3"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 	
-	NOINTERPOLATION
-
-	//Hold
-	FrameIndex GAUN D 0 2	FrameIndex GAUN D 1 0
-	FrameIndex GAUN E 0 2	FrameIndex GAUN E 1 1
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 2
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 3
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 4
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 5
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 6
+	FrameIndex BLFL A 0 0
+	FrameIndex BLFL B 0 1
+	
+	Model 1 "claw_flash.md3"
+	FrameIndex BLFL C 0 2	FrameIndex BLFL C 1 0
 }
 
-Model HVRGauntletsPowered
+
+Model HVRBlasterPowered
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "redglow.md3"
-	Skin 1 "sparkr.png"
+	Path "models/weapons/blaster"
+	Model 0 "dragonclaw.md3"
+	Model 1 "claw_hand.md3"
+	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0	FrameIndex GAUN A 1 0
-	FrameIndex GAUN B 0 0	FrameIndex GAUN B 1 1
-	FrameIndex GAUN C 0 0	FrameIndex GAUN C 1 2
-}
-
-Model HVRGauntletsPowered
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Skin 0 "sparkr.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	FrameIndex BLSR A 0 0	FrameIndex BLSR A 1 0
 	
 	//Fire
-	FrameIndex GAUN D 0 1
-	FrameIndex GAUN E 0 2
+	FrameIndex BLSR B 0 0	FrameIndex BLSR B 0 0
 }
 
-Model HVRGauntletsPowered
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "sparkr.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
-	
-	NOINTERPOLATION
+//without hand
 
-	//Hold
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 0
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 1
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 2
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 3
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 4
-	FrameIndex GAUN K 0 2	FrameIndex GAUN K 1 5
-	FrameIndex GAUN L 0 2	FrameIndex GAUN L 1 6
-}
-
-Model OffhandGauntletPowered
+Model HVRBlasterPowered
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "redglow.md3"
-	Skin 1 "sparkr.png"
+	Path "models/weapons/blaster"
+	Model 0 "dragonclaw.md3"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
 	//Ready
-	FrameIndex GAUN A 0 0	FrameIndex GAUN A 1 0
-	FrameIndex GAUN B 0 0	FrameIndex GAUN B 1 1
-	FrameIndex GAUN C 0 0	FrameIndex GAUN C 1 2
-}
-
-Model OffhandGauntletPowered
-{ 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Skin 0 "sparkr.png"
-	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	FrameIndex NHBL A 0 0
 	
 	//Fire
-	FrameIndex GAUN D 0 1
-	FrameIndex GAUN E 0 2
+	FrameIndex NHBL B 0 0
 }
 
-Model OffhandGauntletPowered
+//flash
+
+Model HVRBlasterPowered
 { 
-	Path "models/weapons/gauntlet"
-	Model 0 "gauntlet.md3"
-	Model 1 "electro.md3"
-	Skin 1 "sparkr.png"
+	Path "models/weapons/blaster"
+	Model 0 "claw_fx.md3"
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 	
-	NOINTERPOLATION
-
-	//Hold
-	FrameIndex GAUN F 0 2	FrameIndex GAUN F 1 0
-	FrameIndex GAUN G 0 2	FrameIndex GAUN G 1 1
-	FrameIndex GAUN H 0 2	FrameIndex GAUN H 1 2
-	FrameIndex GAUN I 0 2	FrameIndex GAUN I 1 3
-	FrameIndex GAUN J 0 2	FrameIndex GAUN J 1 4
-	FrameIndex GAUN K 0 2	FrameIndex GAUN K 1 5
-	FrameIndex GAUN L 0 2	FrameIndex GAUN L 1 6
+	FrameIndex BLFL A 0 0
+	FrameIndex BLFL B 0 1
+	
+	Model 1 "claw_flash.md3"
+	FrameIndex BLFL C 0 2	FrameIndex BLFL C 1 0
 }
 
 
 //overlay
 
-Model OffhandGauntlet
+Model HVRBlaster
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_ring1.md3"
@@ -188,7 +115,7 @@ Model OffhandGauntlet
 	FrameIndex RUN2 A 0 0	FrameIndex RUN2 A 1 0
 }
 
-Model OffhandGauntlet
+Model HVRBlaster
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar1.md3"
@@ -267,7 +194,7 @@ Model OffhandGauntlet
 	FrameIndex HGOD A 0 0
 }
 
-Model OffhandGauntlet
+Model HVRBlaster
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar2.md3"
@@ -346,7 +273,7 @@ Model OffhandGauntlet
 	FrameIndex AGOD A 0 0
 }
 
-Model OffhandGauntlet
+Model HVRBlaster
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar3.md3"
@@ -422,7 +349,7 @@ Model OffhandGauntlet
 	FrameIndex M000 A 0 0
 }
 
-Model OffhandGauntlet
+Model HVRBlaster
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar4.md3"
@@ -498,8 +425,7 @@ Model OffhandGauntlet
 	FrameIndex M200 A 0 0
 }
 
-
-Model OffhandGauntletPowered
+Model HVRBlasterPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_ring1.md3"
@@ -515,7 +441,7 @@ Model OffhandGauntletPowered
 	FrameIndex RUN2 A 0 0	FrameIndex RUN2 A 1 0
 }
 
-Model OffhandGauntletPowered
+Model HVRBlasterPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar1.md3"
@@ -594,7 +520,7 @@ Model OffhandGauntletPowered
 	FrameIndex HGOD A 0 0
 }
 
-Model OffhandGauntletPowered
+Model HVRBlasterPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar2.md3"
@@ -673,7 +599,7 @@ Model OffhandGauntletPowered
 	FrameIndex AGOD A 0 0
 }
 
-Model OffhandGauntletPowered
+Model HVRBlasterPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar3.md3"
@@ -749,7 +675,7 @@ Model OffhandGauntletPowered
 	FrameIndex M000 A 0 0
 }
 
-Model OffhandGauntletPowered
+Model HVRBlasterPowered
 { 
 	Path "models/weapons/overlay"
 	Model 0 "holo_bracer_bar4.md3"
