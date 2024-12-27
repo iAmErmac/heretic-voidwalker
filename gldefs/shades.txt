@@ -29,6 +29,21 @@ material texture "models/weapons/wand/hand.png"
 	shader "shaders/SimSun.fp"
 }
 
+//gauntlet
+
+material texture "models/weapons/gauntlet/Gauntlets.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/gauntlet/Gloves-Bracers.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/gauntlet/Gloves-Spikes.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
 //crossbow
 
 material texture "models/weapons/crossbow/boules.png"

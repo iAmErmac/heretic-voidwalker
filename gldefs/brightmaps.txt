@@ -279,29 +279,40 @@ material texture "models/weapons/overlay/ammobar_u.png"
 
 material texture "models/weapons/staff/electro.png"
 {
-	brightmap "models/common/common_bm.png"
+	brightmap "models/common/fullbright.png"
 }
 material texture "models/weapons/staff/electro1.png"
 {
-	brightmap "models/common/common_bm.png"
+	brightmap "models/common/fullbright.png"
 }
 material texture "models/weapons/staff/electro2.png"
 {
-	brightmap "models/common/common_bm.png"
+	brightmap "models/common/fullbright.png"
 }
 material texture "models/weapons/staff/elc1.png"
 {
-	brightmap "models/common/common_bm.png"
+	brightmap "models/common/fullbright.png"
 }
 material texture "models/weapons/staff/elc2.png"
 {
-	brightmap "models/common/common_bm.png"
+	brightmap "models/common/fullbright.png"
 }
 material texture "models/weapons/staff/elc3.png"
 {
-	brightmap "models/common/common_bm.png"
+	brightmap "models/common/fullbright.png"
 }
 material texture "models/weapons/staff/RuneShield.png"
 {
-	brightmap "models/common/common_bm.png"
+	brightmap "models/common/fullbright.png"
+}
+
+// gauntlet
+
+material texture "models/weapons/gauntlet/spark.png"
+{
+	brightmap "models/common/fullbright.png"
+}
+material texture "models/weapons/gauntlet/sparkr.png"
+{
+	brightmap "models/common/fullbright.png"
 }

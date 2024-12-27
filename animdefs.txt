@@ -89,6 +89,18 @@ Texture "models/weapons/staff/elc1.png"
     pic "models/weapons/staff/elc3.png" tics 2
 
 	
+Texture "models/weapons/gauntlet/elec1.png"
+    pic "models/weapons/gauntlet/elec1.png" tics 2
+    pic "models/weapons/gauntlet/elec2.png" tics 2
+    pic "models/weapons/gauntlet/elec3.png" tics 2
+
+	
+Texture "models/weapons/gauntlet/elec1r.png"
+    pic "models/weapons/gauntlet/elec1r.png" tics 2
+    pic "models/weapons/gauntlet/elec2r.png" tics 2
+    pic "models/weapons/gauntlet/elec3r.png" tics 2
+
+	
 Texture "models/weapons/crossbow/lc1x.png"
     pic "models/weapons/crossbow/lc1x.png" tics 2
     pic "models/weapons/crossbow/lc2x.png" tics 2

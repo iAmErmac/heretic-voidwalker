@@ -1,5 +1,5 @@
 
-Class HVROffhandFistHandler : Eventhandler
+Class HVROffhandWeapHandler : Eventhandler
 {
 	override void WorldTick()
 	{
@@ -7,25 +7,56 @@ Class HVROffhandFistHandler : Eventhandler
 		
 		Playerinfo player = Players[ConsolePlayer];
 		if(!player) return;
+		let pmo = player.mo;
 		
 		if(level.time > 35)
 		{
-			let weap = Weapon(player.mo.FindInventory("HVRStaff"));
+			let weap = Weapon(pmo.FindInventory("HVRStaff"));
 			weap.bNohandswitch = true;
+			
+			let gauntlet = Weapon(pmo.FindInventory("HVRGauntlets"));
+			let powergauntlet = Weapon(pmo.FindInventory("HVRGauntletsPowered"));
+			if(player.ReadyWeapon == gauntlet)
+			{
+				pmo.giveinventory("OffhandGauntlet", 1);
+				let gauntlet2 = Weapon(pmo.FindInventory("OffhandGauntlet"));
+				if(player.OffhandWeapon == gauntlet2) return;
+				
+				player.OffhandWeapon = gauntlet2;
+				player.PendingWeapon = gauntlet2;
+				pmo.BringUpWeapon();
+				return;
+			}
+			else if(player.ReadyWeapon == powergauntlet)
+			{
+				pmo.giveinventory("OffhandGauntletPowered", 1);
+				let gauntlet2 = Weapon(pmo.FindInventory("OffhandGauntletPowered"));
+				if(player.OffhandWeapon == gauntlet2) return;
+				
+				player.OffhandWeapon = gauntlet2;
+				player.PendingWeapon = gauntlet2;
+				pmo.BringUpWeapon();
+				return;
+			}
+			else
+			{
+				if(pmo.countinv("OffhandGauntlet")) pmo.takeinventory("OffhandGauntlet", 1);
+				if(pmo.countinv("OffhandGauntletPowered")) pmo.takeinventory("OffhandGauntletPowered", 1);
+			}
 			
 			if(!player.ReadyWeapon)
 			{
 				weap.bOffhandweapon = false;
 				player.ReadyWeapon = weap;
 				player.PendingWeapon = weap;
-				player.mo.BringUpWeapon();
+				pmo.BringUpWeapon();
 			}
 			else if(!player.OffhandWeapon)
 			{
 				weap.bOffhandweapon = true;
 				player.OffhandWeapon = weap;
 				player.PendingWeapon = weap;
-				player.mo.BringUpWeapon();
+				pmo.BringUpWeapon();
 			}
 		}
 	}

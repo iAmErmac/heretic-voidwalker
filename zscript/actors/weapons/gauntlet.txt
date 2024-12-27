@@ -1,0 +1,212 @@
+
+Class HVRGauntlets : HereticVRWeapon replaces Gauntlets
+{
+	Default
+	{
+	+BLOODSPLATTER
+	Weapon.SelectionOrder 2300;
+	+WEAPON.WIMPY_WEAPON
+	+WEAPON.MELEEWEAPON
+	+WEAPON.NOHANDSWITCH
+	Weapon.Kickback 0;
+	Weapon.UpSound "weapons/gauntletsactivate";
+	Weapon.SisterWeapon "HVRGauntletsPowered";
+	Inventory.PickupMessage "$TXT_WPNGAUNTLETS";
+	Tag "$TAG_GAUNTLETS";
+	Obituary "$OB_MPGAUNTLETS";
+	}
+	
+	action void A_GauntletAttackX (int power)
+	{
+		int damage;
+		double dist;
+		Class<Actor> pufftype;
+		FTranslatedLineTarget t;
+		int actualdamage = 0;
+		Actor puff;
+
+		if (player == null)
+		{
+			return;
+		}
+
+		int hand = 0;
+		int laflags = 0;
+		int alflags = 0;
+		Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		if (weapon != null)
+		{
+			hand = weapon.bOffhandWeapon ? 1 : 0;
+			laflags |= hand ? LAF_ISOFFHAND : 0;
+			alflags |= hand ? ALF_ISOFFHAND : 0;
+			if (!weapon.DepleteAmmo (weapon.bAltFire))
+				return;
+			
+			let psp = player.GetPSprite(hand ? PSP_OFFHANDWEAPON : PSP_WEAPON);
+			if (psp)
+			{
+				psp.x = ((random[GauntletAtk](0, 3)) - 2);
+				psp.y = WEAPONTOP + (random[GauntletAtk](0, 3));
+			}
+		}
+		double ang = angle;
+		if (power)
+		{
+			damage = random[GauntletAtk](1, 8) * 2;
+			dist = 4*DEFMELEERANGE;
+			ang += random2[GauntletAtk]() * (2.8125 / 256);
+			pufftype = "GauntletPuff2";
+		}
+		else
+		{
+			damage = random[GauntletAtk](1, 8) * 2;
+			dist = SAWRANGE;
+			ang += random2[GauntletAtk]() * (5.625 / 256);
+			pufftype = "GauntletPuff1";
+		}
+		double slope = AimLineAttack (ang, dist, flags: alflags);
+		[puff, actualdamage] = LineAttack (ang, dist, slope, damage, 'Melee', pufftype, laflags, t);
+		if (!t.linetarget)
+		{
+			if (random[GauntletAtk]() > 64)
+			{
+				player.extralight = !player.extralight;
+			}
+			A_StartSound ("weapons/gauntletson", CHAN_AUTO);
+			return;
+		}
+		int randVal = random[GauntletAtk]();
+		if (randVal < 64)
+		{
+			player.extralight = 0;
+		}
+		else if (randVal < 160)
+		{
+			player.extralight = 1;
+		}
+		else
+		{
+			player.extralight = 2;
+		}
+		if (power)
+		{
+			if (!t.linetarget.bDontDrain) GiveBody (actualdamage >> 1);
+			A_StartSound ("weapons/gauntletspowhit", CHAN_AUTO);
+		}
+		else
+		{
+			A_StartSound ("weapons/gauntletshit", CHAN_AUTO);
+		}
+		/* changing player angle is bad for vr
+		// turn to face target
+		ang = t.angleFromSource;
+		double anglediff = deltaangle(angle, ang);
+
+		if (anglediff < 0.0)
+		{
+			if (anglediff < -4.5)
+				angle = ang + 90.0 / 21;
+			else
+				angle -= 4.5;
+		}
+		else
+		{
+			if (anglediff > 4.5)
+				angle = ang - 90.0 / 21;
+			else
+				angle += 4.5;
+		}
+		*/
+		bJustAttacked = true;
+	}
+
+	States
+	{
+	Spawn:
+		WGNT A -1;
+		Stop;
+	Ready:
+		TNT1 A 0;
+		GAUN A 1 A_WeaponReady;
+		Loop;
+	Deselect:
+		GAUN A 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Lower;
+		Loop;
+		#### # 1 A_Lower (120);
+		Loop;
+	Select:
+		GAUN A 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Raise;
+		Loop;
+		#### # 1 A_Raise (120);
+		Loop;
+	Fire:
+		GAUN B 4 A_PlayWeaponSound("weapons/gauntletsuse");
+		GAUN C 4;
+	Hold:
+		GAUN DEFGHIJDEFGH 1 Bright A_GauntletAttackX(0);
+		GAUN JFIE 1 A_ReFire;
+		GAUN GDEJ 1 A_Light0;
+		Goto Ready;
+	}
+}
+
+Class OffhandGauntlet : HVRGauntlets
+{
+	Default
+	{
+	+WEAPON.CHEATNOTWEAPON
+	+WEAPON.OFFHANDWEAPON
+	Weapon.SisterWeapon "OffhandGauntletPowered";
+	}
+}
+
+Class HVRGauntletsPowered : HVRGauntlets
+{
+	Default
+	{
+	+WEAPON.POWERED_UP
+	+WEAPON.NOHANDSWITCH
+	Tag "$TAG_GAUNTLETSP";
+	Obituary "$OB_MPPGAUNTLETS";
+	Weapon.SisterWeapon "HVRGauntlets";
+	}
+  
+	States
+	{
+	Ready:
+		GAUN ABC 2 A_WeaponReady;
+		Loop;
+	Deselect:
+		GAUN A 0 A_JumpIf(invoker.fastSwitchWeapon == true, 4);
+		#### ABC 2 A_Lower;
+		Loop;
+		#### ABC 2 A_Lower (120);
+		Loop;
+	Select:
+		GAUN A 0 A_JumpIf(invoker.fastSwitchWeapon == true, 4);
+		#### ABC 2 A_Raise;
+		Loop;
+		#### ABC 2 A_Raise (120);
+		Loop;
+	Fire:
+		GAUN D 4 A_PlayWeaponSound("weapons/gauntletsuse");
+		GAUN E 4;
+	Hold:
+		GAUN FGHIJKLFGHIK 1 Bright A_GauntletAttackX(1);
+		GAUN JFIG 1 A_ReFire;
+		GAUN LIFK 1 A_Light0;
+		Goto Ready;
+	}
+}
+
+Class OffhandGauntletPowered : HVRGauntletsPowered
+{
+	Default
+	{
+	+WEAPON.CHEATNOTWEAPON
+	+WEAPON.OFFHANDWEAPON
+	Weapon.SisterWeapon "OffhandGauntlet";
+	}
+}

@@ -13,7 +13,7 @@ Class HereticVRPlayer : PlayerPawn
 	Player.StartItem "HVRWand";
 	Player.StartItem "HVRStaff";
 	Player.StartItem "GoldWandAmmo", 50;
-	Player.WeaponSlot 1, "HVRStaff", "Gauntlets";
+	Player.WeaponSlot 1, "HVRStaff", "HVRGauntlets";
 	Player.WeaponSlot 2, "HVRWand";
 	Player.WeaponSlot 3, "HVRCrossbow";
 	Player.WeaponSlot 4, "Blaster";
