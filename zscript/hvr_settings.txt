@@ -21,7 +21,8 @@ class hvr_Settings
   int pickupModel()   					{ return pickupModelCvar.getInt();   	}
   bool flashSprite()   					{ return flashSpriteCvar.getBool();   	}
   bool weaponSwitch()   				{ return weaponSwitchCvar.getBool();   	}
-  int holoHUD()   						{ return holoHUDCvar.getInt();   	}
+  int holoHUD()   					{ return holoHUDCvar.getInt();   	}
+  int gauntletHand()   					{ return gauntletCvar.getInt();   	}
   
   //int vrControlScheme() 				{ return controlSchemeCvar.isDefined() ? controlSchemeCvar.getInt() : 0; }
 
@@ -33,8 +34,9 @@ class hvr_Settings
     result.weaponModelCvar 		   		= hvr_CVar.of("hvr_weaponmodel");
     result.pickupModelCvar 		   		= hvr_CVar.of("hvr_pickupmodel");
     result.flashSpriteCvar 		   		= hvr_CVar.of("hvr_flashsprite");
-    result.weaponSwitchCvar   			= hvr_CVar.of("hvr_fastswitch");
+    result.weaponSwitchCvar   				= hvr_CVar.of("hvr_fastswitch");
     result.holoHUDCvar   				= hvr_CVar.of("hvr_holohud");
+    result.gauntletCvar   				= hvr_CVar.of("hvr_gauntlet");
 
     return result;
   }
@@ -44,6 +46,7 @@ class hvr_Settings
   private hvr_CVar flashSpriteCvar;
   private hvr_CVar weaponSwitchCvar;
   private hvr_CVar holoHUDCvar;
+  private hvr_CVar gauntletCvar;
   
   private hvr_CVar controlSchemeCvar;
 

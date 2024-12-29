@@ -19,7 +19,7 @@ Class HereticVRPlayer : PlayerPawn
 	Player.WeaponSlot 4, "HVRBlaster";
 	Player.WeaponSlot 5, "HVRSkullRod";
 	Player.WeaponSlot 6, "HVRPhoenixRod";
-	Player.WeaponSlot 7, "Mace";
+	Player.WeaponSlot 7, "HVRMace";
 	Player.ColorRange 225, 240;
 	Player.ColorSet 0, "Green",         225, 240,  238;
 	Player.ColorSet 1, "Yellow",        114, 129,  127;

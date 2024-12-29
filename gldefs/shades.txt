@@ -130,3 +130,14 @@ material texture "models/weapons/phoenixrod/hand.png"
 {
 	shader "shaders/SimSun.fp"
 }
+
+//fire mace
+
+material texture "models/weapons/mace/FireMace.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/mace/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}

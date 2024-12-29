@@ -14,9 +14,23 @@ Class HVROffhandWeapHandler : Eventhandler
 			let weap = Weapon(pmo.FindInventory("HVRStaff"));
 			weap.bNohandswitch = true;
 			
+			bool gauntletEquipBoth = CVar.GetCVar("hvr_gauntlet", player).GetBool();
+			
 			let gauntlet = Weapon(pmo.FindInventory("HVRGauntlets"));
 			let powergauntlet = Weapon(pmo.FindInventory("HVRGauntletsPowered"));
-			if(player.ReadyWeapon == gauntlet)
+			
+			if(gauntletEquipBoth)
+			{
+				if(gauntlet) gauntlet.bNohandswitch = true;
+				if(powergauntlet) powergauntlet.bNohandswitch = true;
+			}
+			else
+			{
+				if(gauntlet) gauntlet.bNohandswitch = false;
+				if(powergauntlet) powergauntlet.bNohandswitch = false;
+			}
+			
+			if(gauntlet && player.ReadyWeapon == gauntlet && NumOHWeapons() < 7 && gauntletEquipBoth)
 			{
 				pmo.giveinventory("OffhandGauntlet", 1);
 				let gauntlet2 = Weapon(pmo.FindInventory("OffhandGauntlet"));
@@ -27,7 +41,7 @@ Class HVROffhandWeapHandler : Eventhandler
 				pmo.BringUpWeapon();
 				return;
 			}
-			else if(player.ReadyWeapon == powergauntlet)
+			else if(powergauntlet && player.ReadyWeapon == powergauntlet && NumOHWeapons() < 7 && gauntletEquipBoth)
 			{
 				pmo.giveinventory("OffhandGauntletPowered", 1);
 				let gauntlet2 = Weapon(pmo.FindInventory("OffhandGauntletPowered"));
@@ -70,6 +84,40 @@ Class HVROffhandWeapHandler : Eventhandler
 	{
 		bool isTitlemap = (level.mapname == "TITLEMAP");
 		return isTitlemap;
+	}
+	
+	private int NumOHWeapons()
+	{
+		int weaps = 0;
+		
+		Playerinfo player = Players[ConsolePlayer];
+		if(!player) return weaps;
+		let pmo = player.mo;
+		
+		let staff = Weapon(pmo.FindInventory("HVRStaff"));
+		let staff2 = Weapon(pmo.FindInventory("HVRStaffPowered"));
+		let wand = Weapon(pmo.FindInventory("HVRWand"));
+		let wand2 = Weapon(pmo.FindInventory("HVRWandPowered"));
+		let xbow = Weapon(pmo.FindInventory("HVRCrossbow"));
+		let xbow2 = Weapon(pmo.FindInventory("HVRCrossbowPowered"));
+		let blaster = Weapon(pmo.FindInventory("HVRBlaster"));
+		let blaster2 = Weapon(pmo.FindInventory("HVRBlasterPowered"));
+		let skullrod = Weapon(pmo.FindInventory("HVRSkullRod"));
+		let skullrod2 = Weapon(pmo.FindInventory("HVRSkullRodPowered"));
+		let phoenix = Weapon(pmo.FindInventory("HVRPhoenixRod"));
+		let phoenix2 = Weapon(pmo.FindInventory("HVRPhoenixRodPowered"));
+		let mace = Weapon(pmo.FindInventory("HVRMace"));
+		let mace2 = Weapon(pmo.FindInventory("HVRMacePowered"));
+		
+		if( (staff && staff.owner && staff.bOffhandweapon) || (staff2 && staff2.owner && staff2.bOffhandweapon) ) weaps++;
+		if( (wand && wand.owner && wand.bOffhandweapon) || (wand2 && wand2.owner && wand2.bOffhandweapon) ) weaps++;
+		if( (xbow && xbow.owner && xbow.bOffhandweapon) || (xbow2 && xbow2.owner && xbow2.bOffhandweapon) ) weaps++;
+		if( (blaster && blaster.owner && blaster.bOffhandweapon) || (blaster2 && blaster2.owner && blaster2.bOffhandweapon) ) weaps++;
+		if( (skullrod && skullrod.owner && skullrod.bOffhandweapon) || (skullrod2 && skullrod2.owner && skullrod2.bOffhandweapon) ) weaps++;
+		if( (phoenix && phoenix.owner && phoenix.bOffhandweapon) || (phoenix2 && phoenix2.owner && phoenix2.bOffhandweapon) ) weaps++;
+		if( (mace && mace.owner && mace.bOffhandweapon) || (mace2 && mace2.owner && mace2.bOffhandweapon) ) weaps++;
+		
+		return weaps;
 	}
 	
 	private bool _isTitlemap;

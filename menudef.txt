@@ -77,6 +77,11 @@ OptionValue "HVR_WeaponSwitch_Option" {
 	1, "$HVR_OPT_FAST"
 }
 
+OptionValue "HVR_Gauntlet_Options" {
+	0, "$HVR_OPT_GAUNT_ONEHAND"
+	1, "$HVR_OPT_GAUNT_BOTH"
+}
+
 OptionValue "HVR_HoloHUD_Options" {
 	0, "$HVR_DISABLED"
 	1, "$HVR_HOLOHUD_FANCY"
@@ -97,5 +102,6 @@ OptionMenu "HVROptionsMenu" {
 	Option "$HVR_WEAPON_PICKUP", 		"hvr_pickupmodel", 		"HVR_PickupModel_Option"
 	Option "$HVR_WEAPON_FLASH", 		"hvr_flashsprite", 		"OnOff"
 	Option "$HVR_WEAPON_SWITCH", 		"hvr_fastswitch", 		"HVR_WeaponSwitch_Option"
+	Option "$HVR_GAUNTLET", 		"hvr_gauntlet", 		"HVR_Gauntlet_Options"
 	Option "$HVR_HOLO_HUD", 		"hvr_holohud", 			"HVR_HoloHUD_Options"
 }

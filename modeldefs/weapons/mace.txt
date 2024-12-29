@@ -1,0 +1,767 @@
+
+Model HVRMace
+{ 
+	Path "models/weapons/mace"
+	Model 0 "mace.md3"
+	Skin 0 "FireMace.png"
+	Model 1 "mace_spike.md3"
+	Skin 1 "FireMace2.png"
+	Model 2 "mace_cap.md3"
+	Skin 2 "FireMace.png"
+	Model 3 "mace_hand.md3"
+	Skin 3 "hand.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+	
+	//Fire
+	FrameIndex MACE C 0 0	FrameIndex MACE C 1 1	FrameIndex MACE C 2 1	FrameIndex MACE C 3 0
+	FrameIndex MACE D 0 0	FrameIndex MACE D 1 2	FrameIndex MACE D 2 2	FrameIndex MACE D 3 0
+	FrameIndex MACE E 0 0	FrameIndex MACE E 1 3	FrameIndex MACE E 2 3	FrameIndex MACE E 3 0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex MACE A 0 0	FrameIndex MACE A 1 0	FrameIndex MACE A 2 0	FrameIndex MACE A 3 0
+	
+	//Fire
+	FrameIndex MACE B 0 0	FrameIndex MACE B 1 0	FrameIndex MACE B 2 0	FrameIndex MACE B 3 0
+}
+
+//without hand
+
+Model HVRMace
+{ 
+	Path "models/weapons/mace"
+	Model 0 "mace.md3"
+	Skin 0 "FireMace.png"
+	Model 1 "mace_spike.md3"
+	Skin 1 "FireMace2.png"
+	Model 2 "mace_cap.md3"
+	Skin 2 "FireMace.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+	
+	//Fire
+	FrameIndex NHFM C 0 0	FrameIndex NHFM C 1 1	FrameIndex NHFM C 2 1
+	FrameIndex NHFM D 0 0	FrameIndex NHFM D 1 2	FrameIndex NHFM D 2 2
+	FrameIndex NHFM E 0 0	FrameIndex NHFM E 1 3	FrameIndex NHFM E 2 3
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex NHFM A 0 0	FrameIndex NHFM A 1 0	FrameIndex NHFM A 2 0
+	
+	//Fire
+	FrameIndex NHFM B 0 0	FrameIndex NHFM B 1 0	FrameIndex NHFM B 2 0
+}
+
+Model HVRMacePowered
+{ 
+	Path "models/weapons/mace"
+	Model 0 "mace.md3"
+	Skin 0 "FireMace.png"
+	Model 1 "mace_spike.md3"
+	Skin 1 "FireMace2.png"
+	Model 2 "mace_cap.md3"
+	Skin 2 "FireMace.png"
+	Model 3 "mace_hand.md3"
+	Skin 3 "hand.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+	
+	//Fire
+	FrameIndex MACE C 0 0	FrameIndex MACE C 1 1	FrameIndex MACE C 2 1	FrameIndex MACE C 3 0
+	FrameIndex MACE D 0 0	FrameIndex MACE D 1 2	FrameIndex MACE D 2 2	FrameIndex MACE D 3 0
+	FrameIndex MACE E 0 0	FrameIndex MACE E 1 3	FrameIndex MACE E 2 3	FrameIndex MACE E 3 0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex MACE A 0 0	FrameIndex MACE A 1 0	FrameIndex MACE A 2 0	FrameIndex MACE A 3 0
+	
+	//Fire
+	FrameIndex MACE B 0 0	FrameIndex MACE B 1 0	FrameIndex MACE B 2 0	FrameIndex MACE B 3 0
+}
+
+//without hand
+
+Model HVRMacePowered
+{ 
+	Path "models/weapons/mace"
+	Model 0 "mace.md3"
+	Skin 0 "FireMace.png"
+	Model 1 "mace_spike.md3"
+	Skin 1 "FireMace2.png"
+	Model 2 "mace_cap.md3"
+	Skin 2 "FireMace.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -15.0
+	
+	//Fire
+	FrameIndex NHFM C 0 0	FrameIndex NHFM C 1 1	FrameIndex NHFM C 2 1
+	FrameIndex NHFM D 0 0	FrameIndex NHFM D 1 2	FrameIndex NHFM D 2 2
+	FrameIndex NHFM E 0 0	FrameIndex NHFM E 1 3	FrameIndex NHFM E 2 3
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex NHFM A 0 0	FrameIndex NHFM A 1 0	FrameIndex NHFM A 2 0
+	
+	//Fire
+	FrameIndex NHFM B 0 0	FrameIndex NHFM B 1 0	FrameIndex NHFM B 2 0
+}
+
+
+//overlay
+
+Model HVRMace
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_ring1.md3"
+	Skin 0 "bracer_rune_1a.png"
+	Model 1 "holo_bracer_ring2.md3"
+	Skin 1 "bracer_rune_2a.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
+	
+	Skin 0 "bracer_rune_3a.png"
+	FrameIndex RUN2 A 0 0	FrameIndex RUN2 A 1 0
+}
+
+Model HVRMace
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar1.md3"
+	Skin 0 "hpbar_a.png"
+	Model 1 "holo_bracer_icon1.md3"
+	Skin 1 "bracer_icon_a.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex H100 A 0 0
+	
+	Skin 0 "hpbar_b.png"
+	FrameIndex H095 A 0 0
+	
+	Skin 0 "hpbar_c.png"
+	FrameIndex H090 A 0 0
+	
+	Skin 0 "hpbar_d.png"
+	FrameIndex H085 A 0 0
+	
+	Skin 0 "hpbar_e.png"
+	FrameIndex H080 A 0 0
+	
+	Skin 0 "hpbar_f.png"
+	FrameIndex H075 A 0 0
+	
+	Skin 0 "hpbar_g.png"
+	FrameIndex H070 A 0 0
+	
+	Skin 0 "hpbar_h.png"
+	FrameIndex H065 A 0 0
+	
+	Skin 0 "hpbar_i.png"
+	FrameIndex H060 A 0 0
+	
+	Skin 0 "hpbar_j.png"
+	FrameIndex H055 A 0 0
+	
+	Skin 0 "hpbar_k.png"
+	FrameIndex H050 A 0 0
+	
+	Skin 0 "hpbar_l.png"
+	FrameIndex H045 A 0 0
+	
+	Skin 0 "hpbar_m.png"
+	FrameIndex H040 A 0 0
+	
+	Skin 0 "hpbar_n.png"
+	FrameIndex H035 A 0 0
+	
+	Skin 0 "hpbar_o.png"
+	FrameIndex H030 A 0 0
+	
+	Skin 0 "hpbar_p.png"
+	FrameIndex H025 A 0 0
+	
+	Skin 0 "hpbar_q.png"
+	FrameIndex H020 A 0 0
+	
+	Skin 0 "hpbar_r.png"
+	FrameIndex H015 A 0 0
+	
+	Skin 0 "hpbar_s.png"
+	FrameIndex H010 A 0 0
+	
+	Skin 0 "hpbar_t.png"
+	FrameIndex H005 A 0 0
+	
+	Skin 0 "hpbar_u.png"
+	FrameIndex H001 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex H000 A 0 0
+	
+	Skin 0 "hpbar_god.png"
+	FrameIndex HGOD A 0 0
+}
+
+Model HVRMace
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar2.md3"
+	Skin 0 "shieldbar_a.png"
+	Model 1 "holo_bracer_icon2.md3"
+	Skin 1 "bracer_icon_b.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex A100 A 0 0
+	
+	Skin 0 "shieldbar_b.png"
+	FrameIndex A095 A 0 0
+	
+	Skin 0 "shieldbar_c.png"
+	FrameIndex A090 A 0 0
+	
+	Skin 0 "shieldbar_d.png"
+	FrameIndex A085 A 0 0
+	
+	Skin 0 "shieldbar_e.png"
+	FrameIndex A080 A 0 0
+	
+	Skin 0 "shieldbar_f.png"
+	FrameIndex A075 A 0 0
+	
+	Skin 0 "shieldbar_g.png"
+	FrameIndex A070 A 0 0
+	
+	Skin 0 "shieldbar_h.png"
+	FrameIndex A065 A 0 0
+	
+	Skin 0 "shieldbar_i.png"
+	FrameIndex A060 A 0 0
+	
+	Skin 0 "shieldbar_j.png"
+	FrameIndex A055 A 0 0
+	
+	Skin 0 "shieldbar_k.png"
+	FrameIndex A050 A 0 0
+	
+	Skin 0 "shieldbar_l.png"
+	FrameIndex A045 A 0 0
+	
+	Skin 0 "shieldbar_m.png"
+	FrameIndex A040 A 0 0
+	
+	Skin 0 "shieldbar_n.png"
+	FrameIndex A035 A 0 0
+	
+	Skin 0 "shieldbar_o.png"
+	FrameIndex A030 A 0 0
+	
+	Skin 0 "shieldbar_p.png"
+	FrameIndex A025 A 0 0
+	
+	Skin 0 "shieldbar_q.png"
+	FrameIndex A020 A 0 0
+	
+	Skin 0 "shieldbar_r.png"
+	FrameIndex A015 A 0 0
+	
+	Skin 0 "shieldbar_s.png"
+	FrameIndex A010 A 0 0
+	
+	Skin 0 "shieldbar_t.png"
+	FrameIndex A005 A 0 0
+	
+	Skin 0 "shieldbar_u.png"
+	FrameIndex A001 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex A000 A 0 0
+	
+	Skin 0 "shieldbar_god.png"
+	FrameIndex AGOD A 0 0
+}
+
+Model HVRMace
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar3.md3"
+	Skin 0 "ammobar_a.png"
+	Model 1 "holo_bracer_icon3.md3"
+	Skin 1 "bracer_icon_c.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex M100 A 0 0
+	
+	Skin 0 "ammobar_b.png"
+	FrameIndex M095 A 0 0
+	
+	Skin 0 "ammobar_c.png"
+	FrameIndex M090 A 0 0
+	
+	Skin 0 "ammobar_d.png"
+	FrameIndex M085 A 0 0
+	
+	Skin 0 "ammobar_e.png"
+	FrameIndex M080 A 0 0
+	
+	Skin 0 "ammobar_f.png"
+	FrameIndex M075 A 0 0
+	
+	Skin 0 "ammobar_g.png"
+	FrameIndex M070 A 0 0
+	
+	Skin 0 "ammobar_h.png"
+	FrameIndex M065 A 0 0
+	
+	Skin 0 "ammobar_i.png"
+	FrameIndex M060 A 0 0
+	
+	Skin 0 "ammobar_j.png"
+	FrameIndex M055 A 0 0
+	
+	Skin 0 "ammobar_k.png"
+	FrameIndex M050 A 0 0
+	
+	Skin 0 "ammobar_l.png"
+	FrameIndex M045 A 0 0
+	
+	Skin 0 "ammobar_m.png"
+	FrameIndex M040 A 0 0
+	
+	Skin 0 "ammobar_n.png"
+	FrameIndex M035 A 0 0
+	
+	Skin 0 "ammobar_o.png"
+	FrameIndex M030 A 0 0
+	
+	Skin 0 "ammobar_p.png"
+	FrameIndex M025 A 0 0
+	
+	Skin 0 "ammobar_q.png"
+	FrameIndex M020 A 0 0
+	
+	Skin 0 "ammobar_r.png"
+	FrameIndex M015 A 0 0
+	
+	Skin 0 "ammobar_s.png"
+	FrameIndex M010 A 0 0
+	
+	Skin 0 "ammobar_t.png"
+	FrameIndex M005 A 0 0
+	
+	Skin 0 "ammobar_u.png"
+	FrameIndex M001 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex M000 A 0 0
+}
+
+Model HVRMace
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar4.md3"
+	Skin 0 "ammobar_a.png"
+	Model 1 "holo_bracer_icon4.md3"
+	Skin 1 "bracer_icon_d.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex M2FL A 0 0
+	
+	Skin 0 "ammobar_b.png"
+	FrameIndex M295 A 0 0
+	
+	Skin 0 "ammobar_c.png"
+	FrameIndex M290 A 0 0
+	
+	Skin 0 "ammobar_d.png"
+	FrameIndex M285 A 0 0
+	
+	Skin 0 "ammobar_e.png"
+	FrameIndex M280 A 0 0
+	
+	Skin 0 "ammobar_f.png"
+	FrameIndex M275 A 0 0
+	
+	Skin 0 "ammobar_g.png"
+	FrameIndex M270 A 0 0
+	
+	Skin 0 "ammobar_h.png"
+	FrameIndex M265 A 0 0
+	
+	Skin 0 "ammobar_i.png"
+	FrameIndex M260 A 0 0
+	
+	Skin 0 "ammobar_j.png"
+	FrameIndex M255 A 0 0
+	
+	Skin 0 "ammobar_k.png"
+	FrameIndex M250 A 0 0
+	
+	Skin 0 "ammobar_l.png"
+	FrameIndex M245 A 0 0
+	
+	Skin 0 "ammobar_m.png"
+	FrameIndex M240 A 0 0
+	
+	Skin 0 "ammobar_n.png"
+	FrameIndex M235 A 0 0
+	
+	Skin 0 "ammobar_o.png"
+	FrameIndex M230 A 0 0
+	
+	Skin 0 "ammobar_p.png"
+	FrameIndex M225 A 0 0
+	
+	Skin 0 "ammobar_q.png"
+	FrameIndex M220 A 0 0
+	
+	Skin 0 "ammobar_r.png"
+	FrameIndex M215 A 0 0
+	
+	Skin 0 "ammobar_s.png"
+	FrameIndex M210 A 0 0
+	
+	Skin 0 "ammobar_t.png"
+	FrameIndex M205 A 0 0
+	
+	Skin 0 "ammobar_u.png"
+	FrameIndex M201 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex M200 A 0 0
+}
+
+Model HVRMacePowered
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_ring1.md3"
+	Skin 0 "bracer_rune_1a.png"
+	Model 1 "holo_bracer_ring2.md3"
+	Skin 1 "bracer_rune_2a.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
+	
+	Skin 0 "bracer_rune_3a.png"
+	FrameIndex RUN2 A 0 0	FrameIndex RUN2 A 1 0
+}
+
+Model HVRMacePowered
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar1.md3"
+	Skin 0 "hpbar_a.png"
+	Model 1 "holo_bracer_icon1.md3"
+	Skin 1 "bracer_icon_a.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex H100 A 0 0
+	
+	Skin 0 "hpbar_b.png"
+	FrameIndex H095 A 0 0
+	
+	Skin 0 "hpbar_c.png"
+	FrameIndex H090 A 0 0
+	
+	Skin 0 "hpbar_d.png"
+	FrameIndex H085 A 0 0
+	
+	Skin 0 "hpbar_e.png"
+	FrameIndex H080 A 0 0
+	
+	Skin 0 "hpbar_f.png"
+	FrameIndex H075 A 0 0
+	
+	Skin 0 "hpbar_g.png"
+	FrameIndex H070 A 0 0
+	
+	Skin 0 "hpbar_h.png"
+	FrameIndex H065 A 0 0
+	
+	Skin 0 "hpbar_i.png"
+	FrameIndex H060 A 0 0
+	
+	Skin 0 "hpbar_j.png"
+	FrameIndex H055 A 0 0
+	
+	Skin 0 "hpbar_k.png"
+	FrameIndex H050 A 0 0
+	
+	Skin 0 "hpbar_l.png"
+	FrameIndex H045 A 0 0
+	
+	Skin 0 "hpbar_m.png"
+	FrameIndex H040 A 0 0
+	
+	Skin 0 "hpbar_n.png"
+	FrameIndex H035 A 0 0
+	
+	Skin 0 "hpbar_o.png"
+	FrameIndex H030 A 0 0
+	
+	Skin 0 "hpbar_p.png"
+	FrameIndex H025 A 0 0
+	
+	Skin 0 "hpbar_q.png"
+	FrameIndex H020 A 0 0
+	
+	Skin 0 "hpbar_r.png"
+	FrameIndex H015 A 0 0
+	
+	Skin 0 "hpbar_s.png"
+	FrameIndex H010 A 0 0
+	
+	Skin 0 "hpbar_t.png"
+	FrameIndex H005 A 0 0
+	
+	Skin 0 "hpbar_u.png"
+	FrameIndex H001 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex H000 A 0 0
+	
+	Skin 0 "hpbar_god.png"
+	FrameIndex HGOD A 0 0
+}
+
+Model HVRMacePowered
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar2.md3"
+	Skin 0 "shieldbar_a.png"
+	Model 1 "holo_bracer_icon2.md3"
+	Skin 1 "bracer_icon_b.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex A100 A 0 0
+	
+	Skin 0 "shieldbar_b.png"
+	FrameIndex A095 A 0 0
+	
+	Skin 0 "shieldbar_c.png"
+	FrameIndex A090 A 0 0
+	
+	Skin 0 "shieldbar_d.png"
+	FrameIndex A085 A 0 0
+	
+	Skin 0 "shieldbar_e.png"
+	FrameIndex A080 A 0 0
+	
+	Skin 0 "shieldbar_f.png"
+	FrameIndex A075 A 0 0
+	
+	Skin 0 "shieldbar_g.png"
+	FrameIndex A070 A 0 0
+	
+	Skin 0 "shieldbar_h.png"
+	FrameIndex A065 A 0 0
+	
+	Skin 0 "shieldbar_i.png"
+	FrameIndex A060 A 0 0
+	
+	Skin 0 "shieldbar_j.png"
+	FrameIndex A055 A 0 0
+	
+	Skin 0 "shieldbar_k.png"
+	FrameIndex A050 A 0 0
+	
+	Skin 0 "shieldbar_l.png"
+	FrameIndex A045 A 0 0
+	
+	Skin 0 "shieldbar_m.png"
+	FrameIndex A040 A 0 0
+	
+	Skin 0 "shieldbar_n.png"
+	FrameIndex A035 A 0 0
+	
+	Skin 0 "shieldbar_o.png"
+	FrameIndex A030 A 0 0
+	
+	Skin 0 "shieldbar_p.png"
+	FrameIndex A025 A 0 0
+	
+	Skin 0 "shieldbar_q.png"
+	FrameIndex A020 A 0 0
+	
+	Skin 0 "shieldbar_r.png"
+	FrameIndex A015 A 0 0
+	
+	Skin 0 "shieldbar_s.png"
+	FrameIndex A010 A 0 0
+	
+	Skin 0 "shieldbar_t.png"
+	FrameIndex A005 A 0 0
+	
+	Skin 0 "shieldbar_u.png"
+	FrameIndex A001 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex A000 A 0 0
+	
+	Skin 0 "shieldbar_god.png"
+	FrameIndex AGOD A 0 0
+}
+
+Model HVRMacePowered
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar3.md3"
+	Skin 0 "ammobar_a.png"
+	Model 1 "holo_bracer_icon3.md3"
+	Skin 1 "bracer_icon_c.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex M100 A 0 0
+	
+	Skin 0 "ammobar_b.png"
+	FrameIndex M095 A 0 0
+	
+	Skin 0 "ammobar_c.png"
+	FrameIndex M090 A 0 0
+	
+	Skin 0 "ammobar_d.png"
+	FrameIndex M085 A 0 0
+	
+	Skin 0 "ammobar_e.png"
+	FrameIndex M080 A 0 0
+	
+	Skin 0 "ammobar_f.png"
+	FrameIndex M075 A 0 0
+	
+	Skin 0 "ammobar_g.png"
+	FrameIndex M070 A 0 0
+	
+	Skin 0 "ammobar_h.png"
+	FrameIndex M065 A 0 0
+	
+	Skin 0 "ammobar_i.png"
+	FrameIndex M060 A 0 0
+	
+	Skin 0 "ammobar_j.png"
+	FrameIndex M055 A 0 0
+	
+	Skin 0 "ammobar_k.png"
+	FrameIndex M050 A 0 0
+	
+	Skin 0 "ammobar_l.png"
+	FrameIndex M045 A 0 0
+	
+	Skin 0 "ammobar_m.png"
+	FrameIndex M040 A 0 0
+	
+	Skin 0 "ammobar_n.png"
+	FrameIndex M035 A 0 0
+	
+	Skin 0 "ammobar_o.png"
+	FrameIndex M030 A 0 0
+	
+	Skin 0 "ammobar_p.png"
+	FrameIndex M025 A 0 0
+	
+	Skin 0 "ammobar_q.png"
+	FrameIndex M020 A 0 0
+	
+	Skin 0 "ammobar_r.png"
+	FrameIndex M015 A 0 0
+	
+	Skin 0 "ammobar_s.png"
+	FrameIndex M010 A 0 0
+	
+	Skin 0 "ammobar_t.png"
+	FrameIndex M005 A 0 0
+	
+	Skin 0 "ammobar_u.png"
+	FrameIndex M001 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex M000 A 0 0
+}
+
+Model HVRMacePowered
+{ 
+	Path "models/weapons/overlay"
+	Model 0 "holo_bracer_bar4.md3"
+	Skin 0 "ammobar_a.png"
+	Model 1 "holo_bracer_icon4.md3"
+	Skin 1 "bracer_icon_d.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -17 -15.0
+	
+	FrameIndex M2FL A 0 0
+	
+	Skin 0 "ammobar_b.png"
+	FrameIndex M295 A 0 0
+	
+	Skin 0 "ammobar_c.png"
+	FrameIndex M290 A 0 0
+	
+	Skin 0 "ammobar_d.png"
+	FrameIndex M285 A 0 0
+	
+	Skin 0 "ammobar_e.png"
+	FrameIndex M280 A 0 0
+	
+	Skin 0 "ammobar_f.png"
+	FrameIndex M275 A 0 0
+	
+	Skin 0 "ammobar_g.png"
+	FrameIndex M270 A 0 0
+	
+	Skin 0 "ammobar_h.png"
+	FrameIndex M265 A 0 0
+	
+	Skin 0 "ammobar_i.png"
+	FrameIndex M260 A 0 0
+	
+	Skin 0 "ammobar_j.png"
+	FrameIndex M255 A 0 0
+	
+	Skin 0 "ammobar_k.png"
+	FrameIndex M250 A 0 0
+	
+	Skin 0 "ammobar_l.png"
+	FrameIndex M245 A 0 0
+	
+	Skin 0 "ammobar_m.png"
+	FrameIndex M240 A 0 0
+	
+	Skin 0 "ammobar_n.png"
+	FrameIndex M235 A 0 0
+	
+	Skin 0 "ammobar_o.png"
+	FrameIndex M230 A 0 0
+	
+	Skin 0 "ammobar_p.png"
+	FrameIndex M225 A 0 0
+	
+	Skin 0 "ammobar_q.png"
+	FrameIndex M220 A 0 0
+	
+	Skin 0 "ammobar_r.png"
+	FrameIndex M215 A 0 0
+	
+	Skin 0 "ammobar_s.png"
+	FrameIndex M210 A 0 0
+	
+	Skin 0 "ammobar_t.png"
+	FrameIndex M205 A 0 0
+	
+	Skin 0 "ammobar_u.png"
+	FrameIndex M201 A 0 0
+	
+	Skin 0 "bar_empty.png"
+	FrameIndex M200 A 0 0
+}

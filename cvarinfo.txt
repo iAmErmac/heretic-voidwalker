@@ -5,3 +5,4 @@ user bool hvr_flashsprite	= true;
 user bool hvr_fastswitch	= true;
 user int hvr_holohud		= 1;
 user bool hvr_music 		= true;
+user int hvr_gauntlet		= 1;

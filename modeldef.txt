@@ -6,3 +6,4 @@
 #include "modeldefs/weapons/blaster.txt"
 #include "modeldefs/weapons/skullrod.txt"
 #include "modeldefs/weapons/phoenixrod.txt"
+#include "modeldefs/weapons/mace.txt"
