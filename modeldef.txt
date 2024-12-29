@@ -5,3 +5,4 @@
 #include "modeldefs/weapons/crossbow.txt"
 #include "modeldefs/weapons/blaster.txt"
 #include "modeldefs/weapons/skullrod.txt"
+#include "modeldefs/weapons/phoenixrod.txt"

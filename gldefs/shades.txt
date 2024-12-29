@@ -119,3 +119,14 @@ material texture "models/weapons/skullrod/hand.png"
 {
 	shader "shaders/SimSun.fp"
 }
+
+//phoenix rod
+
+material texture "models/weapons/phoenixrod/Phx-Rod.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/phoenixrod/hand.png"
+{
+	shader "shaders/SimSun.fp"
+}

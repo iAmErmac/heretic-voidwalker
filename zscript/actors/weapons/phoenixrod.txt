@@ -1,0 +1,230 @@
+
+Class HVRPhoenixRod : HereticVRWeapon replaces PhoenixRod
+{
+	Default
+	{
+	+WEAPON.NOAUTOFIRE
+	Weapon.SelectionOrder 2600;
+	Weapon.Kickback 150;
+	Weapon.AmmoUse 1;
+	Weapon.AmmoGive 2;
+	Weapon.AmmoType "PhoenixRodAmmo";
+	Weapon.SisterWeapon "HVRPhoenixRodPowered";
+	Inventory.PickupMessage "$TXT_WPNPHOENIxROD";
+	Tag "$TAG_PHOENIxROD";
+	}
+	
+	action void A_FirePhoenixBall()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		int alflags = 0;
+		Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		if (weapon != null)
+		{
+			alflags |= weapon.bOffhandWeapon ? ALF_ISOFFHAND : 0;
+			if (!weapon.DepleteAmmo (weapon.bAltFire))
+				return;
+		}
+		SpawnPlayerMissile ("PhoenixFX1", aimflags: alflags);
+		if(vr_recoil == 1) Thrust(4, angle + 180);
+	}
+
+	States
+	{
+	Spawn:
+		WPHX A -1;
+		Stop;
+	Ready:
+		TNT1 A 0;
+		PHNX A 0 A_SetExtraModel("NHPH");
+		#### # 1 A_WeaponReady;
+		Loop;
+	Deselect:
+		PHNX A 0 A_SetExtraModel("NHPH");
+		#### # 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Lower;
+		Loop;
+		#### # 1 A_Lower (120);
+		Loop;
+	Select:
+		PHNX A 0 A_SetExtraModel("NHPH");
+		#### # 0 A_JumpIf(invoker.fastSwitchWeapon == true, 2);
+		#### # 1 A_Raise;
+		Loop;
+		#### # 1 A_Raise (120);
+		Loop;
+	Fire:
+		PHNX B 0 A_SetExtraModel("NHPH");
+		#### # 0 A_GunFlash("Flash");
+		#### # 5;
+		#### # 7 A_FirePhoenixBall;
+		#### # 8;
+		#### # 0 A_ReFire;
+		Goto Ready;
+	Flash:
+		PHFL A 5 Bright;
+		PHFL B 7 Bright A_Light2;
+		PHFL C 4 Bright A_Light1;
+		PHFL A 4 Bright;
+		Goto lightdone;
+	Placeholder:
+		NHPH A 1;
+	}
+}
+
+Class HVRPhoenixRodPowered : HVRPhoenixRod
+{
+	const FLAME_THROWER_TICS = (10*TICRATE);
+	private int FlameCount;		// for flamethrower duration
+	
+	Default
+	{
+	+WEAPON.POWERED_UP
+	+WEAPON.MELEEWEAPON
+	Weapon.SisterWeapon "HVRPhoenixRod";
+	Weapon.AmmoGive 0;
+	Tag "$TAG_PHOENIxRODP";
+	}
+	
+	action void A_InitPhoenixFlame()
+	{
+		if (player != null)
+		{
+			Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+			if (weapon == null)
+			{
+				return;
+			}
+			HVRPhoenixRodPowered flamethrower = HVRPhoenixRodPowered(weapon);
+			if (flamethrower != null)
+			{
+				flamethrower.FlameCount = FLAME_THROWER_TICS;
+			}
+		}
+	}
+
+	action void A_FirePhoenixFlame()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weapon = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		if (weapon == null)
+		{
+			return;
+		}
+
+		int hand = weapon.bOffhandWeapon ? 1 : 0;
+		HVRPhoenixRodPowered flamethrower = HVRPhoenixRodPowered(weapon);
+		
+		if (flamethrower == null || --flamethrower.FlameCount == 0)
+		{ // Out of flame
+			player.SetPsprite(hand ? PSP_OFFHANDWEAPON : PSP_WEAPON, flamethrower.FindState("Powerdown"));
+			player.refire = 0;
+			A_StopSound (CHAN_WEAPON);
+			return;
+		}
+
+		double slope = -clamp(tan(pitch), -5, 5);
+		double xo = Random2[FirePhoenixFlame]() / 128.;
+		double yo = Random2[FirePhoenixFlame]() / 128.;
+		Vector3 spawnpos = Vec3Offset(xo, yo, 26 + slope - Floorclip);
+		let velxy = Vel.XY;
+		let directionAngle = angle;
+		let directionPitch = pitch;
+		let directionRoll = roll;
+		if (weapon && weapon == invoker && player.mo.OverrideAttackPosDir)
+		{
+			Vector3 dir;
+			Vector3 yoffsetDir;
+			if (weapon.bOffhandWeapon)
+			{
+				spawnpos = player.mo.OffhandPos;
+				directionRoll = -player.mo.OffhandRoll;
+				dir = player.mo.OffhandDir(self, angle, pitch);
+				yoffsetDir = player.mo.OffhandDir(self, angle - 90, pitch);
+			}
+			else
+			{
+				spawnpos = player.mo.AttackPos;
+				directionRoll = -player.mo.AttackRoll;
+				dir = player.mo.AttackDir(self, angle, pitch);
+				yoffsetDir = player.mo.AttackDir(self, angle - 90, pitch);
+			}
+			directionAngle = dir.x;
+			directionPitch = dir.y;
+
+			spawnpos += (
+				xo * cos(dir.x) * cos(dir.y),
+				xo * sin(dir.x) * cos(dir.y),
+				xo * -sin(dir.y)
+			);
+			spawnpos += (
+				yo * cos(yoffsetDir.x) * cos(yoffsetDir.y),
+				yo * sin(yoffsetDir.x) * cos(yoffsetDir.y),
+				yo * -sin(yoffsetDir.y)
+			);
+			
+			slope = -clamp(tan(directionPitch), -5, 5);
+		}
+		Actor mo = Spawn("PhoenixFX2", spawnpos, ALLOW_REPLACE);
+		if (mo != null)
+		{
+			mo.target = self;
+			mo.Angle = directionAngle;
+			mo.Roll = directionRoll;
+			mo.VelFromAngle();
+			mo.Vel.XY += velxy;
+			mo.Vel.Z = mo.Speed * slope;
+			mo.CheckMissileSpawn (radius);
+		}
+		if (!player.refire)
+		{
+			A_StartSound("weapons/phoenixpowshoot", CHAN_WEAPON, CHANF_LOOPING);
+		}	
+	}
+
+	action void A_ShutdownPhoenixFlame()
+	{
+		if (player == null)
+		{
+			return;
+		}
+		Weapon weap = invoker == player.OffhandWeapon ? player.OffhandWeapon : player.ReadyWeapon;
+		HVRPhoenixRodPowered weapon = HVRPhoenixRodPowered(weap);
+		if (weapon != null)
+		{
+			weapon.FlameCount = 0;
+			weapon.DepleteAmmo (weapon.bAltFire);
+		}
+		A_StopSound (CHAN_WEAPON);
+	}
+
+	States
+	{
+	Fire:
+		PHNX B 0 A_SetExtraModel("NHPH");
+		PHNX B 0 A_GunFlash("Flash");
+		#### # 3 A_InitPhoenixFlame;
+	Hold:
+		#### # 0 A_GunFlash("Flash2");
+		#### # 1 A_FirePhoenixFlame;
+		#### # 4 A_ReFire;
+	Powerdown:
+		PHNX B 0 A_GunFlash("Flash");
+		#### # 4 A_ShutdownPhoenixFlame;
+		Goto Ready;
+	Flash:
+		PHFL A 3 Bright A_Light1;
+		Goto lightdone;
+	Flash2:
+		PHFL B 1 Bright A_Light2;
+		Goto lightdone;
+	}
+}

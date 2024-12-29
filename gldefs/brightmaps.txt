@@ -335,3 +335,10 @@ material texture "models/weapons/skullrod/skull_fx4.png"
 {
 	brightmap "models/weapons/skullrod/skull_fx4_bm.png"
 }
+
+// phoenix rod
+
+material texture "models/weapons/phoenixrod/Phx-Crystal.png"
+{
+	brightmap "models/common/fullbright.png"
+}

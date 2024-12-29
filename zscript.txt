@@ -11,5 +11,6 @@ version "3.0"
 #include "zscript/actors/weapons/crossbow.txt"
 #include "zscript/actors/weapons/blaster.txt"
 #include "zscript/actors/weapons/skullrod.txt"
+#include "zscript/actors/weapons/phoenixrod.txt"
 
 #include "zscript/actors/player.txt"
