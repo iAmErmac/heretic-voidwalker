@@ -123,6 +123,43 @@ Class HVROffhandWeapHandler : Eventhandler
 	private bool _isTitlemap;
 }
 
+//it loads the settings into player's inventory so other actors can check them without scanning for actual cvars
+Class HVRConfigHandler : Eventhandler
+{
+	override void WorldTick()
+	{
+		Playerinfo player = Players[ConsolePlayer];
+		if(!player) return;
+		let pmo = player.mo;
+		if(pmo.health < 1) return;
+		
+		if(level.time % 70 == 0) 
+		{
+			_settings 				= hvr_Settings.of();
+			int pickupModel 		= _settings.pickupModel();
+			
+			if(!pmo.countinv("HVRConfigItem")) pmo.giveinventory("HVRConfigItem", 1);
+			
+			let configItem = HVRConfigItem(pmo.findinventory("HVRConfigItem"));
+			
+			configItem.pickupModel = pickupModel;
+		}
+	}
+	
+	private hvr_Settings _settings;
+}
+
+//inventory item where the configs are stored
+Class HVRConfigItem : Inventory
+{
+	Default
+	{
+	Inventory.maxamount 1;
+	}
+	
+	int pickupModel;
+}
+
 Class HVRHapticHelper : EventHandler
 {
 	static void BuzzHand(int hand = 0)

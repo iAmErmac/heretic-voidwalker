@@ -1,0 +1,32 @@
+
+Class HVR_CrossbowFX1 : CrossbowFX1 replaces CrossbowFX1
+{
+	Default
+	{
+	RenderStyle "Normal";
+	}
+}
+
+Class HVR_CrossbowFX2 : CrossbowFX2 replaces CrossbowFX2
+{
+	Default
+	{
+	RenderStyle "Normal";
+	}
+}
+
+Class HVR_CrossbowFX3 : CrossbowFX3 replaces CrossbowFX3
+{
+	Default
+	{
+	RenderStyle "Normal";
+	}
+}
+
+Class HVR_MummyFX1 : MummyFX1 replaces MummyFX1
+{
+	Default
+	{
+	RenderStyle "Normal";
+	}
+}

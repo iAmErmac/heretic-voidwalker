@@ -1,0 +1,582 @@
+
+//ammo
+
+Class HVR_WandAmmo : HVR_CustomPickups replaces GoldWandAmmo
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMG1 A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMGV A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("GoldWandAmmo", 10);
+		Stop;
+	}
+}
+
+Class HVR_WandHefty : HVR_CustomPickups replaces GoldWandHefty
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND2";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMG2 ABC 4;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AGHV ABC 4;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("GoldWandAmmo", 50);
+		Stop;
+	}
+}
+
+Class HVR_CrossbowAmmo : HVR_CustomPickups replaces CrossbowAmmo
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOCROSSBOW1";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMC1 A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMCV A 1 A_SpawnItemEx("HVR_BoltAura");
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("CrossbowAmmo", 5);
+		Stop;
+	}
+}
+
+Class HVR_BoltAura : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Translucent";
+	ALPHA 0.8;
+	}
+	
+	states
+	{
+	Spawn:
+		AMCV Z 2;
+		stop;
+	}
+}
+
+Class HVR_CrossbowHefty : HVR_CustomPickups replaces CrossbowHefty
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOCROSSBOW2";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMC2 ABC 5;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		ACHV AAAAA 1 BRIGHT {A_SpawnItemEx("HVR_Quiver"); A_SpawnItemEx("HVR_BoltAuraHefty1");}
+		ACHV BBBBB 1 BRIGHT {A_SpawnItemEx("HVR_Quiver"); A_SpawnItemEx("HVR_BoltAuraHefty2");}
+		ACHV CCCCC 1 BRIGHT {A_SpawnItemEx("HVR_Quiver"); A_SpawnItemEx("HVR_BoltAuraHefty3");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("CrossbowAmmo", 20);
+		Stop;
+	}
+}
+
+Class HVR_Quiver : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	}
+	
+	states
+	{
+	Spawn:
+		ACHV N 2;
+		stop;
+	}
+}
+
+Class HVR_BoltAuraHefty1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Translucent";
+	ALPHA 0.4;
+	}
+	
+	states
+	{
+	Spawn:
+		ACHV X 2;
+		stop;
+	}
+}
+
+Class HVR_BoltAuraHefty2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Translucent";
+	ALPHA 0.4;
+	}
+	
+	states
+	{
+	Spawn:
+		ACHV Y 2;
+		stop;
+	}
+}
+
+Class HVR_BoltAuraHefty3 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Translucent";
+	ALPHA 0.4;
+	}
+	
+	states
+	{
+	Spawn:
+		ACHV Z 2;
+		stop;
+	}
+}
+
+Class HVR_BlasterAmmo : HVR_CustomPickups replaces BlasterAmmo
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOBLASTER1";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMB1 ABC 4;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMBV A 0 A_SetAngle(angle-90);
+		AMBV AAAA 1 {A_SpawnItemEx("HVR_BlastOrb1"); A_SpawnItemEx("HVR_BlastOrb2");}
+		AMBV B 0 A_SetAngle(angle-90);
+		AMBV BBBB 1 {A_SpawnItemEx("HVR_BlastOrb1"); A_SpawnItemEx("HVR_BlastOrb2");}
+		AMBV C 0 A_SetAngle(angle-90);
+		AMBV CCCC 1 {A_SpawnItemEx("HVR_BlastOrb1"); A_SpawnItemEx("HVR_BlastOrb2");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("BlasterAmmo", 10);
+		Stop;
+	}
+}
+
+Class HVR_BlastOrb1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Translucent";
+	ALPHA 0.2;
+	}
+	
+	states
+	{
+	Spawn:
+		AMBV Z 2;
+		stop;
+	}
+}
+
+Class HVR_BlastOrb2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "ADD";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		AMBV Y 2;
+		stop;
+	}
+}
+
+Class HVR_BlasterHefty : HVR_CustomPickups replaces BlasterHefty
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOBLASTER2";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMB2 ABC 4;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		ABHV A 0 A_SetAngle(angle+90);
+		ABHV AAAA 1 {A_SpawnItemEx("HVR_BlastOrbHefty1"); A_SpawnItemEx("HVR_BlastOrbHefty2");}
+		ABHV B 0 A_SetAngle(angle+90);
+		ABHV BBBB 1 {A_SpawnItemEx("HVR_BlastOrbHefty1"); A_SpawnItemEx("HVR_BlastOrbHefty2");}
+		ABHV C 0 A_SetAngle(angle+90);
+		ABHV CCCC 1 {A_SpawnItemEx("HVR_BlastOrbHefty1"); A_SpawnItemEx("HVR_BlastOrbHefty2");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("BlasterAmmo", 25);
+		Stop;
+	}
+}
+
+Class HVR_BlastOrbHefty1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Translucent";
+	ALPHA 0.2;
+	}
+	
+	states
+	{
+	Spawn:
+		ABHV Z 2;
+		stop;
+	}
+}
+
+Class HVR_BlastOrbHefty2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "ADD";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		ABHV Y 2;
+		stop;
+	}
+}
+
+Class HVR_SkullRodAmmo : HVR_CustomPickups replaces SkullRodAmmo
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMS1 AB 5;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMSV AB 5;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("SkullRodAmmo", 20);
+		Stop;
+	}
+}
+
+Class HVR_SkullRodHefty : HVR_CustomPickups replaces SkullRodHefty
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND2";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMS2 AB 5;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		ASHV AB 5;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("SkullRodAmmo", 100);
+		Stop;
+	}
+}
+
+Class HVR_PhoenixRodAmmo : HVR_CustomPickups replaces PhoenixRodAmmo
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMP1 ABC 4;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMP1 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrb"); A_SpawnItemEx("HVR_RodOrbFlame1");}
+		AMP1 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrb"); A_SpawnItemEx("HVR_RodOrbFlame2");}
+		AMP1 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrb"); A_SpawnItemEx("HVR_RodOrbFlame3");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("PhoenixRodAmmo", 1);
+		Stop;
+	}
+}
+
+Class HVR_RodOrb : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Add";
+	ALPHA 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		AMPV Z 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbFlame1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		AMPV A 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbFlame2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		AMPV B 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbFlame3 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		AMPV C 2;
+		stop;
+	}
+}
+
+
+Class HVR_PhoenixRodHefty : HVR_CustomPickups replaces PhoenixRodHefty
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND2";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMP2 ABC 4;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMP2 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrbHefty"); A_SpawnItemEx("HVR_RodOrbHeftyFlame1");}
+		AMP2 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrbHefty"); A_SpawnItemEx("HVR_RodOrbHeftyFlame2");}
+		AMP2 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrbHefty"); A_SpawnItemEx("HVR_RodOrbHeftyFlame3");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("PhoenixRodAmmo", 10);
+		Stop;
+	}
+}
+
+Class HVR_RodOrbHefty : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "Add";
+	ALPHA 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		APHV Z 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbHeftyFlame1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		APHV A 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbHeftyFlame2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		APHV B 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbHeftyFlame3 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		APHV C 2;
+		stop;
+	}
+}
+
+Class HVR_MaceAmmo : HVR_CustomPickups replaces MaceAmmo
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMM1 A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMMV A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("MaceAmmo", 20);
+		Stop;
+	}
+}
+
+Class HVR_MaceHefty : HVR_CustomPickups replaces MaceHefty
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND2";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		AMM2 A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		AMHV A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("MaceAmmo", 100);
+		Stop;
+	}
+}

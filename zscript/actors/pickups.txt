@@ -1,0 +1,810 @@
+
+Class HVR_CustomPickups : CustomInventory
+{
+	override void Tick()
+	{
+		Playerinfo player = Players[ConsolePlayer];
+		if(!player)
+		{
+			Super.Tick();
+			return;
+		}
+		
+		let pmo = player.mo;
+		let configItem = HVRConfigItem(pmo.findinventory("HVRConfigItem"));
+		if(configItem)
+		{		
+			pickupModel = configItem.pickupModel;
+		}
+		
+		Super.Tick();
+	}
+	
+	protected int pickupModel;
+}
+
+
+Class HVR_CrystalVial : HVR_CustomPickups replaces CrystalVial
+{
+	Default
+	{
+	+FLOATBOB
+	Inventory.PickupMessage "$TXT_ITEMHEALTH"; // "CRYSTAL VIAL"
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		PTN1 ABC 3;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_VialA"); A_SpawnItemEx("HVR_VialGlass");}
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_VialB"); A_SpawnItemEx("HVR_VialGlass");}
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_VialC"); A_SpawnItemEx("HVR_VialGlass");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("Health", 10);
+		Stop;
+	}
+}
+
+Class HVR_VialA : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		PTNV A 2;
+		stop;
+	}
+}
+
+Class HVR_VialB : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		PTNV B 2;
+		stop;
+	}
+}
+
+Class HVR_VialC : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		PTNV C 2;
+		stop;
+	}
+}
+
+Class HVR_VialGlass : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "Translucent";
+	ALPHA 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		PTNV Z 2;
+		stop;
+	}
+}
+
+Class HVR_SilverShield : HVR_CustomPickups replaces SilverShield
+{
+	Default
+	{
+	+FLOATBOB
+	Inventory.PickupMessage "$TXT_ITEMSHIELD1"; // "CRYSTAL VIAL"
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		SHLD A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		SD1V A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("SilverShield", 1);
+		Stop;
+	}
+}
+
+Class HVR_EnchantedShield : HVR_CustomPickups replaces EnchantedShield
+{
+	Default
+	{
+	  +FLOATBOB
+	  Inventory.Pickupmessage "$TXT_ITEMSHIELD2";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		SHD2 A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		SD2V A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("EnchantedShield", 1);
+		Stop;
+	}
+}
+
+Class HVR_BagOfHolding : HVR_CustomPickups replaces BagOfHolding
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ITEMBAGOFHOLDING";
+	+COUNTITEM
+	+FLOATBOB
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		BAGH A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		BAGV A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("BagOfHolding", 1);
+		Stop;
+	}
+}
+
+Class HVR_SuperMap : HVR_CustomPickups replaces SuperMap
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ITEMSUPERMAP";
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	+FLOATBOB
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		SPMP A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		SMPV A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("SuperMap", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArtiHealth : HVR_CustomPickups replaces ArtiHealth
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTIHEALTH"; // "QUARTZ FLASK"
+	Inventory.PickupSound "misc/p_pkup";
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	+INVENTORY.FANCYPICKUPSOUND
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		PTN2 ABC 4;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_FlaskA"); A_SpawnItemEx("HVR_FlaskGlass");}
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_FlaskB"); A_SpawnItemEx("HVR_FlaskGlass");}
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_FlaskC"); A_SpawnItemEx("HVR_FlaskGlass");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiHealth", 1);
+		Stop;
+	}
+}
+
+Class HVR_FlaskA : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		PT2V A 2;
+		stop;
+	}
+}
+
+Class HVR_FlaskB : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		PT2V B 2;
+		stop;
+	}
+}
+
+Class HVR_FlaskC : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		PT2V C 2;
+		stop;
+	}
+}
+
+Class HVR_FlaskGlass : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "Translucent";
+	ALPHA 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		PT2V Z 2;
+		stop;
+	}
+}
+
+Class HVR_ArtiSuperHealth : HVR_CustomPickups replaces ArtiSuperHealth
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTISUPERHEALTH"; // "MYSTIC URN"
+	Inventory.PickupSound "misc/p_pkup";
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	+INVENTORY.FANCYPICKUPSOUND
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		SPHL A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		SHLV A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiSuperHealth", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArtiEgg : HVR_CustomPickups replaces ArtiEgg
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTIEGG"; // "MORPH OVUM"
+	Inventory.PickupSound "misc/p_pkup";
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	+INVENTORY.FANCYPICKUPSOUND
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		EGGC ABCB 6;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		EGGV AAAAAABBBBBBCCCCCCBBBBBB 1 A_SpawnItemEx("HVR_Egg");
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiEgg", 1);
+		Stop;
+	}
+}
+
+Class HVR_Egg : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		EGGV N 2;
+		stop;
+	}
+}
+
+Class HVR_ArtiFly : HVR_CustomPickups replaces ArtiFly
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTIFLY"; // "WINGS OF WRATH"
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	Inventory.RespawnTics 4230;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		SOAR ABCB 5;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		SOAV ABCB 5;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiFly", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArtiInvisibility : HVR_CustomPickups replaces ArtiInvisibility
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTIINVISIBILITY";
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	RenderStyle "Translucent";
+	Alpha 0.4;
+	Inventory.RespawnTics 4230;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		INVS A 1 Bright;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		INVV A 1 Bright;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiInvisibility", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArtiInvulnerability : HVR_CustomPickups replaces ArtiInvulnerability
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTIINVULNERABILITY"; // "RING OF INVINCIBILITY"
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	Inventory.RespawnTics 4230;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		INVU ABCD 3;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		INRV ABCD 3;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiInvulnerability", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArtiTeleport : HVR_CustomPickups replaces ArtiTeleport
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTITELEPORT"; // "CHAOS DEVICE"
+	Inventory.PickupSound "misc/p_pkup";
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	+INVENTORY.FANCYPICKUPSOUND
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		ATLP ABCB 4;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		ATLV ABCB 4;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiTeleport", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArtiTimeBomb : HVR_CustomPickups replaces ArtiTimeBomb
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTIFIREBOMB";
+	Inventory.PickupSound "misc/p_pkup";
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	+INVENTORY.FANCYPICKUPSOUND
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		FBMB E 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		TNT1 A 1 {A_SpawnItemEx("HVR_BombGlass"); A_SpawnItemEx("HVR_BombFrameE");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiTimeBomb", 1);
+		Stop;
+	}
+}
+
+Class HVR_ActivatedTimeBomb : ActivatedTimeBomb replaces ActivatedTimeBomb
+{
+	private int pickupModel;
+	
+	override void Tick()
+	{
+		Playerinfo player = Players[ConsolePlayer];
+		if(!player)
+		{
+			Super.Tick();
+			return;
+		}
+		
+		let pmo = player.mo;
+		let configItem = HVRConfigItem(pmo.findinventory("HVRConfigItem"));
+		if(configItem)
+		{		
+			pickupModel = configItem.pickupModel;
+		}
+		
+		Super.Tick();
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		FBMB ABCD 10;
+		FBMB E 6 A_Scream;
+		XPL1 A 4 BRIGHT A_TimeBomb;
+		XPL1 BCDEF 4 BRIGHT;
+		Stop;
+	SpawnVoxel:
+		FBMV AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDD 1 A_SpawnItemEx("HVR_ActiveBombGlass");
+		FBMV E 0 A_Scream;
+		FBMV EEEEEE 1 A_SpawnItemEx("HVR_ActiveBombGlass");
+		XPL1 A 4 Bright A_TimeBomb;
+		XPL1 BCDEF 4 Bright;
+		Stop;
+	}
+}
+
+Class HVR_BombGlass : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "translucent";
+	ALPHA 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		FBMV Z 2;
+		stop;
+	}
+}
+
+Class HVR_ActiveBombGlass : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "translucent";
+	ALPHA 0.2;
+	}
+	
+	states
+	{
+	Spawn:
+		FBMV Z 2;
+		stop;
+	}
+}
+
+Class HVR_BombFrameA : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		FBMV A 2;
+		stop;
+	}
+}
+
+Class HVR_BombFrameB : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		FBMV B 2;
+		stop;
+	}
+}
+
+Class HVR_BombFrameC : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		FBMV C 2;
+		stop;
+	}
+}
+
+Class HVR_BombFrameD : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		FBMV D 2;
+		stop;
+	}
+}
+
+Class HVR_BombFrameE : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		FBMV E 2;
+		stop;
+	}
+}
+
+Class HVR_ArtiTomeOfPower : HVR_CustomPickups replaces ArtiTomeOfPower
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTITOMEOFPOWER";
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		PWBK A 1;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		PWBV A 1;
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiTomeOfPower", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArtiTorch : HVR_CustomPickups replaces ArtiTorch
+{
+	Default
+	{
+	Inventory.PickupMessage "$TXT_ARTITORCH"; // "TORCH"
+	+COUNTITEM
+	+FLOATBOB
+	+INVENTORY.PICKUPFLASH
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TRCH ABC 3 Bright;
+		Loop;
+	SpawnVoxel:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_ArTorchA"); A_SpawnItemEx("HVR_ArTorchFlameA");}
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_ArTorchB"); A_SpawnItemEx("HVR_ArTorchFlameB");}
+		TNT1 AAA 1 {A_SpawnItemEx("HVR_ArTorchC"); A_SpawnItemEx("HVR_ArTorchFlameC");}
+		Loop;
+	Pickup:
+		#### # 1 A_GiveInventory("ArtiTorch", 1);
+		Stop;
+	}
+}
+
+Class HVR_ArTorchA : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		TRCV A 2 Bright;
+		stop;
+	}
+}
+
+Class HVR_ArTorchB : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		TRCV B 2 Bright;
+		stop;
+	}
+}
+
+Class HVR_ArTorchC : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	}
+	
+	states
+	{
+	Spawn:
+		TRCV C 2 Bright;
+		stop;
+	}
+}
+Class HVR_ArTorchFlameA : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "add";
+	}
+	
+	states
+	{
+	Spawn:
+		TRCV X 2 Bright;
+		stop;
+	}
+}
+Class HVR_ArTorchFlameB : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "add";
+	}
+	
+	states
+	{
+	Spawn:
+		TRCV Y 2 Bright;
+		stop;
+	}
+}
+Class HVR_ArTorchFlameC : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "add";
+	}
+	
+	states
+	{
+	Spawn:
+		TRCV Z 2 Bright;
+		stop;
+	}
+}

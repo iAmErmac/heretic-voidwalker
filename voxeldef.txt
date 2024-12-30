@@ -1,0 +1,510 @@
+//spinners
+
+AMGVA = "AMGVA" //wand ammo
+{
+	Spin = 50
+}
+
+AGHVA = "AGHVA" //wand heavy ammo
+{
+	Spin = 50
+}
+AGHVB = "AGHVB" //wand heavy ammo
+{
+	Spin = 50
+}
+AGHVC = "AGHVC" //wand heavy ammo
+{
+	Spin = 50
+}
+
+AMCVA = "AMCVA" //etherial arrows
+{
+	Spin = 50
+}
+AMCVZ = "AMCVZ"
+{
+	Spin = 50
+}
+
+ACHVA = "ACHVA" //quiver of etherial arrows
+{
+	Spin = 50
+}
+ACHVB = "ACHVB"
+{
+	Spin = 50
+}
+ACHVC = "ACHVC"
+{
+	Spin = 50
+}
+ACHVN = "ACHVN"
+{
+	Spin = 50
+}
+ACHVX = "ACHVX"
+{
+	Spin = 50
+}
+ACHVY = "ACHVY"
+{
+	Spin = 50
+}
+ACHVZ = "ACHVZ"
+{
+	Spin = 50
+}
+
+AMB1A = "AMB1A" //dragon claw ammo
+{
+	Spin = 50
+}
+AMB1B = "AMB1B"
+{
+	Spin = 50
+}
+AMB1C = "AMB1C"
+{
+	Spin = 50
+}
+
+AMB2A = "AMB2A" //dragon claw hefty ammo
+{
+	Spin = 50
+}
+AMB2B = "AMB2B"
+{
+	Spin = 50
+}
+AMB2C = "AMB2C"
+{
+	Spin = 50
+}
+
+AMMVA = "AMMVA" //Firemace ammo
+{
+	Spin = 10
+}
+
+AMHVA = "AMHVA" //Firemace heavy ammo
+{
+	Spin = 10
+}
+
+AMSVA = "AMSVA" //Hellstaff ammo
+{
+	Spin = 50
+}
+AMSVB = "AMSVB"
+{
+	Spin = 50
+}
+
+ASHVA = "ASHVA" //Hellstaff heavy ammo
+{
+	Spin = 50
+}
+ASHVB = "ASHVB"
+{
+	Spin = 50
+}
+
+
+akyy = "akyy"
+{
+	spin = 189
+}
+
+bkyy = "bkyy"
+{
+	spin = 189
+}
+
+ckyy = "ckyy"
+{
+	spin = 189
+}
+
+//bobbers
+
+abnsa = "abnsa"
+{
+	spin = 183
+}
+
+ampva = "ampva"
+{
+	spin = -46
+}
+ampvb = "ampvb"
+{
+	spin = -46
+}
+ampvc = "ampvc"
+{
+	spin = -46
+}
+aphva = "aphva"
+{
+	spin = -46
+}
+aphvb = "aphvb"
+{
+	spin = -46
+}
+aphvc = "aphvc"
+{
+	spin = -46
+}
+
+atlva = "atlva"
+{
+	spin = 91
+}
+
+atlvb = "atlvb"
+{
+	spin = 91
+}
+
+atlvc = "atlvc"
+{
+	spin = 91
+}
+
+bagva = "bagva"
+{
+	spin = 91
+}
+
+eggva = "eggva"
+{
+	spin = 91
+}
+eggvb = "eggvb"
+{
+	spin = 91
+}
+eggvc = "eggvc"
+{
+	spin = 91
+}
+eggvm = "eggvm"
+{
+	spin = 91
+}
+eggvn = "eggvn"
+{
+	spin = 91
+}
+
+
+eggma = "eggma"
+{
+	spin = 365
+}
+
+eggmb = "eggmb"
+{
+	spin = 365
+}
+
+eggmc = "eggmc"
+{
+	spin = 365
+}
+
+eggmd = "eggmd"
+{
+	spin = 365
+}
+
+eggme = "eggme"
+{
+	spin = 365
+}
+
+fbmva = "fbmva"
+{
+	spin = 91
+}
+
+fbmvb = "fbmvb"
+{
+	spin = 91
+}
+
+fbmvc = "fbmvc"
+{
+	spin = 91
+}
+
+fbmvd = "fbmvd"
+{
+	spin = 91
+}
+
+fbmve = "fbmve"
+{
+	spin = 91
+}
+fbmvz = "fbmvz"
+{
+	spin = 91
+}
+
+fx02a = "fx02a"
+{
+	spin = 808
+}
+fx02b = "fx02b"
+{
+	spin = 808
+}
+fx02c = "fx02c"
+{
+	spin = 404
+}
+fx02d = "fx02d"
+{
+	spin = 404
+}
+fx02e = "fx02e"
+{
+	spin = 101
+}
+
+invva = "invva"
+{
+	spin = 91
+}
+
+inrva = "inrva"
+{
+	spin = 91
+}
+
+inrvb = "inrvb"
+{
+	spin = 91
+}
+
+inrvc = "inrvc"
+{
+	spin = 91
+}
+
+inrvd = "inrvd"
+{
+	spin = 91
+}
+
+mrp2a = "mrp2a"
+{
+	spin = 183
+}
+
+ptnva = "ptnva"
+{
+	spin = 183
+}
+ptnvb = "ptnvb"
+{
+	spin = 183
+}
+ptnvc = "ptnvc"
+{
+	spin = 183
+}
+
+ptnvv = "ptnvv"
+{
+	spin = 183
+}
+ptnvw = "ptnvw"
+{
+	spin = 183
+}
+ptnvx = "ptnvx"
+{
+	spin = 183
+}
+ptnvy = "ptnvy"
+{
+	spin = 183
+}
+ptnvz = "ptnvz"
+{
+	spin = 183
+}
+
+pt2va = "pt2va"
+{
+	spin = 91
+}
+pt2vb = "pt2vb"
+{
+	spin = 91
+}
+pt2vc = "pt2vc"
+{
+	spin = 91
+}
+
+pt2vv = "pt2vv"
+{
+	spin = 91
+}
+pt2vw = "pt2vw"
+{
+	spin = 91
+}
+pt2vx = "pt2vx"
+{
+	spin = 91
+}
+pt2vy = "pt2vy"
+{
+	spin = 91
+}
+pt2vz = "pt2vz"
+{
+	spin = 91
+}
+
+pwbva = "spinbk"
+{
+	spin = 91
+}
+
+
+sd1va = "sd1va"
+{
+	spin = 183
+}
+
+sd2va = "sd2va"
+{
+	spin = 183
+}
+
+soava = "soava"
+{
+	spin = 91
+}
+
+soavb = "soavb"
+{
+	spin = 91
+}
+
+soavc = "soavc"
+{
+	spin = 91
+}
+
+shlva = "shlva"
+{
+	spin = 91
+}
+
+smpva = "smpva"
+{
+	spin = 91
+}
+
+trcva = "trcva"
+{
+	spin = 91
+}
+
+trcvb = "trcvb"
+{
+	spin = 91
+}
+
+trcvc = "trcvc"
+{
+	spin = 91
+}
+trcvx = "trcvx"
+{
+	spin = 91
+}
+
+trcvy = "trcvy"
+{
+	spin = 91
+}
+
+trcvz = "trcvz"
+{
+	spin = 91
+}
+
+// replacements ----------------------------------------------------------------
+//optional alternate versions of things
+
+
+
+//twin key gizmo
+//kgz1a = "kgz1t" 
+
+
+//two-faced serpent torch
+srtcd = "srtct" 
+
+
+//hud-style wings of wrath
+//soav = "spfly" {spin = 91} 
+
+
+
+//shoot high res small mace balls for maximum mini ballitude
+/*
+fx02a = "fx02e"
+{
+	scale = 0.29
+	spin = 808
+}
+fx02b = "fx02e"
+{
+	scale = 0.29
+	spin = 808
+}
+fx02c = "fx02e"
+{
+	scale = 0.53
+	spin = 808
+}
+fx02d = "fx02e"
+{
+	scale = 0.53
+	spin = 808
+}
+*/
+
+
+//bad attempt at making hanging skulls not all face the same direction
+/*
+skh1a = "skh1a"
+{
+	angleoffset = 270
+}
+
+skh2a = "skh2a"
+{
+	angleoffset = 0
+}
+
+skh3a = "skh3a"
+{
+	angleoffset = 90
+}
+
+skh4a = "skh4a"
+{
+	angleoffset = 180
+}
+*/

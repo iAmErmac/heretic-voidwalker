@@ -1,0 +1,225 @@
+
+mixin class WallCheck
+{
+    override void PostBeginPlay()
+    {
+		Super.PostBeginPlay();
+	
+        Array<Double> wallDist;
+        
+        for(int i=0; i<36; i++)
+            wallDist.Push(nearbyWallDist(i * 10)); //check for walls in every 10 degree angle
+        
+        double nearestWallDist = maxCheckDist;
+        for(int i=0; i<wallDist.Size(); i++)
+        {
+            if(wallDist[i] && wallDist[i] < nearestWallDist)
+                nearestWallDist = wallDist[i];
+        }
+        
+        double angleTo = wallDist.Find(nearestWallDist);
+        angleTo = angleTo * 10 + 180;
+        A_SetAngle(angleTo); //face away from the nearest wall
+    }
+    
+    double nearbyWallDist(double angle)
+    {
+        FLineTraceData lineData;
+        bool hit = LineTrace(
+           angle,
+           maxCheckDist,
+           0,
+           offsetz: height/2,
+           data: lineData
+        );
+        
+        if(hit && lineData.HitType == TRACE_HitWall)
+            return lineData.Distance;
+        else
+            return 0;
+    }
+    
+    const maxCheckDist = 640;
+}
+
+Class HVR_KeyGizmoBlue : KeyGizmoBlue replaces KeyGizmoBlue
+{
+	mixin WallCheck;
+}
+Class HVR_KeyGizmoGreen : KeyGizmoGreen replaces KeyGizmoGreen
+{
+	mixin WallCheck;
+}
+Class HVR_KeyGizmoYellow : KeyGizmoYellow replaces KeyGizmoYellow
+{
+	mixin WallCheck;
+}
+
+Class HVR_FireBrazier : FireBrazier replaces FireBrazier
+{
+	mixin WallCheck;
+	
+	states
+	{
+	Spawn:
+		KFR1 N 1
+			{
+			A_SpawnItemEx("HVR_BrazFlame1", random(-6, 6), random(-6, 6), random(40, 43), 0, 0, random(1, 3));
+			A_SpawnItemEx("HVR_BrazFlame1", random(-8, 8), random(-8, 8), random(42, 46), 0, 0, random(1, 2));
+			A_SpawnItemEx("HVR_BrazFlame1", random(-10, 10), random(-10, 10), random(40, 42), 0, 0, random(1, 2));
+			A_SpawnItemEx("HVR_BrazFlame2", random(-9, 9), random(-11, 11), random(40, 42), 0, 0, 1);
+			A_SpawnItemEx("HVR_BrazFlame2", random(-11, 11), random(-9, 9), random(40, 42), 0, 0, 1);
+			}
+		loop;
+	}
+}
+
+Class HVR_BrazFlame1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "translucent";
+	alpha 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		RVRF ABCDEFFGGHHH 2 BRIGHT;
+		stop;
+	}
+}
+
+Class HVR_BrazFlame2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "add";
+	alpha 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		RVRF ABCDEFGH 2 BRIGHT;
+		stop;
+	}
+}
+
+Class HVR_WallTorch : WallTorch replaces WallTorch
+{
+	states
+	{
+	Spawn:
+		WTRH D 1 A_SpawnItemEx("HVR_TorchFlame1", random(-1, 1), random(-1, 1), 72, 0, 0, random(1, 2));
+		WTRH D 1 A_SpawnItemEx("HVR_TorchFlame2", random(-1, 1), random(-1, 1), 72, 0, 0, 1);
+		loop;
+	}
+}
+
+Class HVR_TorchFlame1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "translucent";
+	alpha 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		RVRF CDEFGH 2 BRIGHT;
+		stop;
+	}
+}
+Class HVR_TorchFlame2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "add";
+	alpha 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		RVRF CDEF 2 BRIGHT;
+		stop;
+	}
+}
+
+Class HVR_SerpentTorch : SerpentTorch replaces SerpentTorch
+{
+	mixin WallCheck;
+	
+	states
+	{
+	Spawn:
+		SRTC D 1 A_SpawnItemEx("HVR_SerpFlame1", random(-1, 1), random(-1, 1), 50, 0, 0, random(1, 2));
+		SRTC D 1 A_SpawnItemEx("HVR_SerpFlame2", random(-2, 2), random(-2, 2), 50, 0, 0, random(1, 2));
+		loop;
+	}
+}
+
+Class HVR_SerpFlame1 : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "translucent";
+	alpha 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		RVRF EF 3 BRIGHT;
+		RVRF GH 2 BRIGHT;
+		stop;
+	}
+}
+
+Class HVR_SerpFlame2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	RenderStyle "add";
+	alpha 0.7;
+	}
+	
+	states
+	{
+	Spawn:
+		RVRF E 3 BRIGHT;
+		RVRF F 2 BRIGHT;
+		stop;
+	}
+}
+
+Class HVR_WaterSplashBase : WaterSplashBase replaces WaterSplashBase
+{
+	States
+	{
+	Spawn:
+		SPSH E 0 nodelay A_SetAngle(random(0,359));
+		SPSH EFGHIJK 5;
+		Stop;
+	}
+}
+
+Class HVR_WaterSplash : WaterSplash replaces WaterSplash
+{
+	States
+	{
+	Spawn:
+		SPSH A 0 nodelay A_SetAngle(random(0,359));
+		SPSH ABC 8;
+		SPSH D 16;
+		Stop;
+	}
+}

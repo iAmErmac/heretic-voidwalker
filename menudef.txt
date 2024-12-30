@@ -69,7 +69,8 @@ OptionValue "HVR_Models_Option" {
 
 OptionValue "HVR_PickupModel_Option" {
 	0, "$HVR_OPT_SPRITE"
-	1, "$HVR_OPT_3D"
+	1, "$HVR_OPT_VOXEL"
+	2, "$HVR_OPT_3D"
 }
 
 OptionValue "HVR_WeaponSwitch_Option" {

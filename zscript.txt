@@ -14,4 +14,9 @@ version "3.0"
 #include "zscript/actors/weapons/phoenixrod.txt"
 #include "zscript/actors/weapons/mace.txt"
 
+#include "zscript/actors/pickups.txt"
+#include "zscript/actors/pickups_ammo.txt"
+#include "zscript/actors/props.txt"
+#include "zscript/actors/effects.txt"
+
 #include "zscript/actors/player.txt"

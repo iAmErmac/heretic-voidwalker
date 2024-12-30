@@ -1,0 +1,1351 @@
+// explosives ------------------------------------------------------------------
+
+pointlight GAUNTPUFF1
+{
+    color 0.15 0.35 0.1
+    size 20
+	//attenuate 1
+}
+
+pointlight GAUNTPUFF2
+{
+    color 0.15 0.3 0.1
+    size 16
+	//attenuate 1
+}
+
+pointlight GAUNTPUFF3
+{
+    color 0.1 0.25 0.05
+    size 12
+	//attenuate 1
+}
+
+pointlight GAUNTPUFF4
+{
+    color 0.05 0.15 0.0
+    size 8
+	//attenuate 1
+}
+
+object GauntletPuff1
+{
+    frame PUF1A { light GAUNTPUFF1 }
+    frame PUF1B { light GAUNTPUFF2 }
+    frame PUF1C { light GAUNTPUFF3 }
+    frame PUF1D { light GAUNTPUFF4 }
+}
+
+pointlight PGAUNTPUFF1
+{
+    color 0.45 0.0 0.0
+    size 20
+	//attenuate 1
+}
+
+pointlight PGAUNTPUFF2
+{
+    color 0.35 0.0 0.0
+    size 16
+	//attenuate 1
+}
+
+pointlight PGAUNTPUFF3
+{
+    color 0.25 0.0 0.0
+    size 12
+	//attenuate 1
+}
+
+pointlight PGAUNTPUFF4
+{
+    color 0.15 0.0 0.0
+    size 8
+	//attenuate 1
+}
+
+object GauntletPuff2
+{
+    frame PUF1E { light PGAUNTPUFF1 }
+    frame PUF1F { light PGAUNTPUFF2 }
+    frame PUF1G { light PGAUNTPUFF3 }
+    frame PUF1H { light PGAUNTPUFF4 }
+}
+
+
+pointlight WANDPUFF1
+{
+    color 0.9 0.6 0.3
+    size 48
+	//attenuate 1
+}
+
+pointlight WANDPUFF2
+{
+    color 0.6 0.3 0.1
+    size 40
+	//attenuate 1
+}
+
+pointlight WANDPUFF3
+{
+    color 0.3 0.1 0.0
+    size 32
+	//attenuate 1
+}
+
+pointlight WANDPUFF4
+{
+    color 0.15 0.0 0.0
+    size 24
+	//attenuate 1
+}
+
+
+pointlight WANDBALL
+{
+    color 0.9 0.5 0.3
+    size 36
+	//attenuate 1
+}
+
+pointlight WANDBALL_X1
+{
+    color 0.72 0.3 0.2
+    size 48
+	//attenuate 1
+}
+
+pointlight WANDBALL_X2
+{
+    color 0.54 0.2 0.1
+    size 51
+	//attenuate 1
+}
+
+pointlight WANDBALL_X3
+{
+    color 0.36 0.05 0.0
+    size 54
+	//attenuate 1
+}
+
+pointlight WANDBALL_X4
+{
+    color 0.18 0.0 0.0
+    size 57
+	//attenuate 1
+}
+
+
+pointlight SMALLBOWBOLT
+{
+    color 0.5 1.0 0.3
+    size 60
+	//attenuate 1
+}
+
+flickerlight SMALLBOWBOLT_X1
+{
+    color 0.35 0.7 0.2
+    size 72
+    secondarySize 78
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight SMALLBOWBOLT_X2
+{
+    color 0.2 0.4 0.1
+    size 60
+    secondarySize 66
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight SMALLBOWBOLT_X3
+{
+    color 0.1 0.2 0.0
+    size 48
+    secondarySize 54
+    chance 0.3
+	//attenuate 1
+}
+
+object HVR_CrossbowFX3
+{
+    frame FX03A { light SMALLBOWBOLT }
+    
+    frame FX03C { light SMALLBOWBOLT_X1 }
+    frame FX03D { light SMALLBOWBOLT_X2 }
+    frame FX03E { light SMALLBOWBOLT_X3 }
+}
+
+pointlight BIGBOWBOLT
+{
+    color 0.8 1.0 0.4
+    size 96
+	//attenuate 1
+}
+
+flickerlight BIGBOWBOLT_X1
+{
+    color 0.48 0.8 0.2
+    size 108
+    secondarySize 110
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight BIGBOWBOLT_X2
+{
+    color 0.44 0.6 0.1
+    size 84
+    secondarySize 96
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight BIGBOWBOLT_X3
+{
+    color 0.22 0.4 0.0
+    size 48
+    secondarySize 60
+    chance 0.3
+	//attenuate 1
+}
+
+object HVR_CrossbowFX1
+{
+    frame FX03B { light BIGBOWBOLT }
+    
+    frame FX03H { light BIGBOWBOLT_X1 }
+    frame FX03I { light BIGBOWBOLT_X2 }
+    frame FX03J { light BIGBOWBOLT_X3 }
+}
+
+object HVR_CrossbowFX2
+{
+    frame FX03B { light BIGBOWBOLT }
+    
+    frame FX03H { light BIGBOWBOLT_X1 }
+    frame FX03I { light BIGBOWBOLT_X2 }
+    frame FX03J { light BIGBOWBOLT_X3 }
+}
+
+pointlight BOWTRAIL1
+{
+    color 0.2 0.3 0.0
+    size 36
+	//attenuate 1
+}
+
+pointlight BOWTRAIL2
+{
+    color 0.1 0.2 0.0
+    size 24
+	//attenuate 1
+}
+/*
+object CrossbowFX4
+{
+    frame FX03F { light BOWTRAIL1 }
+    frame FX03G { light BOWTRAIL2 }
+}
+*/
+pointlight CLAWPUFF1
+{
+    color 0.2 0.4 1.0
+    size 48
+	//attenuate 1
+}
+
+pointlight CLAWPUFF2
+{
+    color 0.1 0.3 0.8
+    size 36
+	//attenuate 1
+}
+
+pointlight CLAWPUFF3
+{
+    color 0.0 0.2 0.6
+    size 24
+	//attenuate 1
+}
+
+pointlight CLAWPUFF4
+{
+    color 0.0 0.1 0.4
+    size 12
+	//attenuate 1
+}
+
+pointlight BIGCLAWPUFF1
+{
+    color 0.2 0.4 1.0
+    size 84
+	//attenuate 1
+}
+
+pointlight BIGCLAWPUFF2
+{
+    color 0.1 0.3 0.8
+    size 72
+	//attenuate 1
+}
+
+pointlight BIGCLAWPUFF3
+{
+    color 0.0 0.2 0.6
+    size 60
+	//attenuate 1
+}
+
+pointlight BIGCLAWPUFF4
+{
+    color 0.0 0.1 0.4
+    size 48
+	//attenuate 1
+}
+
+pointlight BIGCLAWPUFF5
+{
+    color 0.0 0.0 0.2
+    size 36
+	//attenuate 1
+}
+
+pointlight PHOENIXSHOT
+{
+    color 1.0 0.5 0.1
+    size 96
+	//attenuate 1
+}
+
+flickerlight PHOENIX_X1
+{
+    color 1.0 0.7 0.2
+    size 166
+    secondarySize 188
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight PHOENIX_X2
+{
+    color 1.0 0.4 0.1
+    size 152
+    secondarySize 164
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight PHOENIX_X3
+{
+    color 0.8 0.3 0.0
+    size 138
+    secondarySize 150
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight PHOENIX_X4
+{
+    color 0.6 0.2 0.0
+    size 104
+    secondarySize 126
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight PHOENIX_X5
+{
+    color 0.4 0.1 0.0
+    size 70
+    secondarySize 92
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight PHOENIX_X6
+{
+    color 0.2 0.0 0.0
+    size 56
+    secondarySize 68
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight PHOENIXFLAME
+{
+    color 0.3 0.15 0.0
+    size 72
+    secondarySize 84
+    chance 0.5
+	//attenuate 1
+}
+
+flickerlight PHOENIXFLAME2
+{
+    color 0.2 0.05 0.0
+    size 36
+    secondarySize 48
+    chance 0.5
+	//attenuate 1
+}
+
+flickerlight PHOENIXFLAME3
+{
+    color 0.1 0.0 0.0
+    size 24
+    secondarySize 36
+    chance 0.5
+	//attenuate 1
+}
+
+object PhoenixFX2
+{
+    frame FX09A { light PHOENIXFLAME }
+    frame FX09B { light PHOENIXFLAME }
+    frame FX09C { light PHOENIXFLAME2 }
+    frame FX09D { light PHOENIXFLAME3 }
+	frame FX09G { light PHOENIXFLAME }
+    frame FX09H { light PHOENIXFLAME2 }
+    frame FX09I { light PHOENIXFLAME3 }
+}
+
+flickerlight MACEBALL_X1
+{
+    color 0.8 0.4 0.2
+    size 96
+    secondarySize 108
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight MACEBALL_X2
+{
+    color 0.6 0.3 0.1
+    size 72
+    secondarySize 84
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight MACEBALL_X3
+{
+    color 0.4 0.1 0.0
+    size 48
+    secondarySize 60
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight MACEBALL_X4
+{
+    color 0.2 0.0 0.0
+    size 24
+    secondarySize 36
+    chance 0.3
+	//attenuate 1
+}
+
+// monsters --------------------------------------------------------------------
+
+flickerlight MUMMYBALL
+{
+    color 1.0 0.65 0.0
+    size 60
+    secondarySize 72
+    chance 0.4
+	//attenuate 1
+}
+
+flickerlight MUMMYBALL_X1
+{
+    color 0.7 0.4 0.0
+    size 72
+    secondarySize 84
+    chance 0.4
+	//attenuate 1
+}
+
+flickerlight MUMMYBALL_X2
+{
+    color 0.4 0.2 0.0
+    size 84
+    secondarySize 96
+    chance 0.4
+	//attenuate 1
+}
+
+flickerlight MUMMYBALL_X3
+{
+    color 0.2 0.05 0.0
+    size 96
+    secondarySize 108
+    chance 0.4
+	//attenuate 1
+}
+object HVR_MummyFX1
+{
+    frame FX15A { light MUMMYBALL }
+    frame FX15B { light MUMMYBALL }
+    frame FX15C { light MUMMYBALL }
+
+    frame FX15D { light MUMMYBALL_X1 }
+    frame FX15E { light MUMMYBALL_X2 }
+    frame FX15F { light MUMMYBALL_X3 }
+}
+
+
+// Maulotaur fireball
+flickerlight MAULBALL
+{
+    color 0.4 0.3 0.1
+    size 60
+    secondarySize 72
+    chance 0.5
+	//attenuate 1
+}
+
+flickerlight MAULBALL_X1
+{
+    color 0.5 0.15 0.0
+    size 88
+    secondarySize 96
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight MAULBALL_X2
+{
+    color 0.3 0.1 0.0
+    size 88
+    secondarySize 96
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight MAULBALL_X3
+{
+    color 0.2 0.05 0.0
+    size 60
+    secondarySize 72
+    chance 0.3
+	//attenuate 1
+}
+
+flickerlight MAULBALL_X4
+{
+    color 0.1 0.0 0.0
+    size 48
+    secondarySize 60
+    chance 0.3
+	//attenuate 1
+}
+
+object MinotaurFX1
+{
+    frame FX12A { light MAULBALL }
+    frame FX12B { light MAULBALL }
+
+    frame FX12C { light MAULBALL_X1 }
+    frame FX12D { light MAULBALL_X2 }
+    frame FX12E { light MAULBALL_X3 }
+    frame FX12F { light MAULBALL_X3 }
+    frame FX12G { light MAULBALL_X4 }
+    frame FX12H { light MAULBALL_X4 }
+}
+
+flickerlight MAULFLAME1
+{
+    color 0.3 0.2 0.05
+    size 64
+    secondarySize 84
+	chance 0.3
+	offset 0 7 0
+	//attenuate 1
+}
+flickerlight MAULFLAME2
+{
+    color 0.3 0.2 0.05
+    size 56
+    secondarySize 70
+	chance 0.3
+	offset 0 6 0
+	//attenuate 1
+}
+flickerlight MAULFLAME3
+{
+    color 0.3 0.2 0.05
+    size 48
+    secondarySize 60
+	chance 0.3
+	offset 0 5 0
+	//attenuate 1
+}
+flickerlight MAULFLAME4
+{
+    color 0.3 0.2 0.05
+    size 40
+    secondarySize 50
+	chance 0.3
+	offset 0 4 0
+	//attenuate 1
+}
+flickerlight MAULFLAME5
+{
+    color 0.3 0.2 0.05
+    size 32
+    secondarySize 40
+	chance 0.3
+	offset 0 3 0
+	//attenuate 1
+}
+flickerlight MAULFLAME6
+{
+    color 0.3 0.2 0.05
+    size 24
+    secondarySize 30
+	chance 0.3
+	offset 0 2 0
+	//attenuate 1
+}
+
+flickerlight MAULFLAME7
+{
+    color 0.3 0.2 0.05
+    size 16
+    secondarySize 20
+	chance 0.3
+	offset 0 1 0
+	//attenuate 1
+}
+
+flickerlight MAULFLAME_X1
+{
+    color 1.0 0.5 0.1
+    size 72
+    secondarySize 88
+    chance 0.3
+	offset 0 10 0
+	//attenuate 1
+}
+
+flickerlight MAULFLAME_X2
+{
+    color 1.0 0.5 0.1
+    size 88
+    secondarySize 96
+    chance 0.3
+	offset 0 10 0
+	//attenuate 1
+}
+
+flickerlight MAULFLAME_X3
+{
+    color 0.7 0.2 0.05
+    size 96
+    secondarySize 101
+    chance 0.3
+	offset 0 10 0
+	//attenuate 1
+}
+
+flickerlight MAULFLAME_X4
+{
+    color 0.5 0.1 0.0
+    size 102
+    secondarySize 108
+    chance 0.3
+	offset 0 10 0
+	//attenuate 1
+}
+
+flickerlight MAULFLAME_X5
+{
+    color 0.2 0.0 0.0
+    size 108
+    secondarySize 114
+    chance 0.3
+	offset 0 10 0
+	//attenuate 1
+}
+
+object MinotaurFX3
+{
+    frame FX13B { light MAULFLAME1 }
+    frame FX13C { light MAULFLAME2 }
+    frame FX13D { light MAULFLAME3 }
+    frame FX13E { light MAULFLAME4 }
+    frame FX13F { light MAULFLAME5 }
+    frame FX13G { light MAULFLAME6 }
+    frame FX13H { light MAULFLAME7 }
+
+    frame FX13I { light MAULFLAME_X1 }
+    frame FX13J { light MAULFLAME_X2 }
+    frame FX13K { light MAULFLAME_X3 }
+    frame FX13L { light MAULFLAME_X4 }
+    frame FX13M { light MAULFLAME_X5 }
+}
+
+// weapons ---------------------------------------------------------------------
+
+pointlight GAUNT
+{
+	color 0.0 0.1 0.0
+	size 20
+	offset 0 18 0
+}
+object HVRGauntlets
+{
+	frame WGNT { light GAUNT }
+}
+
+pointlight GWAND
+{
+	color 0.7 0.4 0.0
+	size 22
+	offset 0 35 0
+}
+object HVRWand
+{
+	frame GWAN { light ELVENWAND }
+}
+
+pointlight XBOW
+{
+	color 0.3 0.7 0.1
+	size 24
+	offset 4 38 0
+}
+object HVRCrossbow
+{
+	frame WBOW { light XBOW }
+}
+
+pointlight DCLAW
+{
+	color 0.0 0.1 0.4
+	size 17
+	offset 0 29 0
+}
+object HVRBlaster
+{
+	frame WBLS { light DCLAW }
+}
+
+pointlight SKLROD
+{
+	color 0.15 0.0 0.0
+	size 20
+	offset 3 32 0
+}
+object HVRSkullRod
+{
+	frame WSKL { light SKLROD }
+}
+
+pointlight PHXROD
+{
+	color 0.1 0.01 0.0
+	size 23
+	offset 0 37 0
+}
+object HVRPhoenixRod
+{
+	frame WPHX { light PHXROD }
+}
+
+pointlight MACE
+{
+	color 0.2 0.08 0.0
+	size 23
+	offset 0 37 0
+}
+object HVRMace
+{
+	frame WMCE { light MACE }
+}
+
+// pickups ---------------------------------------------------------------------
+
+pointlight SWANDAMMO
+{
+    color 0.5 0.3 0.0
+    size 16
+	//attenuate 1
+}
+object HVR_WandAmmo
+{
+    frame AMG1 { light SWANDAMMO }
+    frame AMGV { light SWANDAMMO }
+}
+pulselight LWANDAMMO
+{
+    color 0.7 0.4 0.0
+    size 20
+    secondarySize 24
+    interval 2.0
+	//attenuate 1
+}
+object HVR_WandHefty
+{
+    frame AMG2 { light LWANDAMMO }
+    frame AGHV { light LWANDAMMO }
+}
+
+pointlight ETHARROWS
+{
+    color 0.1 0.5 0.0
+    size 12
+    offset 0 7 0
+	//attenuate 1
+}
+object HVR_CrossbowAmmo
+{
+    frame AMC1 { light ETHARROWS }
+    frame AMCVA { light ETHARROWS }
+}
+pointlight ETHQUIVER1
+{
+    color 0.2 0.7 0.0
+    size 16
+    offset 0 23 0
+	//attenuate 1
+}
+pointlight ETHQUIVER2
+{
+    color 0.1 0.5 0.0
+    size 12
+    offset 0 23 0
+	//attenuate 1
+}
+pointlight ETHQUIVER3
+{
+    color 0.0 0.3 0.0
+    size 8
+    offset 0 23 0
+	//attenuate 1
+}
+object HVR_CrossbowHefty
+{
+    frame AMC2A { light ETHQUIVER1 }
+	frame AMC2B { light ETHQUIVER2 }
+	frame AMC2C { light ETHQUIVER3 }
+    frame ACHVA { light ETHQUIVER1 }
+	frame ACHVB { light ETHQUIVER2 }
+	frame ACHVC { light ETHQUIVER3 }
+}
+
+flickerlight2 SCLAWAMMO
+{
+    color 0.0 0.25 0.9
+    size 8
+    secondarySize 14
+	interval 0.1
+	offset 0 7 0
+	//attenuate 1
+}
+object HVR_BlasterAmmo
+{
+    frame AMB1A { light SCLAWAMMO }
+    frame AMB1B { light SCLAWAMMO }
+    frame AMB1C { light SCLAWAMMO }
+    frame AMBVA { light SCLAWAMMO }
+    frame AMBVB { light SCLAWAMMO }
+    frame AMBVC { light SCLAWAMMO }
+}
+flickerlight2 LCLAWAMMO
+{
+    color 0.0 0.3 1.0
+    size 12
+    secondarySize 18
+    interval 0.1
+    offset 0 11 0
+	//attenuate 1
+}
+object HVR_BlasterHefty
+{
+    frame AMB2A { light LCLAWAMMO }
+    frame AMB2B { light LCLAWAMMO }
+    frame AMB2C { light LCLAWAMMO }
+    frame ABHVA { light LCLAWAMMO }
+    frame ABHVB { light LCLAWAMMO }
+    frame ABHVC { light LCLAWAMMO }
+}
+
+pulselight SSTAFFAMMO
+{
+    color 0.5 0.0 0.0
+    size 8
+    secondarySize 10
+    interval 2.0
+}
+pointlight SSTAFFAMMO1
+{
+    color 0.25 0.0 0.0
+    size 12
+	offset 0 7 0
+	//attenuate 1
+}
+object HVR_SkullRodAmmo
+{
+	frame AMS1A { light SSTAFFAMMO1 }
+	frame AMSVA { light SSTAFFAMMO1 }
+}
+
+pulselight LSTAFFAMMO
+{
+    color 0.5 0.0 0.0
+    size 16
+    secondarySize 18
+    interval 2.0
+}
+pointlight LSTAFFAMMO1
+{
+    color 0.25 0.0 0.0
+    size 20
+	offset 0 16 0
+	//attenuate 1
+}
+object HVR_SkullRodHefty
+{
+	frame AMS2A { light LSTAFFAMMO1 }
+	frame ASHVA { light LSTAFFAMMO1 }
+}
+
+flickerlight2 SRODAMMO
+{
+    color 0.6 0.2 0.0
+    size 14
+    secondarySize 18
+    interval 0.1
+	offset 0 7 0
+	//attenuate 1
+}
+object HVR_PhoenixRodAmmo
+{
+    frame AMP1 { light SRODAMMO }
+}
+flickerlight2 LRODAMMO
+{
+    color 0.7 0.25 0.0
+    size 22
+    secondarySize 28
+    interval 0.1
+	offset 0 13 0
+}
+object HVR_PhoenixRodHefty
+{
+    frame AMP2 { light LRODAMMO }
+}
+flickerlight2 CRYSTALVIAL
+{
+    color 0.0 0.05 0.2
+    size 24
+	secondarySize 28
+	interval 0.1
+    offset 0 32 0
+	//attenuate 1
+	dontlightself 1
+}
+object HVR_CrystalVial
+{
+    frame PTN1 { light CRYSTALVIAL }
+}
+object HVR_VialGlass 
+{
+	frame PTNV {light CRYSTALVIAL}
+}
+
+// artifacts -------------------------------------------------------------------
+
+flickerlight2 QUARTZFLASK
+{
+    color 0.15 0.0 0.2
+    size 26
+	secondarySize 30
+	interval 0.1
+    offset 0 26 0
+	//attenuate 1
+	dontlightself 1
+}
+object HVR_ArtiHealth
+{
+    frame PTN2 { light QUARTZFLASK }
+}
+object HVR_FlaskGlass 
+{
+	frame PT2V {light QUARTZFLASK}
+}
+
+flickerlight2 ARTITORCH
+{
+    color 0.6 0.3 0.0
+    size 100
+    secondarySize 120
+    interval 0.1
+    offset 0 40 0
+	//attenuate 1
+}
+object HVR_ArtiTorch
+{
+    frame TRCH { light ARTITORCH }
+}
+object HVR_ArTorchFlameA
+{
+    frame TRCV { light ARTITORCH }
+}
+object HVR_ArTorchFlameB
+{
+    frame TRCV { light ARTITORCH }
+}
+object HVR_ArTorchFlameC
+{
+    frame TRCV { light ARTITORCH }
+}
+
+flickerlight2 ARTIEGG1
+{
+    color 0.0 0.4 0.0
+    size 27
+    secondarySize 32
+    interval 0.1
+    offset 0 26 0
+}
+flickerlight2 ARTIEGG2
+{
+    color 0.0 0.4 0.0
+    size 28
+    secondarySize 34
+    interval 0.1
+    offset 0 32 0
+}
+flickerlight2 ARTIEGG3
+{
+    color 0.0 0.4 0.0
+    size 27
+    secondarySize 32
+    interval 0.1
+    offset 0 36 0
+}
+object HVR_ArtiEgg
+{
+    frame EGGCA { light ARTIEGG1 }
+	frame EGGCB { light ARTIEGG2 }
+	frame EGGCC { light ARTIEGG3 }
+    frame EGGVA { light ARTIEGG1 }
+	frame EGGVB { light ARTIEGG2 }
+	frame EGGVC { light ARTIEGG3 }
+}
+
+pointlight ARTIRING1
+{
+    color 0.1 0.0 0.15
+    size 24
+	offset 0 26 0
+	//attenuate 1
+	//dontlightself 1
+}
+pointlight ARTIRING2
+{
+    color 0.15 0.0 0.0
+    size 24
+	offset 0 26 0
+	//attenuate 1
+	//dontlightself 1
+}
+pointlight ARTIRING3
+{
+    color 0.0 0.15 0.0
+    size 24
+	offset 0 26 0
+	//attenuate 1
+	//dontlightself 1
+}
+pointlight ARTIRING4
+{
+    color 0.0 0.1 0.15
+    size 24
+	offset 0 26 0
+	//attenuate 1
+	//dontlightself 1
+}
+object HVR_ArtiInvulnerability
+{
+    frame INVUA { light ARTIRING1 }
+	frame INVUB { light ARTIRING2 }
+	frame INVUC { light ARTIRING3 }
+	frame INVUD { light ARTIRING4 }
+    frame INRVA { light ARTIRING1 }
+	frame INRVB { light ARTIRING2 }
+	frame INRVC { light ARTIRING3 }
+	frame INRVD { light ARTIRING4 }
+}
+
+// decorations -----------------------------------------------------------------
+
+pointlight BLUESTATUE
+{
+    color 0.0 0.1 0.7
+    size 48
+    offset 0 64 0
+	//attenuate 1
+}
+object HVR_KeyGizmoBlue
+{
+    frame KGZ1 { light BLUESTATUE }
+}
+pointlight YELLOWSTATUE
+{
+    color 0.7 0.4 0.0
+    size 48
+    offset 0 64 0
+	//attenuate 1
+}
+object HVR_KeyGizmoYellow
+{
+    frame KGZ1 { light YELLOWSTATUE }
+}
+pointlight GREENSTATUE
+{
+    color 0.0 0.7 0.0
+    size 48
+    offset 0 64 0
+	//attenuate 1
+}
+object HVR_KeyGizmoGreen
+{
+    frame KGZ1 { light GREENSTATUE }
+}
+
+pulselight HYELLOWKEY
+{
+    color 1.0 0.7 0.0
+    size 36
+    secondarySize 39
+    interval 0.8
+	offset 0 20 0
+	//attenuate 1
+}
+pulselight HBLUEKEY
+{
+    color 0.1 0.0 1.0
+    size 36
+    secondarySize 30
+    interval 0.8
+	offset 0 12 0
+	//attenuate 1
+}
+pulselight HGREENKEY
+{
+    color 0.1 1.0 0.0
+    size 36
+    secondarySize 39
+    interval 0.8
+	offset 0 14 0
+	//attenuate 1
+}
+object KeyGreen
+{
+    frame AKYY { light HGREENKEY }
+}
+object KeyBlue
+{
+    frame BKYY { light HBLUEKEY }
+}
+object KeyYellow
+{
+    frame CKYY  { light HYELLOWKEY }
+}
+
+pointlight TELEGLITTER1
+{
+    color 0.3 0.05 0.1
+    size 24
+    offset 0 0 0
+}
+/*
+object TeleGlitter1
+{
+    frame TGLTA { light TELEGLITTER1 }
+	frame TGLTB { light TELEGLITTER1 }
+	frame TGLTC { light TELEGLITTER1 }
+	frame TGLTD { light TELEGLITTER1 }
+	frame TGLTE { light TELEGLITTER1 }
+}
+*/
+flickerlight2 TELEGLITGEN1
+{
+    color 0.5 0.0 0.0
+    size 64
+	secondarySize 72
+    interval 0.1
+    offset 0 24 0
+}
+object TeleGlitterGenerator1
+{
+    frame TNT1 { light TELEGLITGEN1 }
+}
+
+pointlight TELEGLITTER2
+{
+    color 0.1 0.05 0.3
+    size 24
+    offset 0 0 0
+}
+/*
+object TeleGlitter2
+{
+    frame TGLTF { light TELEGLITTER2 }
+	frame TGLTG { light TELEGLITTER2 }
+	frame TGLTH { light TELEGLITTER2 }
+	frame TGLTI { light TELEGLITTER2 }
+	frame TGLTJ { light TELEGLITTER2 }
+}
+*/
+flickerlight2 TELEGLITGEN2
+{
+    color 0.1 0.0 0.5
+    size 64
+	secondarySize 72
+    interval 0.1
+    offset 0 24 0
+}
+object TeleGlitterGenerator2
+{
+    frame TNT1 { light TELEGLITGEN2 }
+}
+
+pointlight VOLCANO1
+{
+    color 1.0 0.2 0.0
+    size 9
+    offset 0 20 0
+}
+pointlight VOLCANO2
+{
+    color 1.0 0.2 0.0
+    size 10
+    offset 0 21 0
+}
+pointlight VOLCANO3
+{
+    color 1.0 0.2 0.0
+    size 11
+    offset 0 22 0
+}
+pointlight VOLCANO4
+{
+    color 1.0 0.2 0.0
+    size 12
+    offset 0 23 0
+}
+pointlight VOLCANO5
+{
+    color 1.0 0.2 0.0
+    size 13
+    offset 0 24 0
+}
+
+object Volcano
+{
+    frame VLCOA { light VOLCANO1 }
+	frame VLCOB { light VOLCANO2 }
+	frame VLCOC { light VOLCANO3 }
+	frame VLCOD { light VOLCANO4 }
+	frame VLCOE { light VOLCANO5 }
+}
+
+// light fixtures --------------------------------------------------------------
+
+flickerlight2 CHANDELIER
+{
+    color 0.5 0.2 0.0
+    size 176
+    secondarySize 192
+    interval 0.1
+    offset 0 13 0
+}
+
+flickerlight2 FIREBRAZ
+{
+    color 0.8 0.4 0.1
+    size 144
+    secondarySize 160
+    interval 0.1
+    offset 0 46 0
+	//attenuate 1
+}
+
+flickerlight2 WALLTORCH
+{
+    color 0.6 0.3 0.1
+    size 96
+    secondarySize 112
+    interval 0.1 
+    offset 0 78 0
+	//attenuate 1
+}
+
+flickerlight2 SERPTORCH
+{
+    color 0.5 0.2 0.0
+    size 80
+    secondarySize 96
+    interval 0.1
+    offset 0 54 0
+	//attenuate 1
+}
+
+
+object HVR_WallTorch
+{
+    frame WTRH { light WALLTORCH }
+}
+
+object HVR_SerpentTorch
+{
+    frame SRTC { light SERPTORCH }
+}
+
+object HVR_FireBrazier
+{
+    frame KFR1 { light FIREBRAZ }
+}
+
+
+// glowmaps --------------------------------------------------------------------
+
+glow
+{
+	Texture "FLATHUH1", c01000, 160, fullbright
+	Texture "FLATHUH2", b02000, 176, fullbright
+	Texture "FLATHUH3", c01700, 192, fullbright
+	Texture "FLATHUH4", b02000, 176, fullbright
+	
+	Texture "FLTLAVA1", 600000, 104
+	Texture "FLTLAVA2", 800000, 116
+	Texture "FLTLAVA3", 900000, 128
+	Texture "FLTLAVA4", 800000, 116
+	
+	//Texture "FLTSLUD1", 203020, 32
+	//Texture "FLTSLUD2", 304030, 32
+	//Texture "FLTSLUD3", 283828, 32
+	
+	Texture "FLTTELE1", 100000, 32
+	Texture "FLTTELE2", 200000, 32
+	Texture "FLTTELE3", 300000, 32
+	Texture "FLTTELE4", 200000, 32
+	
+	Texture "FOOR21", 000020, 32
+	Texture "FOOR22", 000020, 32
+	Texture "FOOR23", 000020, 32
+	Texture "FOOR24", 000020, 32
+	Texture "FOOR26", 000030, 48
+	
+	Texture "F_SKY1", 705060, 384	
+}

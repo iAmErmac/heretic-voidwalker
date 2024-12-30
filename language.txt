@@ -17,6 +17,7 @@ HVR_OPT_NOHAND 			= "Without Hands";
 HVR_OPT_HAND 			= "With Hands";
 
 HVR_OPT_SPRITE 			= "Flat Sprite";
+HVR_OPT_VOXEL 			= "Voxel";
 HVR_OPT_3D 			= "3D Model";
 
 HVR_OPT_DEFAULT 		= "Default";
