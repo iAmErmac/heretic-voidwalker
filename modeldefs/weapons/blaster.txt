@@ -1,4 +1,18 @@
 
+Model HVRBlaster 
+{
+	Path "models/weapons/blaster"
+	Model 0 "g_claw.md2"
+	Skin 0 "g_claw.pcx"
+	Scale 0.62 0.62 0.62
+	ZOffset 16.0
+	
+	ROTATING
+	Rotation-Speed 0.2
+
+	FrameIndex BLSM A 0 0
+}
+
 Model HVRBlaster
 { 
 	Path "models/weapons/blaster"

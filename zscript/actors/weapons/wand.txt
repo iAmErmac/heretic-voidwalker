@@ -49,8 +49,16 @@ Class HVRWand : HereticVRWeapon replaces GoldWand
 	States
 	{
 	Spawn:
-		GWAN A -1;
-		Stop;
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		//TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "SpawnModel");
+		GWAN A 1;
+		Loop;
+	SpawnVoxel:
+		WNDV A 1;
+		Goto Spawn;
+	SpawnModel:
+		WNDM A 1;
+		Goto Spawn;
 	Ready:
 		TNT1 A 0;
 		GWND A 0 A_SetExtraModel("NHGW");

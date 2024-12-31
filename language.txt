@@ -3,11 +3,13 @@ MNU_HVROPTIONS 			= "Mod Options";
 HVR_OPTIONS 			= "VoidwalkeR Options";
 
 HVR_GAMEPLAY 			= "Gameplay Options";
+HVR_PICKUP_MODEL 		= "Pickup Models";
+HVR_DIST_MODEL 			= "Distant Pickups";
+HVR_MODEL_DIST 			= "Model Load Distance";
 HVR_REMASTERED_TRACK 		= "Remastered Soundtracks";
 
 HVR_WEAPONS 			= "VR Weapon";
 HVR_WEAPON_MODEL 		= "Weapon Models";
-HVR_WEAPON_PICKUP 		= "Pickup Model";
 HVR_WEAPON_FLASH 		= "Muzzle Flash Sprite";
 HVR_WEAPON_SWITCH 		= "Weapon Switching";
 HVR_GAUNTLET 			= "Gauntlet Equip On";
@@ -19,6 +21,9 @@ HVR_OPT_HAND 			= "With Hands";
 HVR_OPT_SPRITE 			= "Flat Sprite";
 HVR_OPT_VOXEL 			= "Voxel";
 HVR_OPT_3D 			= "3D Model";
+
+HVR_OPT_DIST_SPRITE 		= "Load as Sprite";
+HVR_OPT_DIST_MODEL 		= "Load as Voxel/Model";
 
 HVR_OPT_DEFAULT 		= "Default";
 HVR_OPT_FAST 			= "Fast";

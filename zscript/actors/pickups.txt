@@ -13,14 +13,29 @@ Class HVR_CustomPickups : CustomInventory
 		let pmo = player.mo;
 		let configItem = HVRConfigItem(pmo.findinventory("HVRConfigItem"));
 		if(configItem)
-		{		
-			pickupModel = configItem.pickupModel;
+		{
+			distModel = configItem.distModel;
+			modelDist = configItem.modelDist;
+			
+			if(distModel)
+			{
+				if(Distance2D(pmo) > modelDist)
+					pickupModel = 0;
+				else
+					pickupModel = configItem.pickupModel;
+			}
+			else
+			{
+				pickupModel = configItem.pickupModel;
+			}
 		}
 		
 		Super.Tick();
 	}
 	
 	protected int pickupModel;
+	protected bool distModel;
+	protected int modelDist;
 }
 
 

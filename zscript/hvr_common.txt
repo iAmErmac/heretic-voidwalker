@@ -137,12 +137,16 @@ Class HVRConfigHandler : Eventhandler
 		{
 			_settings 				= hvr_Settings.of();
 			int pickupModel 		= _settings.pickupModel();
+			bool distModel 			= _settings.distModel();
+			int modelDist 			= _settings.modelDist();
 			
 			if(!pmo.countinv("HVRConfigItem")) pmo.giveinventory("HVRConfigItem", 1);
 			
 			let configItem = HVRConfigItem(pmo.findinventory("HVRConfigItem"));
 			
 			configItem.pickupModel = pickupModel;
+			configItem.distModel = distModel;
+			configItem.modelDist = modelDist;
 		}
 	}
 	
@@ -158,6 +162,8 @@ Class HVRConfigItem : Inventory
 	}
 	
 	int pickupModel;
+	bool distModel;
+	int modelDist;
 }
 
 Class HVRHapticHelper : EventHandler

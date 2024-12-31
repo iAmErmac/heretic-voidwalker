@@ -3,6 +3,8 @@ Class HereticVRWeapon : HereticWeapon
 {
 	protected bool showHands;
 	protected int pickupModel;
+	protected bool distModel;
+	protected int modelDist;
 	protected bool showFLashSprite;
 	protected bool fastSwitchWeapon;
 	protected int HoloHUD;
@@ -384,6 +386,33 @@ Class HereticVRWeapon : HereticWeapon
 		if(pspr5) pspr5.Destroy();
 	}
 	
+	protected void checkSpawnModel()
+	{
+		//if no owner, makes more sense to read cvars from player than directly scanning for them
+		Playerinfo player = Players[ConsolePlayer];
+		if(!player) return;
+		
+		let pmo = player.mo;
+		let configItem = HVRConfigItem(pmo.findinventory("HVRConfigItem"));
+		if(configItem)
+		{
+			distModel = configItem.distModel;
+			modelDist = configItem.modelDist;
+			
+			if(distModel)
+			{
+				if(Distance2D(pmo) > modelDist)
+					pickupModel = 0;
+				else
+					pickupModel = configItem.pickupModel;
+			}
+			else
+			{
+				pickupModel = configItem.pickupModel;
+			}
+		}
+	}
+	
 	override void Tick()
 	{
 		Super.Tick();
@@ -394,6 +423,8 @@ Class HereticVRWeapon : HereticWeapon
 		{
 			getModSettings();
 		}
+		
+		if(!owner) checkSpawnModel();
 		
 		if(!owner || !owner.player) return;
 		

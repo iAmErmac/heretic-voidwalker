@@ -1,5 +1,40 @@
 //spinners
 
+WNDVA = "WNDVA" //wand
+{
+	Spin = 20
+}
+
+GNTVA = "GNTVA" //gauntlet
+{
+	Spin = 20
+}
+
+BOWVA = "BOWVA" //crossbow
+{
+	Spin = 20
+}
+
+BLSVA = "BLSVA" //blaster
+{
+	Spin = 20
+}
+
+SKLVA = "SKLVA" //skullrod
+{
+	Spin = 20
+}
+
+PHXVA = "PHXVA" //phoenixrod
+{
+	Spin = 20
+}
+
+MCEVA = "MCEVA" //mace
+{
+	Spin = 20
+}
+
 AMGVA = "AMGVA" //wand ammo
 {
 	Spin = 50

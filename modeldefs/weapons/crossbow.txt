@@ -1,4 +1,17 @@
 
+Model HVRCrossbow 
+{
+	Path "models/weapons/crossbow"
+	Model 0 "g_bow.md2"
+	Skin 0 "g_bow.pcx"
+	Scale 1.2 1.2 1.2
+	
+	ROTATING
+	Rotation-Speed 0.2
+
+	FrameIndex BOWM A 0 0
+}
+
 Model HVRCrossbow
 { 
 	Path "models/weapons/crossbow"

@@ -62,6 +62,11 @@ LISTMENU "MainMenu"
 	}
 }
 
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "$HVR_OPTIONS", "HVROptionsMenu"
+}
+
 OptionValue "HVR_Models_Option" {
 	0, "$HVR_OPT_NOHAND"
 	1, "$HVR_OPT_HAND"
@@ -71,6 +76,11 @@ OptionValue "HVR_PickupModel_Option" {
 	0, "$HVR_OPT_SPRITE"
 	1, "$HVR_OPT_VOXEL"
 	2, "$HVR_OPT_3D"
+}
+
+OptionValue "HVR_DistModel_Option" {
+	0, "$HVR_OPT_DIST_MODEL"
+	1, "$HVR_OPT_DIST_SPRITE"
 }
 
 OptionValue "HVR_WeaponSwitch_Option" {
@@ -95,12 +105,14 @@ OptionMenu "HVROptionsMenu" {
 	
 	StaticText " "
 	StaticText "$HVR_GAMEPLAY", "Gold"
+	Option "$HVR_PICKUP_MODEL", 		"hvr_pickupmodel", 		"HVR_PickupModel_Option"
+	Option "$HVR_DIST_MODEL", 		"hvr_loadsprite", 		"HVR_DistModel_Option", hvr_pickupmodel
+	Slider "$HVR_MODEL_DIST", 		"hvr_model_dist", 		100, 5000, 100.0, 0, hvr_loadsprite
 	Option "$HVR_REMASTERED_TRACK", 	"hvr_music", 			"OnOff"
 	
 	StaticText " "
 	StaticText "$HVR_WEAPONS", "Gold"
 	Option "$HVR_WEAPON_MODEL", 		"hvr_weaponmodel", 		"HVR_Models_Option"
-	Option "$HVR_WEAPON_PICKUP", 		"hvr_pickupmodel", 		"HVR_PickupModel_Option"
 	Option "$HVR_WEAPON_FLASH", 		"hvr_flashsprite", 		"OnOff"
 	Option "$HVR_WEAPON_SWITCH", 		"hvr_fastswitch", 		"HVR_WeaponSwitch_Option"
 	Option "$HVR_GAUNTLET", 		"hvr_gauntlet", 		"HVR_Gauntlet_Options"

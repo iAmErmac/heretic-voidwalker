@@ -1,4 +1,17 @@
 
+Model HVRMace 
+{
+	Path "models/weapons/mace"
+	Model 0 "g_mace.md2"
+	Skin 0 "g_mace.pcx"
+	Scale 1.3 1.3 1.3
+	
+	ROTATING
+	Rotation-Speed 0.2
+
+	FrameIndex MCEM A 0 0
+}
+
 Model HVRMace
 { 
 	Path "models/weapons/mace"
