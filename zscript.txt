@@ -3,6 +3,7 @@ version "3.0"
 #include "zscript/hvr_settings.txt"
 #include "zscript/hvr_weaponbase.txt"
 #include "zscript/hvr_common.txt"
+#include "zscript/hvr_replacements.txt"
 #include "zscript/hvr_musichandler.txt"
 
 #include "zscript/actors/weapons/staff.txt"

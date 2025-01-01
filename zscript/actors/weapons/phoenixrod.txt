@@ -74,11 +74,15 @@ Class HVRPhoenixRod : HereticVRWeapon replaces PhoenixRod
 		#### # 0 A_ReFire;
 		Goto Ready;
 	Flash:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
 		PHFL A 5 Bright;
 		PHFL B 7 Bright A_Light2;
 		PHFL C 4 Bright A_Light1;
 		PHFL A 4 Bright;
 		Goto lightdone;
+	NoFlash:
+		TNT1 A 1;
+		Stop;
 	Placeholder:
 		NHPH A 1;
 	}
@@ -229,9 +233,11 @@ Class HVRPhoenixRodPowered : HVRPhoenixRod
 		#### # 4 A_ShutdownPhoenixFlame;
 		Goto Ready;
 	Flash:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
 		PHFL A 3 Bright A_Light1;
 		Goto lightdone;
 	Flash2:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
 		PHFL B 1 Bright A_Light2;
 		Goto lightdone;
 	}

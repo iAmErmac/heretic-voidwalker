@@ -12,7 +12,7 @@ This addon aims to add 3D VR weapons and QoL improvements for VR in the game Her
 
 ## Features
 * VR weapons without/with hand models
-* Voxel pickups and props
+* 3D/Voxel pickups and props
 * Holo HUD on off-hand
 * Remastered Music Tracks (by Xeotroid)
 

@@ -62,7 +62,6 @@ Model HVRSkullRod
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
-	//Ready
 	FrameIndex HRFL A 0 0
 }
 
@@ -135,18 +134,15 @@ Model HVRSkullRodPowered
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
-	//Ready
 	FrameIndex HRFL A 0 0
 	
 	//Fire
-	Model 1 "staff_flash2.md3"
-	Skin 1 "wand-splash1.png"
-	FrameIndex HRFL B 0 0	FrameIndex HRFL B 1 0
-	
-	//Fire
 	Model 0 "staff_flash2.md3"
-	Model 1 "staff_flash3.md3"
-	FrameIndex HRFL C 0 0	FrameIndex HRFL C 1 0
+	Skin 0 "skull-flash.png"
+	FrameIndex HRFL B 0 0
+	
+	Skin 0 "skull-flash2.png"
+	FrameIndex HRFL C 0 1
 }
 
 

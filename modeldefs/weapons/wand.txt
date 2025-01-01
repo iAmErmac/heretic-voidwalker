@@ -71,17 +71,14 @@ Model HVRWand
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
-	//Ready
 	FrameIndex GWFL A 0 0
-	FrameIndex GWFL B 0 1
-	FrameIndex GWFL F 0 5
-	FrameIndex GWFL G 0 6
+	FrameIndex GWFL B 0 2
+	FrameIndex GWFL E 0 5
 	
 	Model 0 "wand_flash2.md3"
-	Skin 0 "wand-splash1.png"
-	FrameIndex GWFL C 0 2
-	FrameIndex GWFL D 0 3
-	FrameIndex GWFL E 0 4
+	Skin 0 "wand-flash.png"
+	FrameIndex GWFL C 0 1
+	FrameIndex GWFL D 0 2
 }
 
 
@@ -157,17 +154,14 @@ Model HVRWandPowered
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -15.0
 
-	//Ready
 	FrameIndex GWFL A 0 0
-	FrameIndex GWFL B 0 1
-	FrameIndex GWFL F 0 5
-	FrameIndex GWFL G 0 6
+	FrameIndex GWFL B 0 2
+	FrameIndex GWFL E 0 5
 	
 	Model 0 "wand_flash2.md3"
-	Skin 0 "wand-splash1.png"
-	FrameIndex GWFL C 0 2
-	FrameIndex GWFL D 0 3
-	FrameIndex GWFL E 0 4
+	Skin 0 "wand-flash.png"
+	FrameIndex GWFL C 0 1
+	FrameIndex GWFL D 0 2
 }
 
 

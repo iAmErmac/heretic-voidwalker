@@ -67,10 +67,18 @@ Class HVRCrossbow : HereticVRWeapon replaces Crossbow
 		CRBW A 0 A_SetExtraModel("NHBW");
 		#### BE 1;
 		#### # 0 A_FireCrossbowX;
+		#### # 0 A_GunFlash("Flash");
 		#### FGHIJKLMN 2;
 		#### A 6;
 		#### # 5 A_ReFire;
 		Goto Ready;
+	Flash:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
+		CRFL ABCD 2 Bright;
+		Stop;
+	NoFlash:
+		TNT1 A 1;
+		Stop;
 	Placeholder:
 		NHBW ABCDFGHIJKLMN 1;
 	}
@@ -114,6 +122,7 @@ Class HVRCrossbowPowered : HVRCrossbow
 		CRBW A 0 A_SetExtraModel("NHBW");
 		#### BE 1;
 		#### # 0 A_FireCrossbowX2;
+		#### # 0 A_GunFlash("Flash");
 		#### FGHIJKLMN 2;
 		#### A 1;
 		#### # 4 A_ReFire;

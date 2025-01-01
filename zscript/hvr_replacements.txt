@@ -1,0 +1,83 @@
+
+Class HVRItemReplacementHandler : EventHandler
+{
+	override void CheckReplacement(ReplaceEvent e)
+	{
+		if(GameInfo.GameType & GAME_Heretic)
+		{
+			//ammo
+			
+			if(e.Replacee is "GoldWandAmmo") 			e.Replacement = 'HVR_WandAmmo';
+			if(e.Replacee is "GoldWandHefty") 			e.Replacement = 'HVR_WandHefty';
+			if(e.Replacee is "CrossbowAmmo") 			e.Replacement = 'HVR_CrossbowAmmo';
+			if(e.Replacee is "CrossbowHefty") 			e.Replacement = 'HVR_CrossbowHefty';
+			if(e.Replacee is "BlasterAmmo") 			e.Replacement = 'HVR_BlasterAmmo';
+			if(e.Replacee is "BlasterHefty") 			e.Replacement = 'HVR_BlasterHefty';
+			if(e.Replacee is "SkullRodAmmo") 			e.Replacement = 'HVR_SkullRodAmmo';
+			if(e.Replacee is "SkullRodHefty") 			e.Replacement = 'HVR_SkullRodHefty';
+			if(e.Replacee is "PhoenixRodAmmo") 			e.Replacement = 'HVR_PhoenixRodAmmo';
+			if(e.Replacee is "PhoenixRodHefty") 		e.Replacement = 'HVR_PhoenixRodHefty';
+			if(e.Replacee is "MaceAmmo") 				e.Replacement = 'HVR_MaceAmmo';
+			if(e.Replacee is "MaceHefty") 				e.Replacement = 'HVR_MaceHefty';
+			
+			//items
+			
+			if(e.Replacee is "CrystalVial") 			e.Replacement = 'HVR_CrystalVial';
+			if(e.Replacee is "SilverShield") 			e.Replacement = 'HVR_SilverShield';
+			if(e.Replacee is "EnchantedShield") 		e.Replacement = 'HVR_EnchantedShield';
+			if(e.Replacee is "BagOfHolding") 			e.Replacement = 'HVR_BagOfHolding';
+			if(e.Replacee is "SuperMap") 				e.Replacement = 'HVR_SuperMap';
+		}
+	}
+	
+	override void WorldThingSpawned(WorldEvent e)
+	{
+		let player = Players[ConsolePlayer].mo;
+		let spawned_thing = e.Thing;
+	
+		//do no replace drops from heretic/hexen/strife. they will be handled by filter lumps
+		if(GameInfo.GameType & GAME_Heretic)
+		{
+			String pickup_class = spawned_thing.GetClassName();
+			pickup_class = pickup_class.MakeLower();
+			
+			for(int i = 0; i < HVR_arti_list.Size(); i++) {
+				if(spawned_thing && pickup_class == HVR_arti_list[i]) {
+					if(!Inventory(spawned_thing).owner)
+					{
+						Actor.Spawn(HVR_arti_replace_list[i], spawned_thing.pos);
+						spawned_thing.destroy();
+						return;
+					}
+					break;
+				}
+			}
+		}
+	}
+	
+	static const string HVR_arti_list[] = {
+		"artihealth",
+		"artisuperhealth",
+		"artiegg",
+		"artifly",
+		"artiinvisibility",
+		"artiinvulnerability",
+		"artiteleport",
+		"artitimebomb",
+		"artitomeofpower",
+		"artitorch"
+	};
+	
+	static const string HVR_arti_replace_list[] = {
+		"HVR_ArtiHealth",
+		"HVR_ArtiSuperHealth",
+		"HVR_ArtiEgg",
+		"HVR_ArtiFly",
+		"HVR_ArtiInvisibility",
+		"HVR_ArtiInvulnerability",
+		"HVR_ArtiTeleport",
+		"HVR_ArtiTimeBomb",
+		"HVR_ArtiTomeOfPower",
+		"HVR_ArtiTorch"
+	};
+}

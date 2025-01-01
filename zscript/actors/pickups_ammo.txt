@@ -1,7 +1,7 @@
 
 //ammo
 
-Class HVR_WandAmmo : HVR_CustomPickups replaces GoldWandAmmo
+Class HVR_WandAmmo : HVR_CustomPickups
 {
 	Default
 	{
@@ -24,7 +24,7 @@ Class HVR_WandAmmo : HVR_CustomPickups replaces GoldWandAmmo
 	}
 }
 
-Class HVR_WandHefty : HVR_CustomPickups replaces GoldWandHefty
+Class HVR_WandHefty : HVR_CustomPickups
 {
 	Default
 	{
@@ -47,7 +47,7 @@ Class HVR_WandHefty : HVR_CustomPickups replaces GoldWandHefty
 	}
 }
 
-Class HVR_CrossbowAmmo : HVR_CustomPickups replaces CrossbowAmmo
+Class HVR_CrossbowAmmo : HVR_CustomPickups
 {
 	Default
 	{
@@ -87,7 +87,7 @@ Class HVR_BoltAura : Actor
 	}
 }
 
-Class HVR_CrossbowHefty : HVR_CustomPickups replaces CrossbowHefty
+Class HVR_CrossbowHefty : HVR_CustomPickups
 {
 	Default
 	{
@@ -178,7 +178,7 @@ Class HVR_BoltAuraHefty3 : Actor
 	}
 }
 
-Class HVR_BlasterAmmo : HVR_CustomPickups replaces BlasterAmmo
+Class HVR_BlasterAmmo : HVR_CustomPickups
 {
 	Default
 	{
@@ -240,7 +240,7 @@ Class HVR_BlastOrb2 : Actor
 	}
 }
 
-Class HVR_BlasterHefty : HVR_CustomPickups replaces BlasterHefty
+Class HVR_BlasterHefty : HVR_CustomPickups
 {
 	Default
 	{
@@ -302,7 +302,7 @@ Class HVR_BlastOrbHefty2 : Actor
 	}
 }
 
-Class HVR_SkullRodAmmo : HVR_CustomPickups replaces SkullRodAmmo
+Class HVR_SkullRodAmmo : HVR_CustomPickups
 {
 	Default
 	{
@@ -325,7 +325,7 @@ Class HVR_SkullRodAmmo : HVR_CustomPickups replaces SkullRodAmmo
 	}
 }
 
-Class HVR_SkullRodHefty : HVR_CustomPickups replaces SkullRodHefty
+Class HVR_SkullRodHefty : HVR_CustomPickups
 {
 	Default
 	{
@@ -348,7 +348,7 @@ Class HVR_SkullRodHefty : HVR_CustomPickups replaces SkullRodHefty
 	}
 }
 
-Class HVR_PhoenixRodAmmo : HVR_CustomPickups replaces PhoenixRodAmmo
+Class HVR_PhoenixRodAmmo : HVR_CustomPickups
 {
 	Default
 	{
@@ -442,7 +442,7 @@ Class HVR_RodOrbFlame3 : Actor
 }
 
 
-Class HVR_PhoenixRodHefty : HVR_CustomPickups replaces PhoenixRodHefty
+Class HVR_PhoenixRodHefty : HVR_CustomPickups
 {
 	Default
 	{
@@ -535,7 +535,7 @@ Class HVR_RodOrbHeftyFlame3 : Actor
 	}
 }
 
-Class HVR_MaceAmmo : HVR_CustomPickups replaces MaceAmmo
+Class HVR_MaceAmmo : HVR_CustomPickups
 {
 	Default
 	{
@@ -558,7 +558,7 @@ Class HVR_MaceAmmo : HVR_CustomPickups replaces MaceAmmo
 	}
 }
 
-Class HVR_MaceHefty : HVR_CustomPickups replaces MaceHefty
+Class HVR_MaceHefty : HVR_CustomPickups
 {
 	Default
 	{

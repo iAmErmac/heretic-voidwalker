@@ -39,7 +39,7 @@ Class HVR_CustomPickups : CustomInventory
 }
 
 
-Class HVR_CrystalVial : HVR_CustomPickups replaces CrystalVial
+Class HVR_CrystalVial : HVR_CustomPickups
 {
 	Default
 	{
@@ -127,7 +127,7 @@ Class HVR_VialGlass : Actor
 	}
 }
 
-Class HVR_SilverShield : HVR_CustomPickups replaces SilverShield
+Class HVR_SilverShield : HVR_CustomPickups
 {
 	Default
 	{
@@ -151,7 +151,7 @@ Class HVR_SilverShield : HVR_CustomPickups replaces SilverShield
 	}
 }
 
-Class HVR_EnchantedShield : HVR_CustomPickups replaces EnchantedShield
+Class HVR_EnchantedShield : HVR_CustomPickups
 {
 	Default
 	{
@@ -175,7 +175,7 @@ Class HVR_EnchantedShield : HVR_CustomPickups replaces EnchantedShield
 	}
 }
 
-Class HVR_BagOfHolding : HVR_CustomPickups replaces BagOfHolding
+Class HVR_BagOfHolding : HVR_CustomPickups
 {
 	Default
 	{
@@ -200,7 +200,7 @@ Class HVR_BagOfHolding : HVR_CustomPickups replaces BagOfHolding
 	}
 }
 
-Class HVR_SuperMap : HVR_CustomPickups replaces SuperMap
+Class HVR_SuperMap : HVR_CustomPickups
 {
 	Default
 	{
@@ -226,7 +226,7 @@ Class HVR_SuperMap : HVR_CustomPickups replaces SuperMap
 	}
 }
 
-Class HVR_ArtiHealth : HVR_CustomPickups replaces ArtiHealth
+Class HVR_ArtiHealth : HVR_CustomPickups
 {
 	Default
 	{
@@ -318,7 +318,7 @@ Class HVR_FlaskGlass : Actor
 	}
 }
 
-Class HVR_ArtiSuperHealth : HVR_CustomPickups replaces ArtiSuperHealth
+Class HVR_ArtiSuperHealth : HVR_CustomPickups
 {
 	Default
 	{
@@ -346,7 +346,7 @@ Class HVR_ArtiSuperHealth : HVR_CustomPickups replaces ArtiSuperHealth
 	}
 }
 
-Class HVR_ArtiEgg : HVR_CustomPickups replaces ArtiEgg
+Class HVR_ArtiEgg : HVR_CustomPickups
 {
 	Default
 	{
@@ -389,7 +389,7 @@ Class HVR_Egg : Actor
 	}
 }
 
-Class HVR_ArtiFly : HVR_CustomPickups replaces ArtiFly
+Class HVR_ArtiFly : HVR_CustomPickups
 {
 	Default
 	{
@@ -416,7 +416,7 @@ Class HVR_ArtiFly : HVR_CustomPickups replaces ArtiFly
 	}
 }
 
-Class HVR_ArtiInvisibility : HVR_CustomPickups replaces ArtiInvisibility
+Class HVR_ArtiInvisibility : HVR_CustomPickups
 {
 	Default
 	{
@@ -445,7 +445,7 @@ Class HVR_ArtiInvisibility : HVR_CustomPickups replaces ArtiInvisibility
 	}
 }
 
-Class HVR_ArtiInvulnerability : HVR_CustomPickups replaces ArtiInvulnerability
+Class HVR_ArtiInvulnerability : HVR_CustomPickups
 {
 	Default
 	{
@@ -472,7 +472,7 @@ Class HVR_ArtiInvulnerability : HVR_CustomPickups replaces ArtiInvulnerability
 	}
 }
 
-Class HVR_ArtiTeleport : HVR_CustomPickups replaces ArtiTeleport
+Class HVR_ArtiTeleport : HVR_CustomPickups
 {
 	Default
 	{
@@ -500,7 +500,7 @@ Class HVR_ArtiTeleport : HVR_CustomPickups replaces ArtiTeleport
 	}
 }
 
-Class HVR_ArtiTimeBomb : HVR_CustomPickups replaces ArtiTimeBomb
+Class HVR_ArtiTimeBomb : HVR_CustomPickups
 {
 	Default
 	{
@@ -680,7 +680,7 @@ Class HVR_BombFrameE : Actor
 	}
 }
 
-Class HVR_ArtiTomeOfPower : HVR_CustomPickups replaces ArtiTomeOfPower
+Class HVR_ArtiTomeOfPower : HVR_CustomPickups
 {
 	Default
 	{
@@ -706,7 +706,7 @@ Class HVR_ArtiTomeOfPower : HVR_CustomPickups replaces ArtiTomeOfPower
 	}
 }
 
-Class HVR_ArtiTorch : HVR_CustomPickups replaces ArtiTorch
+Class HVR_ArtiTorch : HVR_CustomPickups
 {
 	Default
 	{

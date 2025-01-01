@@ -10,7 +10,7 @@ HVR_REMASTERED_TRACK 		= "Remastered Soundtracks";
 
 HVR_WEAPONS 			= "VR Weapon";
 HVR_WEAPON_MODEL 		= "Weapon Models";
-HVR_WEAPON_FLASH 		= "Muzzle Flash Sprite";
+HVR_WEAPON_FLASH 		= "Show Flash Sprite";
 HVR_WEAPON_SWITCH 		= "Weapon Switching";
 HVR_GAUNTLET 			= "Gauntlet Equip On";
 HVR_HOLO_HUD 			= "Holo HUD";

@@ -90,14 +90,19 @@ Class HVRBlaster : HereticVRWeapon replaces Blaster
 		#### A 0 A_ReFire;
 		Goto Ready;
 	Flash:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
 		BLFL AB 3 Bright;
 		BLFL C 2 Bright A_Light1;
 		BLFL BA 2 Bright;
 		Goto Lightdone;
 	Flash2:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
 		BLFL C 2 Bright A_Light1;
 		BLFL BA 2 Bright;
 		Goto Lightdone;
+	NoFlash:
+		TNT1 A 1;
+		Stop;
 	Placeholder:
 		NHBL ABC 1;
 		Stop;
@@ -127,6 +132,7 @@ Class HVRBlasterPowered : HVRBlaster
 		#### A 0 A_ReFire;
 		Goto Ready;
 	Flash:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
 		BLFL AB 1 Bright;
 		BLFL C 2 Bright A_Light1;
 		BLFL BA 2 Bright;

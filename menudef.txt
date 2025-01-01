@@ -113,7 +113,7 @@ OptionMenu "HVROptionsMenu" {
 	StaticText " "
 	StaticText "$HVR_WEAPONS", "Gold"
 	Option "$HVR_WEAPON_MODEL", 		"hvr_weaponmodel", 		"HVR_Models_Option"
-	Option "$HVR_WEAPON_FLASH", 		"hvr_flashsprite", 		"OnOff"
+	Option "$HVR_WEAPON_FLASH", 		"hvr_flashsprite", 		"YesNo"
 	Option "$HVR_WEAPON_SWITCH", 		"hvr_fastswitch", 		"HVR_WeaponSwitch_Option"
 	Option "$HVR_GAUNTLET", 		"hvr_gauntlet", 		"HVR_Gauntlet_Options"
 	Option "$HVR_HOLO_HUD", 		"hvr_holohud", 			"HVR_HoloHUD_Options"

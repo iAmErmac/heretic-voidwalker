@@ -99,11 +99,15 @@ Class HVRWand : HereticVRWeapon replaces GoldWand
 		CRST A 4;
 		Stop;
 	Flash:
+		TNT1 A 0 A_jumpIf(invoker.showFLashSprite == false, "NoFlash");
 		GWFL B 1 Bright A_Light1;
-		TNT1 A 1;
-		GWFL CDE 1 Bright A_Light2;
-		GWFL FG 1 Bright A_Light1;
+		GWFL C 2 Bright A_Light2;
+		GWFL D 2 Bright A_Light2;
+		GWFL E 1 Bright A_Light1;
 		Goto LightDone;
+	NoFlash:
+		TNT1 A 1;
+		Stop;
 	Placeholder:
 		NHGW ABC 1;
 		Stop;
