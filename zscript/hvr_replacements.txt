@@ -43,7 +43,7 @@ Class HVRItemReplacementHandler : EventHandler
 			
 			for(int i = 0; i < HVR_arti_list.Size(); i++) {
 				if(spawned_thing && pickup_class == HVR_arti_list[i]) {
-					if(!Inventory(spawned_thing).owner)
+					if(!spawned_thing.bNoBlockmap || !spawned_thing.bNoSector)
 					{
 						Actor.Spawn(HVR_arti_replace_list[i], spawned_thing.pos);
 						spawned_thing.destroy();

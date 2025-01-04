@@ -6,7 +6,7 @@ Model HVRStaff
 	Model 1 "staff_hand.md3"
 	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex STFF A 0 0	FrameIndex STFF A 1 0
@@ -28,7 +28,7 @@ Model HVRStaff
 	Path "models/weapons/staff"
 	Model 0 "staff.md3"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex NHST A 0 0
@@ -53,7 +53,7 @@ Model HVRStaff
 	Model 1 "staff_hand.md3"
 	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	FrameIndex STFF S 0 0	FrameIndex STFF S 1 8
 }
@@ -69,7 +69,7 @@ Model HVRStaffPowered
 	Model 3 "staff_puff.md3"
 	Skin 3 "elc1.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex STFF A 0 0	FrameIndex STFF A 1 0	FrameIndex STFF A 2 0	FrameIndex STFF A 3 99
@@ -95,7 +95,7 @@ Model HVRStaffPowered
 	Model 2 "staff_puff.md3"
 	Skin 2 "elc1.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex NHST A 0 0	FrameIndex NHST A 1 0	FrameIndex NHST A 2 99
@@ -120,7 +120,7 @@ Model HVRStaffPowered
 	Model 1 "staff_hand.md3"
 	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	FrameIndex STFF S 0 0	FrameIndex STFF S 1 8
 }
@@ -135,7 +135,7 @@ Model HVRStaff
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -151,7 +151,7 @@ Model HVRStaff
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -230,7 +230,7 @@ Model HVRStaff
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -309,7 +309,7 @@ Model HVRStaff
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -385,7 +385,7 @@ Model HVRStaff
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	
@@ -461,7 +461,7 @@ Model HVRStaffPowered
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -477,7 +477,7 @@ Model HVRStaffPowered
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -556,7 +556,7 @@ Model HVRStaffPowered
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -635,7 +635,7 @@ Model HVRStaffPowered
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -711,7 +711,7 @@ Model HVRStaffPowered
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	

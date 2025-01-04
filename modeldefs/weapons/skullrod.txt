@@ -22,7 +22,7 @@ Model HVRSkullRod
 	Model 2 "staff_hand.md3"
 	Skin 2 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex HROD A 0 0	FrameIndex HROD A 1 0	FrameIndex HROD A 2 0
@@ -42,7 +42,7 @@ Model HVRSkullRod
 	Model 1 "horns.md3"
 	Skin 1 "g_skull.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex NHRD A 0 0	FrameIndex NHRD A 1 0
@@ -60,7 +60,7 @@ Model HVRSkullRod
 	Model 0 "staff_flash.md3"
 	Skin 0 "wand-splash1.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	FrameIndex HRFL A 0 0
 }
@@ -76,7 +76,7 @@ Model HVRSkullRodPowered
 	Model 2 "staff_hand.md3"
 	Skin 2 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex HROD A 0 0	FrameIndex HROD A 1 0	FrameIndex HROD A 2 0
@@ -105,7 +105,7 @@ Model HVRSkullRodPowered
 	Model 1 "horns.md3"
 	Skin 1 "g_skull.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex NHRD A 0 0	FrameIndex NHRD A 1 0
@@ -132,7 +132,7 @@ Model HVRSkullRodPowered
 	Model 0 "staff_flash.md3"
 	Skin 0 "wand-splash1.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	FrameIndex HRFL A 0 0
 	
@@ -156,7 +156,7 @@ Model HVRSkullRod
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -172,7 +172,7 @@ Model HVRSkullRod
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -251,7 +251,7 @@ Model HVRSkullRod
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -330,7 +330,7 @@ Model HVRSkullRod
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -406,7 +406,7 @@ Model HVRSkullRod
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	
@@ -482,7 +482,7 @@ Model HVRSkullRodPowered
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -498,7 +498,7 @@ Model HVRSkullRodPowered
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -577,7 +577,7 @@ Model HVRSkullRodPowered
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -656,7 +656,7 @@ Model HVRSkullRodPowered
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -732,7 +732,7 @@ Model HVRSkullRodPowered
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	

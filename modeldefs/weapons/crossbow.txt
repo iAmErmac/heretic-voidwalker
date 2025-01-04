@@ -23,7 +23,7 @@ Model HVRCrossbow
 	Model 3 "xbow_hand.md3"
 	Skin 3 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex CRBW A 0 0	FrameIndex CRBW A 1 0	FrameIndex CRBW A 2 0	FrameIndex CRBW A 3 0
@@ -40,7 +40,7 @@ Model HVRCrossbow
 	Model 3 "xbow_hand.md3"
 	Skin 3 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex CRBW B 0 1	FrameIndex CRBW B 1 0	FrameIndex CRBW B 2 0	FrameIndex CRBW B 3 1
@@ -56,7 +56,7 @@ Model HVRCrossbow
 	Model 1 "xbow_hand.md3"
 	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex CRBW F 0 3	FrameIndex CRBW F 1 3
@@ -72,7 +72,7 @@ Model HVRCrossbow
 	Model 1 "xbow_hand.md3"
 	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex CRBW J 0 7	FrameIndex CRBW J 1 7
@@ -93,7 +93,7 @@ Model HVRCrossbow
 	Model 2 "arrow_trail.md3"
 	Skin 2 "lc1x.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex NHBW A 0 0	FrameIndex NHBW A 1 0	FrameIndex NHBW A 2 0
@@ -108,7 +108,7 @@ Model HVRCrossbow
 	Model 2 "arrow_trail.md3"
 	Skin 2 "lc1x.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex NHBW B 0 1	FrameIndex NHBW B 1 0	FrameIndex NHBW B 2 0
@@ -122,7 +122,7 @@ Model HVRCrossbow
 	Path "models/weapons/crossbow"
 	Model 0 "xbow.md3"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex NHBW F 0 3
@@ -136,7 +136,7 @@ Model HVRCrossbow
 	Path "models/weapons/crossbow"
 	Model 0 "xbow.md3"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex NHBW J 0 7
@@ -154,7 +154,7 @@ Model HVRCrossbow
 	Model 0 "xbow_flash.md3"
 	Skin 0 "lc1x.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	FrameIndex CRFL A 0 0
 	FrameIndex CRFL B 0 1
@@ -174,7 +174,7 @@ Model HVRCrossbowPowered
 	Model 3 "xbow_hand.md3"
 	Skin 3 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex CRBW A 0 0	FrameIndex CRBW A 1 0	FrameIndex CRBW A 2 0	FrameIndex CRBW A 3 0
@@ -191,7 +191,7 @@ Model HVRCrossbowPowered
 	Model 3 "xbow_hand.md3"
 	Skin 3 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex CRBW B 0 1	FrameIndex CRBW B 1 0	FrameIndex CRBW B 2 0	FrameIndex CRBW B 3 1
@@ -207,7 +207,7 @@ Model HVRCrossbowPowered
 	Model 1 "xbow_hand.md3"
 	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex CRBW F 0 3	FrameIndex CRBW F 1 3
@@ -223,7 +223,7 @@ Model HVRCrossbowPowered
 	Model 1 "xbow_hand.md3"
 	Skin 1 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex CRBW J 0 7	FrameIndex CRBW J 1 7
@@ -244,7 +244,7 @@ Model HVRCrossbowPowered
 	Model 2 "arrow_trail.md3"
 	Skin 2 "lc1x.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 
 	//Ready
 	FrameIndex NHBW A 0 0	FrameIndex NHBW A 1 0	FrameIndex NHBW A 2 0
@@ -259,7 +259,7 @@ Model HVRCrossbowPowered
 	Model 2 "arrow_trail.md3"
 	Skin 2 "lc1x.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex NHBW B 0 1	FrameIndex NHBW B 1 0	FrameIndex NHBW B 2 0
@@ -273,7 +273,7 @@ Model HVRCrossbowPowered
 	Path "models/weapons/crossbow"
 	Model 0 "xbow.md3"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex NHBW F 0 3
@@ -287,7 +287,7 @@ Model HVRCrossbowPowered
 	Path "models/weapons/crossbow"
 	Model 0 "xbow.md3"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire done
 	FrameIndex NHBW J 0 7
@@ -305,7 +305,7 @@ Model HVRCrossbowPowered
 	Model 0 "xbow_flash.md3"
 	Skin 0 "lc1x.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	FrameIndex CRFL A 0 0
 	FrameIndex CRFL B 0 1
@@ -324,7 +324,7 @@ Model HVRCrossbow
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -340,7 +340,7 @@ Model HVRCrossbow
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -419,7 +419,7 @@ Model HVRCrossbow
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -498,7 +498,7 @@ Model HVRCrossbow
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -574,7 +574,7 @@ Model HVRCrossbow
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	
@@ -650,7 +650,7 @@ Model HVRCrossbowPowered
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -666,7 +666,7 @@ Model HVRCrossbowPowered
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -745,7 +745,7 @@ Model HVRCrossbowPowered
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -824,7 +824,7 @@ Model HVRCrossbowPowered
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -900,7 +900,7 @@ Model HVRCrossbowPowered
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	

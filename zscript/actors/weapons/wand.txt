@@ -37,10 +37,10 @@ Class HVRWand : HereticVRWeapon replaces GoldWand
 		{
 			ang += Random2[FireGoldWand]() * (5.625 / 256);
 
-			if (GetCVar ("vertspread") && !sv_novertspread)
+			/*if (GetCVar ("vertspread") && !sv_novertspread)
 			{
 				pitch += Random2[FireGoldWand]() * (3.549 / 256);
-			}
+			}*/
 		}
 		LineAttack(ang, PLAYERMISSILERANGE, pitch, damage, 'Hitscan', "GoldWandPuff1", laflags);
 		A_StartSound("weapons/wandhit", CHAN_WEAPON);

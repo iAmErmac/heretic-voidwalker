@@ -24,7 +24,7 @@ Model HVRMace
 	Model 3 "mace_hand.md3"
 	Skin 3 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex MACE C 0 0	FrameIndex MACE C 1 1	FrameIndex MACE C 2 1	FrameIndex MACE C 3 0
@@ -52,7 +52,7 @@ Model HVRMace
 	Model 2 "mace_cap.md3"
 	Skin 2 "FireMace.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex NHFM C 0 0	FrameIndex NHFM C 1 1	FrameIndex NHFM C 2 1
@@ -80,7 +80,7 @@ Model HVRMacePowered
 	Model 3 "mace_hand.md3"
 	Skin 3 "hand.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex MACE C 0 0	FrameIndex MACE C 1 1	FrameIndex MACE C 2 1	FrameIndex MACE C 3 0
@@ -108,7 +108,7 @@ Model HVRMacePowered
 	Model 2 "mace_cap.md3"
 	Skin 2 "FireMace.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -22 -15.0
+	Offset 0.0 -22 -7.0
 	
 	//Fire
 	FrameIndex NHFM C 0 0	FrameIndex NHFM C 1 1	FrameIndex NHFM C 2 1
@@ -135,7 +135,7 @@ Model HVRMace
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -151,7 +151,7 @@ Model HVRMace
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -230,7 +230,7 @@ Model HVRMace
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -309,7 +309,7 @@ Model HVRMace
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -385,7 +385,7 @@ Model HVRMace
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	
@@ -461,7 +461,7 @@ Model HVRMacePowered
 	Model 1 "holo_bracer_ring2.md3"
 	Skin 1 "bracer_rune_2a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex RUNE A 0 0	FrameIndex RUNE A 1 0
 	
@@ -477,7 +477,7 @@ Model HVRMacePowered
 	Model 1 "holo_bracer_icon1.md3"
 	Skin 1 "bracer_icon_a.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex H100 A 0 0
 	
@@ -556,7 +556,7 @@ Model HVRMacePowered
 	Model 1 "holo_bracer_icon2.md3"
 	Skin 1 "bracer_icon_b.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex A100 A 0 0
 	
@@ -635,7 +635,7 @@ Model HVRMacePowered
 	Model 1 "holo_bracer_icon3.md3"
 	Skin 1 "bracer_icon_c.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M100 A 0 0
 	
@@ -711,7 +711,7 @@ Model HVRMacePowered
 	Model 1 "holo_bracer_icon4.md3"
 	Skin 1 "bracer_icon_d.png"
 	Scale -0.82 0.82 0.82
-	Offset 0.0 -17 -15.0
+	Offset 0.0 -17 -7.0
 	
 	FrameIndex M2FL A 0 0
 	
