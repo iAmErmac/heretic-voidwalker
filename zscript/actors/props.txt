@@ -42,20 +42,20 @@ mixin class WallCheck
     const maxCheckDist = 640;
 }
 
-Class HVR_KeyGizmoBlue : KeyGizmoBlue replaces KeyGizmoBlue
+Class HVR_KeyGizmoBlue : KeyGizmoBlue
 {
 	mixin WallCheck;
 }
-Class HVR_KeyGizmoGreen : KeyGizmoGreen replaces KeyGizmoGreen
+Class HVR_KeyGizmoGreen : KeyGizmoGreen
 {
 	mixin WallCheck;
 }
-Class HVR_KeyGizmoYellow : KeyGizmoYellow replaces KeyGizmoYellow
+Class HVR_KeyGizmoYellow : KeyGizmoYellow
 {
 	mixin WallCheck;
 }
 
-Class HVR_FireBrazier : FireBrazier replaces FireBrazier
+Class HVR_FireBrazier : FireBrazier
 {
 	mixin WallCheck;
 	
@@ -152,7 +152,7 @@ Class HVR_TorchFlame2 : Actor
 	}
 }
 
-Class HVR_SerpentTorch : SerpentTorch replaces SerpentTorch
+Class HVR_SerpentTorch : SerpentTorch
 {
 	mixin WallCheck;
 	

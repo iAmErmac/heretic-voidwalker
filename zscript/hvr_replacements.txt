@@ -27,6 +27,15 @@ Class HVRItemReplacementHandler : EventHandler
 			if(e.Replacee is "EnchantedShield") 		e.Replacement = 'HVR_EnchantedShield';
 			if(e.Replacee is "BagOfHolding") 			e.Replacement = 'HVR_BagOfHolding';
 			if(e.Replacee is "SuperMap") 				e.Replacement = 'HVR_SuperMap';
+			
+			//props
+			
+			if(e.Replacee is "KeyGizmoBlue") 			e.Replacement = 'HVR_KeyGizmoBlue';
+			if(e.Replacee is "KeyGizmoGreen") 			e.Replacement = 'HVR_KeyGizmoGreen';
+			if(e.Replacee is "KeyGizmoYellow") 			e.Replacement = 'HVR_KeyGizmoYellow';
+			if(e.Replacee is "FireBrazier") 			e.Replacement = 'HVR_FireBrazier';
+			if(e.Replacee is "WallTorch") 				e.Replacement = 'HVR_WallTorch';
+			if(e.Replacee is "SerpentTorch") 			e.Replacement = 'HVR_SerpentTorch';
 		}
 	}
 	

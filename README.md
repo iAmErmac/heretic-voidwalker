@@ -14,7 +14,7 @@ This addon aims to add 3D VR weapons and QoL improvements for VR in the game Her
 * VR weapons without/with hand models
 * 3D/Voxel pickups and props
 * Holo HUD on off-hand
-* Remastered Music Tracks (by Xeotroid)
+* Remastered Sound Tracks (by Xeotroid)
 
 ## Installation
 
@@ -158,6 +158,8 @@ If you don't own Heretic:
 ## Credits
 
 * Reikall - Voxel pickups, props and associated codes
+* Dwars - HQ sound effects
+* Xeotroid - Remastered sound tracks
 * Cherno - Simsun Shader
 * DS-Models, jHeretic Resource Pack, Vavoom xmodels - 3D models in community projects
 * Ermac - Scripts and models for VR, modifying weapon models for VR

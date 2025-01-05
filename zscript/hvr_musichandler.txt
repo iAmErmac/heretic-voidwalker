@@ -31,7 +31,13 @@ class HVRMusicHandler : EventHandler
 	{
 		if(levelMusic.Length() > 0)
 		{
-			S_ChangeMusic("rmx" .. levelMusic.Mid(3));
+			let soundtrack = levelMusic.MakeLower();
+			
+			for(int i = 0; i < heretic_sound_tracks.Size(); i++) {
+				if(soundtrack == heretic_sound_tracks[i]) { //only try to replace default heretic soundtracks
+					S_ChangeMusic("rmx" .. levelMusic.Mid(3));
+				}
+			}
 		}
 	}
 	
@@ -39,6 +45,32 @@ class HVRMusicHandler : EventHandler
 	{
 		S_ChangeMusic(levelMusic);
 	}
+	
+	static const string heretic_sound_tracks[]  = {
+		'mus_e1m1',
+		'mus_e1m2',
+		'mus_e1m3',
+		'mus_e1m4',
+		'mus_e1m5',
+		'mus_e1m6',
+		'mus_e1m7',
+		'mus_e1m8',
+		'mus_e1m9',
+		'mus_e2m1',
+		'mus_e2m2',
+		'mus_e2m3',
+		'mus_e2m4',
+		'mus_e2m5',
+		'mus_e2m6',
+		'mus_e2m7',
+		'mus_e2m8',
+		'mus_e2m9',
+		'mus_e3m2',
+		'mus_e3m3',
+		'mus_titl',
+		'mus_intr',
+		'mus_cptd'
+	};
 	
 	String levelMusic;
 	bool playRemastered;

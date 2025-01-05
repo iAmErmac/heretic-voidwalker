@@ -6,7 +6,7 @@ HVR_GAMEPLAY 			= "Gameplay Options";
 HVR_PICKUP_MODEL 		= "Pickup Models";
 HVR_DIST_MODEL 			= "Distant Pickups";
 HVR_MODEL_DIST 			= "Model Load Distance";
-HVR_REMASTERED_TRACK 		= "Remastered Soundtracks";
+HVR_REMASTERED_TRACK 		= "Remastered Sound tracks";
 
 HVR_WEAPONS 			= "VR Weapon";
 HVR_WEAPON_MODEL 		= "Weapon Models";
