@@ -782,6 +782,7 @@ object HVR_WandAmmo
 {
     frame AMG1 { light SWANDAMMO }
     frame AMGV { light SWANDAMMO }
+    frame AMGM { light SWANDAMMO }
 }
 pulselight LWANDAMMO
 {
@@ -795,6 +796,7 @@ object HVR_WandHefty
 {
     frame AMG2 { light LWANDAMMO }
     frame AGHV { light LWANDAMMO }
+    frame AGHM { light LWANDAMMO }
 }
 
 pointlight ETHARROWS
@@ -808,6 +810,7 @@ object HVR_CrossbowAmmo
 {
     frame AMC1 { light ETHARROWS }
     frame AMCVA { light ETHARROWS }
+    frame AMCM { light ETHARROWS }
 }
 pointlight ETHQUIVER1
 {
@@ -838,6 +841,9 @@ object HVR_CrossbowHefty
     frame ACHVA { light ETHQUIVER1 }
 	frame ACHVB { light ETHQUIVER2 }
 	frame ACHVC { light ETHQUIVER3 }
+    frame ACHMA { light ETHQUIVER1 }
+	frame ACHMB { light ETHQUIVER2 }
+	frame ACHMC { light ETHQUIVER3 }
 }
 
 flickerlight2 SCLAWAMMO
@@ -857,6 +863,9 @@ object HVR_BlasterAmmo
     frame AMBVA { light SCLAWAMMO }
     frame AMBVB { light SCLAWAMMO }
     frame AMBVC { light SCLAWAMMO }
+    frame AMBMA { light SCLAWAMMO }
+    frame AMBMB { light SCLAWAMMO }
+    frame AMBMC { light SCLAWAMMO }
 }
 flickerlight2 LCLAWAMMO
 {
@@ -875,6 +884,9 @@ object HVR_BlasterHefty
     frame ABHVA { light LCLAWAMMO }
     frame ABHVB { light LCLAWAMMO }
     frame ABHVC { light LCLAWAMMO }
+    frame ABHMA { light LCLAWAMMO }
+    frame ABHMB { light LCLAWAMMO }
+    frame ABHMC { light LCLAWAMMO }
 }
 
 pulselight SSTAFFAMMO
@@ -895,6 +907,7 @@ object HVR_SkullRodAmmo
 {
 	frame AMS1A { light SSTAFFAMMO1 }
 	frame AMSVA { light SSTAFFAMMO1 }
+	frame AMSMA { light SSTAFFAMMO1 }
 }
 
 pulselight LSTAFFAMMO
@@ -915,6 +928,7 @@ object HVR_SkullRodHefty
 {
 	frame AMS2A { light LSTAFFAMMO1 }
 	frame ASHVA { light LSTAFFAMMO1 }
+	frame ASHMA { light LSTAFFAMMO1 }
 }
 
 flickerlight2 SRODAMMO
@@ -929,6 +943,7 @@ flickerlight2 SRODAMMO
 object HVR_PhoenixRodAmmo
 {
     frame AMP1 { light SRODAMMO }
+    frame AMPM { light SRODAMMO }
 }
 flickerlight2 LRODAMMO
 {
@@ -941,6 +956,7 @@ flickerlight2 LRODAMMO
 object HVR_PhoenixRodHefty
 {
     frame AMP2 { light LRODAMMO }
+    frame APHM { light LRODAMMO }
 }
 flickerlight2 CRYSTALVIAL
 {

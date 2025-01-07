@@ -1,0 +1,249 @@
+
+Model HVR_WandAmmo
+{
+	Path "models/pickups/ammo/wand"
+	Model 0 "wand-ammo1.md2"
+	Skin 0 "wand1.png"
+	
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 1.1 1.1 1.1
+	ZOffset -25
+
+	FrameIndex AMGM A 0 0
+}
+
+Model HVR_WandHefty
+{
+	Path "models/pickups/ammo/wand"
+	Model 0 "wand-ammo2.md2"
+	Skin 0 "wand2.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 1.0 1.0 1.0
+
+	FrameIndex AGHM A 0 0
+	FrameIndex AGHM B 0 0
+	FrameIndex AGHM C 0 0
+}
+
+Model HVR_CrossbowAmmo
+{
+	Path "models/pickups/ammo/bow"
+	Model 0 "flechesx3.md2"
+	Skin 0 "fleches.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 1.8 1.8 1.8
+	ZOffset -12
+
+	FrameIndex AMCM A 0 0
+}
+
+Model HVR_CrossbowHefty 
+{
+	Path "models/pickups/ammo/bow"
+	Model 0 "carquois.md2"
+	Skin 0 "fleches2.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 0.95 0.95 0.95
+	ZOffset -10
+
+	FrameIndex ACHM A 0 0
+	
+	Skin 0 "fleches.png"
+	FrameIndex ACHM B 0 0
+	FrameIndex ACHM C 0 0
+}
+
+Model HVR_BlasterAmmo 
+{
+	Path "models/pickups/ammo/blaster"
+	Model 0 "Ammo-Drag.md3"
+	Skin 0 "Ammo-DragH.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 0.3 0.3 0.3
+	ZOffset 2
+	
+	NOINTERPOLATION
+
+	FrameIndex AMBM A 0 0
+	FrameIndex AMBM B 0 1
+	FrameIndex AMBM C 0 2
+}
+
+Model HVR_BlasterAmmoOrb
+{
+	Path "models/pickups/ammo/blaster"
+	Model 0 "Ammo-Drag-outer.md3"
+	Skin 0 "Ammo-DragH.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 0.3 0.3 0.3
+	ZOffset 2
+	
+	DONTCULLBACKFACES
+
+	FrameIndex ABOM A 0 0
+}
+
+Model HVR_BlasterHefty 
+{
+	Path "models/pickups/ammo/blaster"
+	Model 0 "Ammo-Drag.md3"
+	Skin 0 "Ammo-DragH.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+	
+	NOINTERPOLATION
+
+	Scale 0.45 0.45 0.45
+	ZOffset 3
+
+	FrameIndex ABHM A 0 0
+	FrameIndex ABHM B 0 1
+	FrameIndex ABHM C 0 2
+}
+
+Model HVR_BlasterHeftyOrb
+{
+	Path "models/pickups/ammo/blaster"
+	Model 0 "Ammo-Drag-outer.md3"
+	Skin 0 "Ammo-DragH.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 0.45 0.45 0.45
+	ZOffset 3
+	
+	DONTCULLBACKFACES
+
+	FrameIndex ABOM A 0 0
+}
+
+Model HVR_SkullRodAmmo
+{
+	Path "models/pickups/ammo/skull"
+	Model 0 "HellAmmo1.md2"
+	Skin 0 "HellAmmo1.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 0.22 0.22 0.22
+
+	FrameIndex AMSM A 0 0
+	FrameIndex AMSM B 0 0
+	FrameIndex AMSM C 0 0
+}
+
+Model HVR_SkullRodHefty
+{
+	Path "models/pickups/ammo/skull"
+	Model 0 "HellAmmo2.md2"
+	Skin 0 "HellAmmo2.png"
+
+	ROTATING
+	rotation-speed 0.8
+	rotation-vector 0 1 0
+
+	Scale 0.32 0.32 0.32
+	Offset 1.8 0.0 0.0
+
+	FrameIndex ASHM A 0 0
+	FrameIndex ASHM B 0 0
+	FrameIndex ASHM C 0 0
+}
+
+Model HVR_PhoenixRodAmmo
+{
+	Path "models/pickups/ammo/phoenix"
+	Model 0 "phoenix1.md2"
+	Skin 0 "phoenix1.png"
+
+	//ROTATING
+	//rotation-speed 0.8
+	//rotation-vector 0 1 0
+
+	Scale 1.2 1.2 1.2
+	ZOffset 0
+
+	FrameIndex AMPM A 0 0
+	FrameIndex AMPM B 0 0
+	FrameIndex AMPM C 0 0
+}
+
+Model HVR_PhoenixRodHefty
+{
+	Path "models/pickups/ammo/phoenix"
+	Model 0 "phoenix2.md2"
+	Skin 0 "phoenix2.png"
+
+	//ROTATING
+	//rotation-speed 0.8
+	//rotation-vector 0 1 0
+
+	Scale 1.25 1.25 1.25
+	ZOffset 0
+
+	FrameIndex APHM A 0 0
+	FrameIndex APHM B 0 0
+	FrameIndex APHM C 0 0
+}
+
+Model HVR_MaceAmmo
+{
+	Path "models/pickups/ammo/mace"
+	Model 0 "mace1.md2"
+	Skin 0 "mace2.png"
+
+	ROTATING
+	rotation-speed 0.2
+	rotation-vector 0 1 0
+
+	Scale 1.0 1.0 1.0
+	ZOffset 0
+	
+	FrameIndex AMMM A 0 0
+}
+
+Model HVR_MaceHefty
+{
+	Path "models/pickups/ammo/mace"
+	Model 0 "mace2.md2"
+	Skin 0 "mace2.png"
+
+	ROTATING
+	rotation-speed 0.2
+	rotation-vector 0 1 0
+
+	Scale 1.3 1.3 1.3
+	Offset -1.4 0.0 0.0
+	ZOffset 0
+
+	FrameIndex AMHM A 0 0
+}

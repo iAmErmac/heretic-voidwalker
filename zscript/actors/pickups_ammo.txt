@@ -11,13 +11,16 @@ Class HVR_WandAmmo : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMG1 A 1;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMGV A 1;
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		AMGM A 1 Bright;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("GoldWandAmmo", 10);
 		Stop;
@@ -34,13 +37,16 @@ Class HVR_WandHefty : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMG2 ABC 4;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AGHV ABC 4;
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		AGHM ABC 4 Bright;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("GoldWandAmmo", 50);
 		Stop;
@@ -57,13 +63,16 @@ Class HVR_CrossbowAmmo : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMC1 A 1;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMCV A 1 A_SpawnItemEx("HVR_BoltAura");
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		AMCM A 1;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("CrossbowAmmo", 5);
 		Stop;
@@ -97,15 +106,18 @@ Class HVR_CrossbowHefty : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMC2 ABC 5;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		ACHV AAAAA 1 BRIGHT {A_SpawnItemEx("HVR_Quiver"); A_SpawnItemEx("HVR_BoltAuraHefty1");}
 		ACHV BBBBB 1 BRIGHT {A_SpawnItemEx("HVR_Quiver"); A_SpawnItemEx("HVR_BoltAuraHefty2");}
 		ACHV CCCCC 1 BRIGHT {A_SpawnItemEx("HVR_Quiver"); A_SpawnItemEx("HVR_BoltAuraHefty3");}
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		ACHM ABC 5;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("CrossbowAmmo", 20);
 		Stop;
@@ -188,18 +200,21 @@ Class HVR_BlasterAmmo : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMB1 ABC 4;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMBV A 0 A_SetAngle(angle-90);
 		AMBV AAAA 1 {A_SpawnItemEx("HVR_BlastOrb1"); A_SpawnItemEx("HVR_BlastOrb2");}
 		AMBV B 0 A_SetAngle(angle-90);
 		AMBV BBBB 1 {A_SpawnItemEx("HVR_BlastOrb1"); A_SpawnItemEx("HVR_BlastOrb2");}
 		AMBV C 0 A_SetAngle(angle-90);
 		AMBV CCCC 1 {A_SpawnItemEx("HVR_BlastOrb1"); A_SpawnItemEx("HVR_BlastOrb2");}
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		AMBM AAAABBBBCCCC 1 A_SpawnItemEx("HVR_BlasterAmmoOrb");
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("BlasterAmmo", 10);
 		Stop;
@@ -240,6 +255,23 @@ Class HVR_BlastOrb2 : Actor
 	}
 }
 
+Class HVR_BlasterAmmoOrb : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "ADD";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		ABOM A 2;
+		stop;
+	}
+}
+
 Class HVR_BlasterHefty : HVR_CustomPickups
 {
 	Default
@@ -250,18 +282,21 @@ Class HVR_BlasterHefty : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMB2 ABC 4;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		ABHV A 0 A_SetAngle(angle+90);
 		ABHV AAAA 1 {A_SpawnItemEx("HVR_BlastOrbHefty1"); A_SpawnItemEx("HVR_BlastOrbHefty2");}
 		ABHV B 0 A_SetAngle(angle+90);
 		ABHV BBBB 1 {A_SpawnItemEx("HVR_BlastOrbHefty1"); A_SpawnItemEx("HVR_BlastOrbHefty2");}
 		ABHV C 0 A_SetAngle(angle+90);
 		ABHV CCCC 1 {A_SpawnItemEx("HVR_BlastOrbHefty1"); A_SpawnItemEx("HVR_BlastOrbHefty2");}
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		ABHM AAAABBBBCCCC 1 A_SpawnItemEx("HVR_BlasterHeftyOrb");
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("BlasterAmmo", 25);
 		Stop;
@@ -302,6 +337,23 @@ Class HVR_BlastOrbHefty2 : Actor
 	}
 }
 
+Class HVR_BlasterHeftyOrb : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "ADD";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		ABOM A 2;
+		stop;
+	}
+}
+
 Class HVR_SkullRodAmmo : HVR_CustomPickups
 {
 	Default
@@ -312,13 +364,16 @@ Class HVR_SkullRodAmmo : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMS1 AB 5;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMSV AB 5;
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		AMSM AB 5 Bright;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("SkullRodAmmo", 20);
 		Stop;
@@ -335,13 +390,16 @@ Class HVR_SkullRodHefty : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMS2 AB 5;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		ASHV AB 5;
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		ASHM AB 5 Bright;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("SkullRodAmmo", 100);
 		Stop;
@@ -358,15 +416,22 @@ Class HVR_PhoenixRodAmmo : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
+		TNT1 A 0 A_SetRenderStyle(1, STYLE_Normal);
 		AMP1 ABC 4;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMP1 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrb"); A_SpawnItemEx("HVR_RodOrbFlame1");}
 		AMP1 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrb"); A_SpawnItemEx("HVR_RodOrbFlame2");}
 		AMP1 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrb"); A_SpawnItemEx("HVR_RodOrbFlame3");}
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		TNT1 A 0 A_SetRenderStyle(1, STYLE_Subtract);
+		AMPM AAAA 1 { A_Face(players[consoleplayer].mo); A_SpawnItemEx("HVR_RodOrbSprite"); }
+		AMPM BBBB 1 { A_Face(players[consoleplayer].mo); A_SpawnItemEx("HVR_RodOrbSprite2"); }
+		AMPM CCCC 1 { A_Face(players[consoleplayer].mo); A_SpawnItemEx("HVR_RodOrbSprite3"); }
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("PhoenixRodAmmo", 1);
 		Stop;
@@ -441,6 +506,57 @@ Class HVR_RodOrbFlame3 : Actor
 	}
 }
 
+Class HVR_RodOrbSprite : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		AMP1 A 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbSprite2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		AMP1 B 2;
+		stop;
+	}
+}
+
+Class HVR_RodOrbSprite3 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		AMP1 C 2;
+		stop;
+	}
+}
+
 
 Class HVR_PhoenixRodHefty : HVR_CustomPickups
 {
@@ -452,15 +568,22 @@ Class HVR_PhoenixRodHefty : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
+		TNT1 A 0 A_SetRenderStyle(1, STYLE_Normal);
 		AMP2 ABC 4;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMP2 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrbHefty"); A_SpawnItemEx("HVR_RodOrbHeftyFlame1");}
 		AMP2 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrbHefty"); A_SpawnItemEx("HVR_RodOrbHeftyFlame2");}
 		AMP2 NNNN 1 bright {A_SpawnItemEx("HVR_RodOrbHefty"); A_SpawnItemEx("HVR_RodOrbHeftyFlame3");}
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		TNT1 A 0 A_SetRenderStyle(1, STYLE_Subtract);
+		APHM AAAA 1 { A_Face(players[consoleplayer].mo); A_SpawnItemEx("HVR_RodHeftyOrbSprite"); }
+		APHM BBBB 1 { A_Face(players[consoleplayer].mo); A_SpawnItemEx("HVR_RodHeftyOrbSprite2"); }
+		APHM CCCC 1 { A_Face(players[consoleplayer].mo); A_SpawnItemEx("HVR_RodHeftyOrbSprite3"); }
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("PhoenixRodAmmo", 10);
 		Stop;
@@ -535,6 +658,57 @@ Class HVR_RodOrbHeftyFlame3 : Actor
 	}
 }
 
+Class HVR_RodHeftyOrbSprite : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		AMP2 A 2;
+		stop;
+	}
+}
+
+Class HVR_RodHeftyOrbSprite2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		AMP2 B 2;
+		stop;
+	}
+}
+
+Class HVR_RodHeftyOrbSprite3 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	RenderStyle "add";
+	ALPHA 0.9;
+	}
+	
+	states
+	{
+	Spawn:
+		AMP2 C 2;
+		stop;
+	}
+}
+
 Class HVR_MaceAmmo : HVR_CustomPickups
 {
 	Default
@@ -545,13 +719,16 @@ Class HVR_MaceAmmo : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMM1 A 1;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMMV A 1;
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		AMMM A 1;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("MaceAmmo", 20);
 		Stop;
@@ -568,13 +745,16 @@ Class HVR_MaceHefty : HVR_CustomPickups
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel > 0, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
 		AMM2 A 1;
 		Loop;
 	SpawnVoxel:
-		TNT1 A 0 A_JumpIf(invoker.pickupModel == 0, "Spawn");
 		AMHV A 1;
-		Loop;
+		Goto Spawn;
+	Spawn3D:
+		AMHM A 1;
+		Goto Spawn;
 	Pickup:
 		#### # 1 A_GiveInventory("MaceAmmo", 100);
 		Stop;

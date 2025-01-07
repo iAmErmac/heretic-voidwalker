@@ -1,4 +1,6 @@
 
+//weapons
+
 #include "modeldefs/weapons/staff.txt"
 #include "modeldefs/weapons/gauntlet.txt"
 #include "modeldefs/weapons/wand.txt"
@@ -7,3 +9,13 @@
 #include "modeldefs/weapons/skullrod.txt"
 #include "modeldefs/weapons/phoenixrod.txt"
 #include "modeldefs/weapons/mace.txt"
+
+//pickups
+
+#include "modeldefs/pickups/ammo.txt"
+#include "modeldefs/pickups/items.txt"
+#include "modeldefs/pickups/keys.txt"
+
+//props
+
+#include "modeldefs/props.txt"
