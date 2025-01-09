@@ -6,7 +6,7 @@ Model HVR_WandAmmo
 	Skin 0 "wand1.png"
 	
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 1.1 1.1 1.1
@@ -22,7 +22,7 @@ Model HVR_WandHefty
 	Skin 0 "wand2.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 1.0 1.0 1.0
@@ -39,7 +39,7 @@ Model HVR_CrossbowAmmo
 	Skin 0 "fleches.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 1.8 1.8 1.8
@@ -55,7 +55,7 @@ Model HVR_CrossbowHefty
 	Skin 0 "fleches2.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 0.95 0.95 0.95
@@ -75,7 +75,7 @@ Model HVR_BlasterAmmo
 	Skin 0 "Ammo-DragH.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 0.3 0.3 0.3
@@ -95,7 +95,7 @@ Model HVR_BlasterAmmoOrb
 	Skin 0 "Ammo-DragH.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 0.3 0.3 0.3
@@ -113,7 +113,7 @@ Model HVR_BlasterHefty
 	Skin 0 "Ammo-DragH.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 	
 	NOINTERPOLATION
@@ -133,7 +133,7 @@ Model HVR_BlasterHeftyOrb
 	Skin 0 "Ammo-DragH.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 0.45 0.45 0.45
@@ -151,7 +151,7 @@ Model HVR_SkullRodAmmo
 	Skin 0 "HellAmmo1.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 0.22 0.22 0.22
@@ -168,7 +168,7 @@ Model HVR_SkullRodHefty
 	Skin 0 "HellAmmo2.png"
 
 	ROTATING
-	rotation-speed 0.8
+	rotation-speed 1.0
 	rotation-vector 0 1 0
 
 	Scale 0.32 0.32 0.32
@@ -186,7 +186,7 @@ Model HVR_PhoenixRodAmmo
 	Skin 0 "phoenix1.png"
 
 	//ROTATING
-	//rotation-speed 0.8
+	//rotation-speed 1.0
 	//rotation-vector 0 1 0
 
 	Scale 1.2 1.2 1.2
@@ -204,7 +204,7 @@ Model HVR_PhoenixRodHefty
 	Skin 0 "phoenix2.png"
 
 	//ROTATING
-	//rotation-speed 0.8
+	//rotation-speed 1.0
 	//rotation-vector 0 1 0
 
 	Scale 1.25 1.25 1.25

@@ -1,0 +1,449 @@
+
+Model HVR_VialGlass2
+{
+	Path "models/pickups/Items/Vial"
+	
+	Model 0 "potion-vial.md2"
+	Skin 0 "Potions-Vial.jpg"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.0 1.0 1.2
+	ZOffset 32
+	
+	DONTCULLBACKFACES
+
+	FrameIndex PTNM A 0 0
+}
+
+Model HVR_VialCap
+{
+	Path "models/pickups/Items/Vial"
+	
+	Model 0 "potion-cap.md2"
+	Skin 0 "Potions-Vial.jpg"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+	
+	NOINTERPOLATION
+
+	Scale 1.0 1.0 1.2
+	ZOffset 32
+
+	FrameIndex PTNM A 0 0
+}
+
+Model HVR_SilverShield 
+{
+	Path "models/pickups/Items/shield"
+	
+	Model 0 "shield1.md2"
+	Skin 0 "shield1.png"
+
+	ROTATING
+	rotation-speed 2.5
+	rotation-vector 0 1 0
+	
+	Scale 1.2 1.2 1.2
+
+	FrameIndex SD1M A 0 0
+}
+
+Model HVR_EnchantedShield 
+{
+	Path "models/pickups/Items/shield"
+	
+	Model 0 "shield2.md2"
+	Skin 0 "shield2.png"
+	
+	ROTATING
+	rotation-speed 2.5
+	rotation-vector 0 1 0
+	
+	Scale 1.2 1.2 1.2
+
+	FrameIndex SD2M A 0 0
+}
+
+Model HVR_BagOfHolding
+{
+	Path "models/pickups/Items/bag"
+	
+	Model 0 "bag.md2"
+	Skin 0 "bag.png"
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+	
+	Scale 0.8 0.8 0.8
+	ZOffset 10
+
+	FrameIndex BAGM A 0 0
+}
+
+Model HVR_FlaskGlass2
+{
+	Path "models/pickups/Items/Flask"
+	
+	Model 0 "Flask.md2"
+	Skin 0 "Flask.png"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.5 1.5 1.3
+	ZOffset -13
+
+	FrameIndex PT2M A 0 0
+}
+
+Model HVR_FlaskLquidA
+{
+	Path "models/pickups/Items/Flask"
+	
+	Model 0 "Liquid.md2"
+	Skin 0 "Liquid-v.jpg"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.5 1.5 1.3
+	ZOffset -13
+
+	FrameIndex PT2M A 0 0
+}
+
+Model HVR_FlaskLquidB
+{
+	Path "models/pickups/Items/Flask"
+	
+	Model 0 "Liquid.md2"
+	Skin 0 "Liquid-v.jpg"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.5 1.5 1.3
+	ZOffset -13
+
+	FrameIndex PT2M A 0 1
+}
+
+Model HVR_FlaskLquidC
+{
+	Path "models/pickups/Items/Flask"
+	
+	Model 0 "Liquid.md2"
+	Skin 0 "Liquid-v.jpg"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.5 1.5 1.3
+	ZOffset -13
+
+	FrameIndex PT2M A 0 2
+}
+
+Model HVR_ArtiSuperHealth 
+{
+	Path "models/pickups/Items/SuperHealth"
+	
+	Model 0 "shboost.md2"
+	Skin 0 "shboost.pcx"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.55 1.55 1.4
+	ZOffset -3
+
+	FrameIndex SHLM A 0 0
+}
+
+Model HVR_SuperMap
+{
+	Path "models/pickups/Items/map"
+	
+	Model 0 "map.md2"
+	Skin 0 "map.png"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+	
+	Scale 1.1 1.1 1.1
+
+	FrameIndex SMPM A 0 0
+}
+
+Model HVR_ArtiInvisibility 
+{
+	Path "models/pickups/Items/shadow"
+	
+	Model 0 "ShadowsSphere.md2"
+	Skin 0 "ShadowsSphere.png"
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 0.7 0.7 0.7
+	ZOffset -37
+
+	FrameIndex INVM A 0 0
+}
+
+Model HVR_ArtiInvulnerability
+{
+	Path "models/pickups/Items/ring"
+	
+	Model 0 "ring.md2"
+	Skin 0 "ring1.pcx"
+	
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.25 1.25 1.25
+	ZOffset -7
+
+	FrameIndex INRM A 0 0
+	
+	Skin 0 "ring2.pcx"
+	FrameIndex INRM B 0 0
+	
+	Skin 0 "ring3.pcx"
+	FrameIndex INRM C 0 0
+	
+	Skin 0 "ring4.pcx"
+	FrameIndex INRM D 0 0
+}
+
+Model HVR_ArtiEgg 
+{
+	Path "models/pickups/Items/egg"
+	
+	Model 0 "egg.md2"
+	Skin 0 "egg.png"
+	Model 1 "egg-fx.md2"
+	Skin 1 "egg-fx.png"
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 7.0 7.0 8.0
+	ZOffset +30
+	
+	NOINTERPOLATION
+
+	FrameIndex EGGM A 0 0	FrameIndex EGGM A 1 0
+	FrameIndex EGGM B 0 1	FrameIndex EGGM B 1 1
+	FrameIndex EGGM C 0 2	FrameIndex EGGM C 1 2
+	FrameIndex EGGM D 0 3	FrameIndex EGGM D 1 3
+}
+
+Model HVR_ArtiFly 
+{
+	Path "models/pickups/Items/Wings"
+	
+	Model 0 "Wings.md2"
+	Skin 0 "Wings.png"
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 0.3 0.3 0.3
+	ZOffset +25
+
+	FrameIndex SOAM A 0 0
+	FrameIndex SOAM B 0 1
+	FrameIndex SOAM C 0 2
+	FrameIndex SOAM D 0 3
+	FrameIndex SOAM E 0 4
+	FrameIndex SOAM F 0 5
+	FrameIndex SOAM G 0 6
+	FrameIndex SOAM H 0 7
+}
+
+Model HVR_ArtiTeleport 
+{
+	Path "models/pickups/Items/teleport"
+	
+	Model 0 "teleport.md2"
+	Skin 0 "teleport-a.png"
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.38 1.38 1.38
+	ZOffset -5
+
+	FrameIndex ATLM A 0 0
+	
+	Skin 0 "teleport-b.png"
+	FrameIndex ATLM B 0 0
+	
+	Skin 0 "teleport-c.png"
+	FrameIndex ATLM C 0 0
+}
+
+Model HVR_BombFrame2
+{
+	Path "models/pickups/Items/bomb"
+	
+	Model 0 "bomb.md3"
+	Skin 0 "bomb.png"
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+
+	Scale 1.1 1.1 1.2
+	ZOffset 20
+
+	FrameIndex FBMM A 0 4
+}
+
+Model HVR_BombGlass2
+{
+	Path "models/pickups/Items/bomb"
+	
+	Model 0 "bomb-glass.md3"
+	Skin 0 "bomb.png"
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+	
+	DONTCULLBACKFACES
+
+	Scale 1.1 1.1 1.2
+	ZOffset 20
+
+	FrameIndex FBMM Z 0 0
+}
+
+Model HVR_ActivatedTimeBomb
+{
+	Path "models/pickups/Items/bomb"
+	
+	Model 0 "bomb.md3"
+	Skin 0 "bomb.png"
+
+	Scale 1.1 1.1 1.2
+	ZOffset 20
+
+	FrameIndex FBMM A 0 0
+	FrameIndex FBMM B 0 1
+	FrameIndex FBMM C 0 2
+	FrameIndex FBMM D 0 3
+	FrameIndex FBMM E 0 4
+}
+
+Model HVR_ActiveBombGlass2
+{
+	Path "models/pickups/Items/bomb"
+	
+	Model 0 "bomb-glass.md3"
+	Skin 0 "bomb.png"
+
+	Scale 1.1 1.1 1.2
+	ZOffset 20
+
+	FrameIndex FBMM Z 0 0
+}
+
+Model HVR_ArtiTomeOfPower 
+{
+	Path "models/pickups/Items/Tome"
+	
+	Model 0 "Tome.md2"
+	Skin 0 "tome.png"
+
+	Scale 1.3 1.3 1.3
+
+	ROTATING
+	rotation-speed 1.0
+	rotation-vector 0 1 0
+	ZOffset -8
+
+	FrameIndex PWBM A 0 0
+}
+
+Model HVR_ArtiTorch
+{
+	Path "models/pickups/Items/Torch"
+	
+	Model 0 "Torch.md3"
+	Skin 0 "Torch.png"
+
+	Scale 0.75 0.75 0.75
+	ZOffset 5
+
+	ROTATING
+	rotation-speed 1.0
+	
+	FrameIndex TRCM A 0 0
+}
+
+Model HVR_ArtiTorchFlameA
+{
+	Path "models/pickups/Items/Torch"
+	
+	Model 0 "Torch-flame.md3"
+	Skin 0 "Torch.png"
+
+	Scale 0.75 0.75 0.75
+	ZOffset 5
+
+	ROTATING
+	rotation-speed 1.0
+	
+	FrameIndex TRCM X 0 0
+}
+
+Model HVR_ArtiTorchFlameB
+{
+	Path "models/pickups/Items/Torch"
+	
+	Model 0 "Torch-flame.md3"
+	Skin 0 "Torch.png"
+
+	Scale 0.75 0.75 0.75
+	ZOffset 5
+
+	ROTATING
+	rotation-speed 1.0
+	
+	FrameIndex TRCM Y 0 1
+}
+
+Model HVR_ArtiTorchFlameC
+{
+	Path "models/pickups/Items/Torch"
+	
+	Model 0 "Torch-flame.md3"
+	Skin 0 "Torch.png"
+
+	Scale 0.75 0.75 0.75
+	ZOffset 5
+
+	ROTATING
+	rotation-speed 1.0
+	
+	FrameIndex TRCM Z 0 2
+}

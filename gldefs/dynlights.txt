@@ -971,10 +971,7 @@ flickerlight2 CRYSTALVIAL
 object HVR_CrystalVial
 {
     frame PTN1 { light CRYSTALVIAL }
-}
-object HVR_VialGlass 
-{
-	frame PTNV {light CRYSTALVIAL}
+    frame TNT1 { light CRYSTALVIAL }
 }
 
 // artifacts -------------------------------------------------------------------
@@ -992,10 +989,7 @@ flickerlight2 QUARTZFLASK
 object HVR_ArtiHealth
 {
     frame PTN2 { light QUARTZFLASK }
-}
-object HVR_FlaskGlass 
-{
-	frame PT2V {light QUARTZFLASK}
+    frame TNT1 { light QUARTZFLASK }
 }
 
 flickerlight2 ARTITORCH
@@ -1010,6 +1004,7 @@ flickerlight2 ARTITORCH
 object HVR_ArtiTorch
 {
     frame TRCH { light ARTITORCH }
+    frame TRCM { light ARTITORCH }
 }
 object HVR_ArTorchFlameA
 {
@@ -1056,6 +1051,9 @@ object HVR_ArtiEgg
     frame EGGVA { light ARTIEGG1 }
 	frame EGGVB { light ARTIEGG2 }
 	frame EGGVC { light ARTIEGG3 }
+    frame EGGMA { light ARTIEGG1 }
+	frame EGGMB { light ARTIEGG2 }
+	frame EGGMC { light ARTIEGG3 }
 }
 
 pointlight ARTIRING1
@@ -1100,6 +1098,10 @@ object HVR_ArtiInvulnerability
 	frame INRVB { light ARTIRING2 }
 	frame INRVC { light ARTIRING3 }
 	frame INRVD { light ARTIRING4 }
+    frame INRMA { light ARTIRING1 }
+	frame INRMB { light ARTIRING2 }
+	frame INRMC { light ARTIRING3 }
+	frame INRMD { light ARTIRING4 }
 }
 
 // decorations -----------------------------------------------------------------
