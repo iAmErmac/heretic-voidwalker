@@ -147,10 +147,21 @@ Class HVRConfigHandler : Eventhandler
 			configItem.pickupModel = pickupModel;
 			configItem.distModel = distModel;
 			configItem.modelDist = modelDist;
+			
+			if(developer > 0)
+			{
+				//auto-cycle between models for dev test
+				if(test_count == 2)
+					test_count = 0;
+				else
+					test_count++;
+				configItem.pickupModel = test_count;
+			}
 		}
 	}
 	
 	private hvr_Settings _settings;
+	private int test_count;
 }
 
 //inventory item where the configs are stored

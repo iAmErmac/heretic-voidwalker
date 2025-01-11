@@ -1072,3 +1072,87 @@ Class HVR_ArtiTorchFlameC : Actor
 		stop;
 	}
 }
+
+
+//keys
+
+Class HVR_KeyBlue : HVR_CustomPickups
+{
+	Default
+	{
+	+FLOATBOB
+	Inventory.PickupMessage "$TXT_GOTBLUEKEY";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
+		BKYY ABCDEFGHIJ 3 Bright;
+		Loop;
+	SpawnVoxel:
+		BKYV A 1 Bright;
+		Goto Spawn;
+	Spawn3D:
+		BKYM A 1 Bright;
+		Goto Spawn;
+	Pickup:
+		#### # 1 A_GiveInventory("KeyBlue", 1);
+		Stop;
+	}
+}
+
+Class HVR_KeyGreen : HVR_CustomPickups
+{
+	Default
+	{
+	+FLOATBOB
+	Inventory.PickupMessage "$TXT_GOTGREENKEY";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
+		AKYY ABCDEFGHIJ 3 Bright;
+		Loop;
+	SpawnVoxel:
+		AKYV A 1 Bright;
+		Goto Spawn;
+	Spawn3D:
+		AKYM A 1 Bright;
+		Goto Spawn;
+	Pickup:
+		#### # 1 A_GiveInventory("KeyGreen", 1);
+		Stop;
+	}
+}
+
+Class HVR_KeyYellow : HVR_CustomPickups
+{
+	Default
+	{
+	+FLOATBOB
+	Inventory.PickupMessage "$TXT_GOTGREENKEY";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 1, "SpawnVoxel");
+		TNT1 A 0 A_JumpIf(invoker.pickupModel == 2, "Spawn3D");
+		CKYY ABCDEFGHI 3 Bright;
+		Loop;
+	SpawnVoxel:
+		CKYV A 1 Bright;
+		Goto Spawn;
+	Spawn3D:
+		CKYM A 1 Bright;
+		Goto Spawn;
+	Pickup:
+		#### # 1 A_GiveInventory("KeyYellow", 1);
+		Stop;
+	}
+}

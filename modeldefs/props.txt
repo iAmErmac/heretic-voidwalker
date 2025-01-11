@@ -1,0 +1,407 @@
+
+Model HVR_Barrel 
+{
+	Path "models/props/Barrel"
+	
+	Model 0 "barrel.MD2"
+	Skin 0 "barrel.png"
+
+	Scale 1.1 1.1 1.1
+
+	FrameIndex BARM A 0 0
+}
+
+Model HVR_BrownPillar 
+{
+	Path "models/props/Pillar/Big"
+	
+	Model 0 "plrbig.md2"
+	Skin 0 "plrbig.png"
+
+	Scale 1.2 1.2 1.13
+
+	FrameIndex BRPM A 0 0
+}
+
+Model HVR_Chandelier 
+{
+	Path "models/props/Chandelier"
+	
+	Model 0 "Chandelier.md3"
+	Skin 0 "Chandelier.png"
+
+	Scale 0.75 0.75 0.75
+	ZOffset -2
+
+	FrameIndex CHDM A 0 0
+}
+
+Model HVR_FireBrazier 
+{
+	Path "models/props/Brazier"
+	
+	Model 0 "Brazier.md2"
+	Skin 0 "Brazier.png"
+	Zoffset -6
+	Scale 1.0 1.0 1.0
+
+	FrameIndex KFR1 M 0 0
+}
+
+Model HVR_ChandelierFlame 
+{
+	Path "models/props/Chandelier"
+	
+	Model 0 "Chandelier-flame.md3"
+	Skin 0 "Chandelier.png"
+
+	Scale 0.75 0.75 0.75
+	ZOffset -2
+
+	FrameIndex CHDM A 0 0
+	FrameIndex CHDM B 0 1
+	FrameIndex CHDM C 0 2
+}
+
+Model HVR_HangingCorpse 
+{
+	Path "models/props/Corpse"
+	
+	Model 0 "HangCorpse.md2"
+	Skin 0 "HangCorpse.png"
+
+	Scale 1.0 1.0 1.0
+
+	FrameIndex HCRM A 0 0
+}
+
+Model HVR_KeyGizmoBlue 
+{
+	Path "models/props/Pillar/Door"
+	
+	Model 0 "plrdoor.md2"
+	Skin 0 "plrdoor.png"
+
+	Scale 1.0 1.0 1.2
+
+	FrameIndex KG1M A 0 0
+}
+
+Model HVR_KeyGizmoFloatBlue3 
+{
+	Path "models/props/Pillar/Door"
+	
+	Model 0 "orbblue.md2"
+	Skin 0 "orbblue.png"
+
+	Scale 1.0 1.0 1.0
+	ZOffset -10
+
+	FrameIndex KGBM A 0 0
+}
+
+Model HVR_KeyGizmoGreen 
+{
+	Path "models/props/Pillar/Door"
+	
+	Model 0 "plrdoor.md2"
+	Skin 0 "plrdoor.png"
+
+	Scale 1.0 1.0 1.2
+
+	FrameIndex KG1M A 0 0
+}
+
+Model HVR_KeyGizmoFloatGreen3 
+{
+	Path "models/props/Pillar/Door"
+	
+	Model 0 "orbgreen.md2"
+	Skin 0 "orbgreen.png"
+
+	Scale 1.0 1.0 1.0
+	ZOffset -10
+
+	FrameIndex KGGM A 0 0
+}
+
+Model HVR_KeyGizmoYellow 
+{
+	Path "models/props/Pillar/Door"
+	
+	Model 0 "plrdoor.md2"
+	Skin 0 "plrdoor.png"
+
+	Scale 1.0 1.0 1.2
+
+	FrameIndex KG1M A 0 0
+}
+
+Model HVR_KeyGizmoFloatYellow3 
+{
+	Path "models/props/Pillar/Door"
+	
+	Model 0 "orbyel.md2"
+	Skin 0 "orbyel.png"
+
+	Scale 1.0 1.0 1.0
+	ZOffset -10
+
+	FrameIndex KGYM A 0 0
+}
+
+Model HVR_Moss1
+{
+	Path "models/props/moss"
+	
+	Model 0 "moss1.md2"
+	Skin 0 "moss.png"
+
+	Scale 0.4 0.4 0.4
+	ZOffset 13
+
+	FrameIndex MS1M A 0 0
+}
+
+Model HVR_Moss2
+{
+	Path "models/props/moss"
+	
+	Model 0 "moss2.md2"
+	Skin 0 "moss.png"
+
+	Scale 0.4 0.4 0.4
+	ZOffset 13
+
+	FrameIndex MS2M A 0 0
+}
+
+Model HVR_Pod 
+{
+	Path "models/props/Pod"
+	
+	Model 0 "Spore.md2"
+	Skin 0 "Spore.png"
+
+	Scale 0.45 0.45 0.45
+	ZOffset 18
+
+	FrameIndex PODM A 0 0
+	FrameIndex PODM I 0 1
+	FrameIndex PODM J 0 2
+	FrameIndex PODM K 0 3
+	FrameIndex PODM L 0 4
+	FrameIndex PODM M 0 5
+	FrameIndex PODM N 0 6
+	FrameIndex PODM O 0 7
+	FrameIndex PODM P 0 8
+	
+	Scale 0.5 0.5 0.5
+	ZOffset 16
+	FrameIndex PODM B 0 7
+}
+
+Model HVR_PodGoo
+{
+	Path "models/props/Pod"
+	
+	Model 0 "Gib.md2"
+	Skin 0 "Gib.png"
+
+	Scale 0.3 0.3 0.3
+	ZOffset -3
+	
+	ROTATING
+	rotation-speed -3.0
+	rotation-vector 0 0 1
+
+	FrameIndex PODM H 0 0
+	FrameIndex PODM G 0 0
+}
+
+Model HVR_SerpentTorch 
+{
+	Path "models/props/Torch/Serpent"
+
+	Model 0 "SerpTorch01.md2"
+	Skin 0 "SerpTorch01.jpg"
+	Model 1 "SerpTorch02.md2"
+	Skin 1 "SerpTorch02.jpg"
+	Model 2 "SerpTorch03.md2"
+	Skin 2 "SerpTorch03.jpg"
+	
+	Scale 1.0 1.0 1.15
+
+	FrameIndex SRTM A 0 0	FrameIndex SRTM A 1 0	FrameIndex SRTM A 2 0
+}
+
+Model HVR_WallTorch
+{
+	Path "models/props/Torch/Wall"
+	
+	Model 0 "Torch.md2"
+	Skin 0 "Torch.png"
+
+	Scale 1.8 1.8 1.5
+	ZOffset -8
+	
+	FrameIndex WTRM A 0 0
+}
+
+Model HVR_SkullHang35 
+{
+	Path "models/props/Skull"
+	
+	Model 0 "skull4.md2"
+	Skin 0 "skull.png"
+
+	Scale 1.0 1.0 1.0
+
+	FrameIndex SKM4 A 0 0
+}
+
+Model HVR_SkullHang45 
+{
+	Path "models/props/Skull"
+	
+	Model 0 "skull3.md2"
+	Skin 0 "skull.png"
+
+	Scale 1.0 1.0 1.0
+
+	FrameIndex SKM3 A 0 0
+}
+
+Model HVR_SkullHang60 
+{
+	Path "models/props/Skull"
+	
+	Model 0 "skull2.md2"
+	Skin 0 "skull.png"
+
+	Scale 1.0 1.0 1.0
+
+	FrameIndex SKM2 A 0 0
+}
+
+Model HVR_SkullHang70 
+{
+	Path "models/props/Skull"
+	
+	Model 0 "skull1.md2"
+	Skin 0 "skull.png"
+
+	Scale 1.0 1.0 1.0
+
+	FrameIndex SKM1 A 0 0
+}
+
+Model HVR_SmallPillar 
+{
+	Path "models/props/Pillar/Small"
+	
+	Model 0 "plrsmall.md2"
+	Skin 0 "plrsmall.png"
+
+	Scale 1.1 1.1 1.2
+
+	FrameIndex SPLM A 0 0
+}
+
+Model HVR_StalactiteLarge 
+{
+	Path "models/props/Stalagmite"
+	
+	Model 0 "stalact1.md2"
+	Skin 0 "stalag.jpg"
+
+	Scale 1.1 1.1 1.1
+
+	FrameIndex SCLM A 0 0
+}
+
+Model HVR_StalactiteSmall 
+{
+	Path "models/props/Stalagmite"
+	
+	Model 0 "stalact2.md2"
+	Skin 0 "stalag.jpg"
+
+	Scale 1.1 1.1 1.1
+
+	FrameIndex SCSM A 0 0
+}
+
+Model HVR_StalagmiteLarge 
+{
+	Path "models/props/Stalagmite"
+	
+	Model 0 "stalagm1.md2"
+	Skin 0 "stalag.jpg"
+
+	Scale 1.1 1.1 1.1
+
+	FrameIndex SGLM A 0 0
+}
+
+Model HVR_StalagmiteSmall 
+{
+	Path "models/props/Stalagmite"
+	
+	Model 0 "stalagm2.md2"
+	Skin 0 "stalag.jpg"
+
+	Scale 0.6 0.6 0.6
+
+	FrameIndex SGSM A 0 0
+}
+
+Model HVR_Volcano 
+{
+	Path "models/props/Volcano"
+	
+	Model 0 "Volcano.md2"
+	Skin 0 "lava3.jpg"
+
+	Scale 0.35 0.35 0.25
+
+	FrameIndex VLCM A 0 0
+	FrameIndex VLCM B 0 0
+	FrameIndex VLCM C 0 0
+	FrameIndex VLCM D 0 0
+	FrameIndex VLCM E 0 0
+}
+
+Model HVR_VolcanoBlast 
+{
+	Path "models/props/Volcano"
+	
+	Model 0 "Rock-Large.md3"
+	Skin 0 "lava2.jpg"
+
+	Scale 0.8 0.8 0.8
+	
+	ROTATING
+	rotation-speed -2.0
+	rotation-vector 0 1 1
+
+	FrameIndex VFBM A 0 0
+	FrameIndex VFBM B 0 0
+}
+
+Model HVR_VolcanoTBlast 
+{
+	Path "models/props/Volcano"
+	
+	Model 0 "Rock-Small.md3"
+	Skin 0 "lava2.jpg"
+
+	Scale 0.8 0.8 0.8
+	
+	ROTATING
+	rotation-speed -2.0
+	rotation-vector 0 1 1
+
+	FrameIndex VTFM A 0 0
+	FrameIndex VTFM B 0 0
+}

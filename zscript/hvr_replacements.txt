@@ -30,12 +30,32 @@ Class HVRItemReplacementHandler : EventHandler
 			
 			//props
 			
+			if(e.Replacee is "Barrel") 					e.Replacement = 'HVR_Barrel';
+			if(e.Replacee is "BrownPillar") 			e.Replacement = 'HVR_BrownPillar';
+			if(e.Replacee is "Chandelier") 				e.Replacement = 'HVR_Chandelier';
+			if(e.Replacee is "FireBrazier") 			e.Replacement = 'HVR_FireBrazier';
+			if(e.Replacee is "HangingCorpse") 			e.Replacement = 'HVR_HangingCorpse';
 			if(e.Replacee is "KeyGizmoBlue") 			e.Replacement = 'HVR_KeyGizmoBlue';
 			if(e.Replacee is "KeyGizmoGreen") 			e.Replacement = 'HVR_KeyGizmoGreen';
 			if(e.Replacee is "KeyGizmoYellow") 			e.Replacement = 'HVR_KeyGizmoYellow';
-			if(e.Replacee is "FireBrazier") 			e.Replacement = 'HVR_FireBrazier';
+			if(e.Replacee is "Moss1") 					e.Replacement = 'HVR_Moss1';
+			if(e.Replacee is "Moss2") 					e.Replacement = 'HVR_Moss2';
+			if(e.Replacee is "Pod") 					e.Replacement = 'HVR_Pod';
+			if(e.Replacee is "PodGoo") 					e.Replacement = 'HVR_PodGoo';
 			if(e.Replacee is "WallTorch") 				e.Replacement = 'HVR_WallTorch';
 			if(e.Replacee is "SerpentTorch") 			e.Replacement = 'HVR_SerpentTorch';
+			if(e.Replacee is "SkullHang35") 			e.Replacement = 'HVR_SkullHang35';
+			if(e.Replacee is "SkullHang45") 			e.Replacement = 'HVR_SkullHang45';
+			if(e.Replacee is "SkullHang60") 			e.Replacement = 'HVR_SkullHang60';
+			if(e.Replacee is "SkullHang70") 			e.Replacement = 'HVR_SkullHang70';
+			if(e.Replacee is "SmallPillar") 			e.Replacement = 'HVR_SmallPillar';
+			if(e.Replacee is "StalactiteLarge") 		e.Replacement = 'HVR_StalactiteLarge';
+			if(e.Replacee is "StalactiteSmall") 		e.Replacement = 'HVR_StalactiteSmall';
+			if(e.Replacee is "StalagmiteLarge") 		e.Replacement = 'HVR_StalagmiteLarge';
+			if(e.Replacee is "StalagmiteSmall") 		e.Replacement = 'HVR_StalagmiteSmall';
+			if(e.Replacee is "Volcano") 				e.Replacement = 'HVR_Volcano';
+			if(e.Replacee is "VolcanoBlast") 			e.Replacement = 'HVR_VolcanoBlast';
+			if(e.Replacee is "VolcanoTBlast") 			e.Replacement = 'HVR_VolcanoTBlast';
 		}
 	}
 	
@@ -74,7 +94,10 @@ Class HVRItemReplacementHandler : EventHandler
 		"artiteleport",
 		"artitimebomb",
 		"artitomeofpower",
-		"artitorch"
+		"artitorch",
+		"keyblue",
+		"keygreen",
+		"keyyellow"
 	};
 	
 	static const string HVR_arti_replace_list[] = {
@@ -87,6 +110,9 @@ Class HVRItemReplacementHandler : EventHandler
 		"HVR_ArtiTeleport",
 		"HVR_ArtiTimeBomb",
 		"HVR_ArtiTomeOfPower",
-		"HVR_ArtiTorch"
+		"HVR_ArtiTorch",
+		"HVR_KeyBlue",
+		"HVR_KeyGreen",
+		"HVR_KeyYellow"
 	};
 }

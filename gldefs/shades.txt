@@ -141,3 +141,109 @@ material texture "models/weapons/mace/hand.png"
 {
 	shader "shaders/SimSun.fp"
 }
+
+//items
+
+material texture "models/pickups/Items/shield/shield1.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/pickups/Items/shield/shield2.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/pickups/Items/bag/bag.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/pickups/Items/map/map.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/pickups/Items/Wings/Wings.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/pickups/Items/bomb/bomb.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/pickups/Items/Tome/tome.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+//props
+
+material texture "models/props/Barrel/barrel.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Pillar/Big/plrbig.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Brazier/Brazier.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Corpse/HangCorpse.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Pillar/Door/plrdoor.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Pod/Spore.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/props/Pod/Gib.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Torch/Serpent/SerpTorch01.jpg"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/props/Torch/Serpent/SerpTorch02.jpg"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/props/Torch/Serpent/SerpTorch03.jpg"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Torch/Wall/Torch.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Skull/skull.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Pillar/Small/plrsmall.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/props/Stalagmite/stalag.png"
+{
+	shader "shaders/SimSun.fp"
+}

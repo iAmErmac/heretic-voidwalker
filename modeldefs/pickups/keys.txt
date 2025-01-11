@@ -1,0 +1,51 @@
+
+Model HVR_KeyBlue 
+{
+	Path "models/pickups/keys"
+	
+	Model 0 "blue.md2"
+	Skin 0 "blue.png"
+
+	ROTATING
+	rotation-speed 3.0
+	rotation-vector 0 1 0
+
+	Scale 1.0 1.0 1.0
+	ZOffset 1
+
+	FrameIndex BKYM A 0 0
+}
+
+Model HVR_KeyGreen 
+{
+	Path "models/pickups/keys"
+	
+	Model 0 "green.md2"
+	Skin 0 "green.png"
+
+	ROTATING
+	rotation-speed 3.0
+	rotation-vector 0 1 0
+
+	Scale 1.0 1.0 1.0
+	ZOffset 1
+
+	FrameIndex AKYM A 0 0
+}
+
+Model HVR_KeyYellow 
+{
+	Path "models/pickups/keys"
+	
+	Model 0 "yellow.md2"
+	Skin 0 "yellow.png"
+
+	ROTATING
+	rotation-speed 3.0
+	rotation-vector 0 1 0
+
+	Scale 1.2 1.2 1.2
+	ZOffset 1
+
+	FrameIndex CKYM A 0 0
+}

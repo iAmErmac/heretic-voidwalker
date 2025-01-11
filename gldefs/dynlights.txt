@@ -702,6 +702,8 @@ pointlight GAUNT
 object HVRGauntlets
 {
 	frame WGNT { light GAUNT }
+	frame GNTV { light GAUNT }
+	frame GNTM { light GAUNT }
 }
 
 pointlight GWAND
@@ -713,6 +715,7 @@ pointlight GWAND
 object HVRWand
 {
 	frame GWAN { light ELVENWAND }
+	frame WNDV { light ELVENWAND }
 }
 
 pointlight XBOW
@@ -724,6 +727,8 @@ pointlight XBOW
 object HVRCrossbow
 {
 	frame WBOW { light XBOW }
+	frame BOWV { light XBOW }
+	frame BOWM { light XBOW }
 }
 
 pointlight DCLAW
@@ -735,6 +740,8 @@ pointlight DCLAW
 object HVRBlaster
 {
 	frame WBLS { light DCLAW }
+	frame BLSV { light DCLAW }
+	frame BLSM { light DCLAW }
 }
 
 pointlight SKLROD
@@ -746,6 +753,8 @@ pointlight SKLROD
 object HVRSkullRod
 {
 	frame WSKL { light SKLROD }
+	frame SKLV { light SKLROD }
+	frame SKLM { light SKLROD }
 }
 
 pointlight PHXROD
@@ -757,6 +766,8 @@ pointlight PHXROD
 object HVRPhoenixRod
 {
 	frame WPHX { light PHXROD }
+	frame PHXV { light PHXROD }
+	frame PHXM { light PHXROD }
 }
 
 pointlight MACE
@@ -768,6 +779,8 @@ pointlight MACE
 object HVRMace
 {
 	frame WMCE { light MACE }
+	frame MCEV { light MACE }
+	frame MCEM { light MACE }
 }
 
 // pickups ---------------------------------------------------------------------
@@ -1116,6 +1129,8 @@ pointlight BLUESTATUE
 object HVR_KeyGizmoBlue
 {
     frame KGZ1 { light BLUESTATUE }
+    frame KG1V { light BLUESTATUE }
+    frame KG1M { light BLUESTATUE }
 }
 pointlight YELLOWSTATUE
 {
@@ -1127,6 +1142,8 @@ pointlight YELLOWSTATUE
 object HVR_KeyGizmoYellow
 {
     frame KGZ1 { light YELLOWSTATUE }
+    frame KG1V { light YELLOWSTATUE }
+    frame KG1M { light YELLOWSTATUE }
 }
 pointlight GREENSTATUE
 {
@@ -1138,6 +1155,8 @@ pointlight GREENSTATUE
 object HVR_KeyGizmoGreen
 {
     frame KGZ1 { light GREENSTATUE }
+    frame KG1V { light GREENSTATUE }
+    frame KG1M { light GREENSTATUE }
 }
 
 pulselight HYELLOWKEY
@@ -1167,17 +1186,23 @@ pulselight HGREENKEY
 	offset 0 14 0
 	//attenuate 1
 }
-object KeyGreen
+object HVR_KeyGreen
 {
     frame AKYY { light HGREENKEY }
+    frame AKYV { light HGREENKEY }
+    frame AKYM { light HGREENKEY }
 }
-object KeyBlue
+object HVR_KeyBlue
 {
     frame BKYY { light HBLUEKEY }
+    frame BKYV { light HBLUEKEY }
+    frame BKYM { light HBLUEKEY }
 }
-object KeyYellow
+object HVR_KeyYellow
 {
     frame CKYY  { light HYELLOWKEY }
+    frame CKYV  { light HYELLOWKEY }
+    frame CKYM  { light HYELLOWKEY }
 }
 
 pointlight TELEGLITTER1
@@ -1283,8 +1308,8 @@ object Volcano
 flickerlight2 CHANDELIER
 {
     color 0.5 0.2 0.0
-    size 176
-    secondarySize 192
+    size 80
+    secondarySize 96
     interval 0.1
     offset 0 13 0
 }
@@ -1319,15 +1344,25 @@ flickerlight2 SERPTORCH
 	//attenuate 1
 }
 
+object HVR_Chandelier
+{
+    frame CHDL { light CHANDELIER }
+    frame CHDV { light CHANDELIER }
+    frame CHDM { light CHANDELIER }
+}
 
 object HVR_WallTorch
 {
     frame WTRH { light WALLTORCH }
+    frame WTRV { light WALLTORCH }
+    frame WTRM { light WALLTORCH }
 }
 
 object HVR_SerpentTorch
 {
     frame SRTC { light SERPTORCH }
+    frame SRTV { light SERPTORCH }
+    frame SRTM { light SERPTORCH }
 }
 
 object HVR_FireBrazier

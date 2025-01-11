@@ -146,17 +146,17 @@ ASHVB = "ASHVB"
 }
 
 
-akyy = "akyy"
+akyv = "akyv"
 {
 	spin = 189
 }
 
-bkyy = "bkyy"
+bkyv = "bkyv"
 {
 	spin = 189
 }
 
-ckyy = "ckyy"
+ckyv = "ckyv"
 {
 	spin = 189
 }
