@@ -30,3 +30,41 @@ Class HVR_MummyFX1 : MummyFX1 replaces MummyFX1
 	RenderStyle "Normal";
 	}
 }
+
+
+
+Class Flare_General : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	+NOGRAVITY
+	+CLIENTSIDEONLY
+	+DONTBLAST
+	+FORCEXYBILLBOARD
+	-SOLID
+	+THRUACTORS
+	renderstyle "Add";
+	radius 1;
+	height 1;
+	alpha 0.2;
+	scale 0.4;
+	}
+}
+
+Class BlueStaffPuffFlare : Flare_General
+{
+	Default
+	{
+	alpha 0.3;
+	scale 0.13;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		L2NB A 1 Bright;
+		Stop;
+	}
+}

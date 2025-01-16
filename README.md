@@ -134,6 +134,9 @@ If you don't own Heretic:
 
 ## Recommended mods to combine with:
 
+* [Symphony of the Serpent Riders](https://www.moddb.com/games/heretic/downloads/heretic-symphony-of-the-serpent-riders-music-replacement)
+  - Remixed Sound Tracks for Heretic. All the music, originally composed by Kevin Schilder, has been faithfully remade in a more orchestral style while keeping the hard rock roots
+
 * [Nashgore Next](https://github.com/iAmErmac/NashGore/releases/latest)
   - NashGore NEXT is an evolution of Nash's Gore Mod: Vengeance Edition. NEXT is NOW!
 

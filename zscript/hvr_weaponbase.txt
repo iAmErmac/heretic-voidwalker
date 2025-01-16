@@ -6,6 +6,7 @@ Class HereticVRWeapon : HereticWeapon
 	protected bool distModel;
 	protected int modelDist;
 	protected bool showFLashSprite;
+	protected bool showParticles;
 	protected bool fastSwitchWeapon;
 	protected int HoloHUD;
 	protected int vrControlScheme;
@@ -44,11 +45,12 @@ Class HereticVRWeapon : HereticWeapon
 	{
 		_settings = hvr_Settings.of();
 		
-		showHands 				= _settings.weaponModel();
+		showHands 			= _settings.weaponModel();
 		pickupModel 			= _settings.pickupModel();
 		showFLashSprite 		= _settings.flashSprite();
+		showParticles 			= _settings.showParticles();
 		fastSwitchWeapon 		= _settings.weaponSwitch();
-		HoloHUD 				= _settings.holoHUD();
+		HoloHUD 			= _settings.holoHUD();
 		
 		//vrControlScheme 		= _settings.vrControlScheme();
 	}
@@ -457,6 +459,11 @@ Class HereticVRWeapon : HereticWeapon
 	States
 	{
 		HoloBracer:
+			TNT1 A 0 {
+				A_OverlayFlags(PSP_HoloBracer, PSPF_RENDERSTYLE | PSPF_FORCEALPHA, true);
+				//A_OverlayRenderstyle(PSP_HoloBracer, STYLE_Add);
+				A_OverlayAlpha(PSP_HoloBracer, 0.8);
+			}
 			RUNE A 1 Bright;
 			Loop;
 		Holobar1:

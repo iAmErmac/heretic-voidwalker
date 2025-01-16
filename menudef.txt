@@ -105,6 +105,8 @@ OptionMenu "HVROptionsMenu" {
 	
 	StaticText " "
 	StaticText "$HVR_GAMEPLAY", "Gold"
+	Option "$HVR_PARTICLES", 		"hvr_particles", 		"OnOff"
+	Option "$HVR_LESSPARTICLE", 		"hvr_lessparticle", 		"YesNo", hvr_particles
 	Option "$HVR_PICKUP_MODEL", 		"hvr_pickupmodel", 		"HVR_PickupModel_Option"
 	Option "$HVR_DIST_MODEL", 		"hvr_loadsprite", 		"HVR_DistModel_Option", hvr_pickupmodel
 	Slider "$HVR_MODEL_DIST", 		"hvr_model_dist", 		100, 5000, 100.0, 0, hvr_loadsprite

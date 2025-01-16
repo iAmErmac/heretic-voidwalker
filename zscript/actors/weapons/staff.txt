@@ -67,7 +67,7 @@ Class HVRStaff : HereticVRWeapon replaces Staff
 		STFF A 0 A_SetExtraModel("NHST");
 		#### # 0 A_JumpIf(invoker.owner.player.mo.countinv("HVRRuneShield") == 1, "DontFire"); 
 		#### BCDEFG 1;
-		#### H 1 A_StaffAttackX(random[StaffAttack](5, 20), "StaffPuff");
+		#### H 1 A_StaffAttackX(random[StaffAttack](5, 20), "HVRStaffPuff");
 		#### FDC 1;
 		#### A 4;
 		#### # 8 A_ReFire;
@@ -108,7 +108,7 @@ Class HVRStaffPowered : HVRStaff
 		STFF A 0 A_SetExtraModel("NHST");
 		#### # 0 A_JumpIf(invoker.owner.player.mo.countinv("HVRRuneShield") == 1, "DontFire"); 
 		#### BCDEFG 1;
-		#### H 1 A_StaffAttackX(random[StaffAttack](18, 81), "StaffPuff2");
+		#### H 1 A_StaffAttackX(random[StaffAttack](18, 81), "HVRPoweredStaffPuff");
 		#### FDC 1;
 		#### A 4;
 		#### # 8 A_ReFire;

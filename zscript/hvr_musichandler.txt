@@ -34,8 +34,9 @@ class HVRMusicHandler : EventHandler
 			let soundtrack = levelMusic.MakeLower();
 			
 			for(int i = 0; i < heretic_sound_tracks.Size(); i++) {
-				if(soundtrack == heretic_sound_tracks[i]) { //only try to replace default heretic soundtracks
+				if(soundtrack == heretic_sound_tracks[i].MakeLower()) { //only try to replace default heretic soundtracks
 					S_ChangeMusic("rmx" .. levelMusic.Mid(3));
+					break;
 				}
 			}
 		}

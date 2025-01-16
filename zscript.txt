@@ -19,5 +19,6 @@ version "3.0"
 #include "zscript/actors/pickups_ammo.txt"
 #include "zscript/actors/props.txt"
 #include "zscript/actors/effects.txt"
+#include "zscript/actors/particles.txt"
 
 #include "zscript/actors/player.txt"

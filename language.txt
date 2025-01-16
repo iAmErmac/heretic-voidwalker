@@ -3,6 +3,8 @@ MNU_HVROPTIONS 			= "Mod Options";
 HVR_OPTIONS 			= "VoidwalkeR Options";
 
 HVR_GAMEPLAY 			= "Gameplay Options";
+HVR_PARTICLES 			= "Fancy Particles";
+HVR_LESSPARTICLE 		= "Reduce Particles";
 HVR_PICKUP_MODEL 		= "Pickup Models";
 HVR_DIST_MODEL 			= "Distant Pickups";
 HVR_MODEL_DIST 			= "Model Load Distance";

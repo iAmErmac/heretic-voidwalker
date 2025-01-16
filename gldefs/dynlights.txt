@@ -1402,3 +1402,102 @@ glow
 	
 	Texture "F_SKY1", 705060, 384	
 }
+
+
+
+
+pointlight STAFPUFF01
+{
+    color 0.8 0.9 1.0
+    size 16
+}
+pointlight STAFPUFF02
+{
+    color 0.8 0.9 1.0
+    size 13
+}
+pointlight STAFPUFF03
+{
+    color 0.8 0.9 1.0
+    size 10
+}
+pointlight STAFPUFF04
+{
+    color 0.8 0.9 1.0
+    size 7
+}
+pointlight STAFPUFF05
+{
+    color 0.8 0.9 1.0
+    size 4
+}
+
+pointlight STAFF1PUFF1
+{
+    color 0.03 0.07 0.4
+    size 32
+    offset 0 3 0
+}
+pointlight STAFF1PUFF2
+{
+    color 0.03 0.07 0.4
+    size 28
+    offset 0 3 0
+}
+pointlight STAFF1PUFF3
+{
+    color 0.03 0.07 0.4
+    size 24
+    offset 0 3 0
+}
+pointlight STAFF1PUFF4
+{
+    color 0.03 0.07 0.4
+    size 20
+    offset 0 3 0
+}
+pointlight STAFF1PUFF5
+{
+    color 0.03 0.07 0.4
+    size 16
+    offset 0 3 0
+}
+pointlight STAFF1PUFF6
+{
+    color 0.03 0.07 0.4
+    size 12
+    offset 0 3 0
+}
+
+object HVRPoweredStaffPuff
+{
+	frame PUF4A { light STAFF1PUFF1 }
+	frame PUF4B { light STAFF1PUFF2 }
+	frame PUF4C { light STAFF1PUFF3 }
+	frame PUF4D { light STAFF1PUFF4 }
+	frame PUF4E { light STAFF1PUFF5 }
+	frame PUF4F { light STAFF1PUFF6 }
+}
+
+pointlight GOLDWANDSHOT1
+{
+    color 0.4 0.34 0.0
+    size 59
+    offset 0 1 0
+}
+object GoldWandTracer
+{
+    frame FX01 { light GOLDWANDSHOT1 }
+}
+object GoldWandFX3
+{
+    frame FX01 { light GOLDWANDSHOT1 }
+}
+pointlight GOLDWANDSHOT2
+{ color 0.34 0.29 0.0 size 68 offset 0 1 0 }
+pointlight GOLDWANDSHOT3
+{ color 0.28 0.24 0.0 size 80 offset 0 1 0 }
+pointlight GOLDWANDSHOT4
+{ color 0.24 0.19 0.0 size 96 offset 0 1 0 }
+pointlight GOLDWANDSHOT5
+{ color 0.18 0.14 0.0 size 116 offset 0 1 0 }

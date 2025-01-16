@@ -20,6 +20,8 @@ class hvr_Settings
   int weaponModel()   					{ return weaponModelCvar.getInt();   	}
   int pickupModel()   					{ return pickupModelCvar.getInt();   	}
   bool flashSprite()   					{ return flashSpriteCvar.getBool();   	}
+  bool showParticles()   				{ return particlesCvar.getBool();   	}
+  bool lessParticles()   				{ return lessParticlesCvar.getBool();   }
   bool weaponSwitch()   				{ return weaponSwitchCvar.getBool();   	}
   int holoHUD()   					{ return holoHUDCvar.getInt();   	}
   int gauntletHand()   					{ return gauntletCvar.getInt();   	}
@@ -36,6 +38,8 @@ class hvr_Settings
     result.weaponModelCvar 		   		= hvr_CVar.of("hvr_weaponmodel");
     result.pickupModelCvar 		   		= hvr_CVar.of("hvr_pickupmodel");
     result.flashSpriteCvar 		   		= hvr_CVar.of("hvr_flashsprite");
+    result.particlesCvar 		   		= hvr_CVar.of("hvr_particles");
+    result.lessParticlesCvar 		   		= hvr_CVar.of("hvr_lessparticle");
     result.weaponSwitchCvar   				= hvr_CVar.of("hvr_fastswitch");
     result.holoHUDCvar   				= hvr_CVar.of("hvr_holohud");
     result.distModelCvar   				= hvr_CVar.of("hvr_loadsprite");
@@ -47,6 +51,8 @@ class hvr_Settings
   private hvr_CVar weaponModelCvar;
   private hvr_CVar pickupModelCvar;
   private hvr_CVar flashSpriteCvar;
+  private hvr_CVar particlesCvar;
+  private hvr_CVar lessParticlesCvar;
   private hvr_CVar weaponSwitchCvar;
   private hvr_CVar holoHUDCvar;
   private hvr_CVar gauntletCvar;

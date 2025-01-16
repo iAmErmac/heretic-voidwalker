@@ -33,9 +33,11 @@ Class HVRWand : HereticVRWeapon replaces GoldWand
 		double pitch = BulletSlope(aimflags: alflags);
 		int damage = random[FireGoldWand](7, 14);
 		double ang = angle;
+		double angOffset = 0;
 		if (player.refire)
 		{
-			ang += Random2[FireGoldWand]() * (5.625 / 256);
+			angOffset = Random2[FireGoldWand]() * (5.625 / 256);
+			ang += angOffset;
 
 			/*if (GetCVar ("vertspread") && !sv_novertspread)
 			{
@@ -43,6 +45,8 @@ Class HVRWand : HereticVRWeapon replaces GoldWand
 			}*/
 		}
 		LineAttack(ang, PLAYERMISSILERANGE, pitch, damage, 'Hitscan', "GoldWandPuff1", laflags);
+		if(invoker.showParticles) A_FireProjectile("GoldWandTracer", angOffset,false,0,0,0,0);
+		
 		A_StartSound("weapons/wandhit", CHAN_WEAPON);
 	}
 
@@ -141,13 +145,22 @@ Class HVRWandPowered : HVRWand
 		}
 		double pitch = BulletSlope(aimflags: alflags);
 
-		SpawnPlayerMissile("GoldWandFX2", angle - (45. / 8), aimflags: alflags);
-		SpawnPlayerMissile("GoldWandFX2", angle + (45. / 8), aimflags: alflags);
+		if(invoker.showParticles)
+		{
+			SpawnPlayerMissile("GoldWandFX3", angle - (45. / 8), aimflags: alflags);
+			SpawnPlayerMissile("GoldWandFX3", angle + (45. / 8), aimflags: alflags);
+		}
+		else
+		{
+			SpawnPlayerMissile("GoldWandFX2", angle - (45. / 8), aimflags: alflags);
+			SpawnPlayerMissile("GoldWandFX2", angle + (45. / 8), aimflags: alflags);
+		}
 		double ang = angle - (45. / 8);
 		for(int i = 0; i < 5; i++)
 		{
 			int damage = random[FireGoldWand](1, 8);
 			LineAttack (ang, PLAYERMISSILERANGE, pitch, damage, 'Hitscan', "GoldWandPuff2", laflags);
+			if(invoker.showParticles) SpawnPlayerMissile("GoldWandTracer2", ang, aimflags: alflags);
 			ang += ((45. / 8) * 2) / 4;
 		}
 		A_StartSound("weapons/wandhit", CHAN_WEAPON);
