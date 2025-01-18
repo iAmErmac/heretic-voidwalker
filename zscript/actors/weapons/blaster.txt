@@ -34,9 +34,11 @@ Class HVRBlaster : HereticVRWeapon replaces Blaster
 		double pitch = BulletSlope(aimflags: alflags);
 		int damage = random[FireBlaster](1, 8) * 4;
 		double ang = angle;
+		double angOffset = 0;
 		if (player.refire)
 		{
-			ang += Random2[FireBlaster]() * (5.625 / 256);
+			angOffset = Random2[FireBlaster]() * (5.625 / 256);
+			ang += angOffset;
 
 			/*if (GetCVar ("vertspread") && !sv_novertspread)
 			{
@@ -44,6 +46,8 @@ Class HVRBlaster : HereticVRWeapon replaces Blaster
 			}*/
 		}
 		LineAttack (ang, PLAYERMISSILERANGE, pitch, damage, 'Hitscan', "BlasterPuff", laflags);
+		if(invoker.showParticles) A_FireProjectile("BlasterTracer", angOffset,false,0,0,0,0);
+		
 		A_StartSound ("weapons/blastershoot", CHAN_WEAPON);
 	}
 
@@ -127,6 +131,8 @@ Class HVRBlasterPowered : HVRBlaster
 		#### B 0;
 	Hold:
 		#### # 0 A_GunFlash("Flash");
+		#### # 0 A_JumpIf(invoker.showParticles == false, 2);
+		#### # 0 A_FireCustomMissile("PoweredBlasterTracer");
 		#### # 3 A_FireCustomMissile("BlasterFX1");
 		#### # 8;
 		#### A 0 A_ReFire;

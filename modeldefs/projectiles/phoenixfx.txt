@@ -1,0 +1,12 @@
+
+Model PhoenixFX1
+{
+	Path "models/projectiles/phoenixfx"
+	Model 0 "FX04A.md3"
+	Skin 0 "FX04A.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX04 A 0 0
+}

@@ -26,9 +26,19 @@ Class HVRCrossbow : HereticVRWeapon replaces Crossbow
 			if (!weapon.DepleteAmmo (weapon.bAltFire))
 				return;
 		}
-		SpawnPlayerMissile ("CrossbowFX1", aimflags: alflags);
-		SpawnPlayerMissile ("CrossbowFX3", angle - 4.5, aimflags: alflags);
-		SpawnPlayerMissile ("CrossbowFX3", angle + 4.5, aimflags: alflags);
+		
+		if(invoker.showParticles)
+		{
+			SpawnPlayerMissile ("EtheralBolt1", aimflags: alflags);
+			SpawnPlayerMissile ("EtheralBolt3", angle - 4.5, aimflags: alflags);
+			SpawnPlayerMissile ("EtheralBolt3", angle + 4.5, aimflags: alflags);
+		}
+		else
+		{
+			SpawnPlayerMissile ("CrossbowFX1", aimflags: alflags);
+			SpawnPlayerMissile ("CrossbowFX3", angle - 4.5, aimflags: alflags);
+			SpawnPlayerMissile ("CrossbowFX3", angle + 4.5, aimflags: alflags);
+		}
 	}
 
 	States
@@ -109,11 +119,23 @@ Class HVRCrossbowPowered : HVRCrossbow
 			if (!weapon.DepleteAmmo (weapon.bAltFire))
 				return;
 		}
-		SpawnPlayerMissile ("CrossbowFX2", aimflags: alflags);
-		SpawnPlayerMissile ("CrossbowFX2", angle - 4.5, aimflags: alflags);
-		SpawnPlayerMissile ("CrossbowFX2", angle + 4.5, aimflags: alflags);
-		SpawnPlayerMissile ("CrossbowFX3", angle - 9., aimflags: alflags);
-		SpawnPlayerMissile ("CrossbowFX3", angle + 9., aimflags: alflags);
+		
+		if(invoker.showParticles)
+		{
+			SpawnPlayerMissile ("EtheralBolt2", aimflags: alflags);
+			SpawnPlayerMissile ("EtheralBolt2", angle - 4.5, aimflags: alflags);
+			SpawnPlayerMissile ("EtheralBolt2", angle + 4.5, aimflags: alflags);
+			SpawnPlayerMissile ("EtheralBolt4", angle - 9., aimflags: alflags);
+			SpawnPlayerMissile ("EtheralBolt4", angle + 9., aimflags: alflags);
+		}
+		else
+		{
+			SpawnPlayerMissile ("CrossbowFX2", aimflags: alflags);
+			SpawnPlayerMissile ("CrossbowFX2", angle - 4.5, aimflags: alflags);
+			SpawnPlayerMissile ("CrossbowFX2", angle + 4.5, aimflags: alflags);
+			SpawnPlayerMissile ("CrossbowFX3", angle - 9., aimflags: alflags);
+			SpawnPlayerMissile ("CrossbowFX3", angle + 9., aimflags: alflags);
+		}
 	}
 
 	States

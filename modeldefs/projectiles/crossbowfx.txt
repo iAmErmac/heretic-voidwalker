@@ -1,0 +1,84 @@
+
+Model HVR_CrossbowFX1
+{
+	Path "models/projectiles/crossbowfx"
+	Model 0 "FX03B.md3"
+	Skin 0 "FX03B.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX03 B 0 0
+}
+
+Model HVR_CrossbowFX2
+{
+	Path "models/projectiles/crossbowfx"
+	Model 0 "FX03B.md3"
+	Skin 0 "FX03B.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX03 B 0 0
+}
+
+Model HVR_CrossbowFX3
+{
+	Path "models/projectiles/crossbowfx"
+	Model 0 "FX03A.md3"
+	Skin 0 "FX03A.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX03 A 0 0
+}
+
+Model EtheralBolt1
+{
+	Path "models/projectiles/crossbowfx"
+	Model 0 "FX03B.md3"
+	Skin 0 "FX03B.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX03 B 0 0
+}
+
+Model EtheralBolt2
+{
+	Path "models/projectiles/crossbowfx"
+	Model 0 "FX03B.md3"
+	Skin 0 "FX03B.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX03 B 0 0
+}
+
+Model EtheralBolt3
+{
+	Path "models/projectiles/crossbowfx"
+	Model 0 "FX03A.md3"
+	Skin 0 "FX03A.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX03 A 0 0
+}
+
+Model EtheralBolt4
+{
+	Path "models/projectiles/crossbowfx"
+	Model 0 "FX03A.md3"
+	Skin 0 "FX03A.png"
+	Scale 1.0 1.0 1.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex FX03 A 0 0
+}

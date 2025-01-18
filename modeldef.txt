@@ -10,6 +10,11 @@
 #include "modeldefs/weapons/phoenixrod.txt"
 #include "modeldefs/weapons/mace.txt"
 
+//projectiles
+
+#include "modeldefs/projectiles/crossbowfx.txt"
+#include "modeldefs/projectiles/phoenixfx.txt"
+
 //pickups
 
 #include "modeldefs/pickups/ammo.txt"

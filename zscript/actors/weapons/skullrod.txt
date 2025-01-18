@@ -33,6 +33,8 @@ Class HVRSkullRod : HereticVRWeapon replaces SkullRod
 		{
 			mo.SetState (mo.CurState.NextState);
 		}
+		
+		if(invoker.showParticles) SpawnPlayerMissile ("HellShotTrail", aimflags: alflags);
 	}
 
 	States

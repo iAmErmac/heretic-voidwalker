@@ -3,7 +3,7 @@ MNU_HVROPTIONS 			= "Mod Options";
 HVR_OPTIONS 			= "VoidwalkeR Options";
 
 HVR_GAMEPLAY 			= "Gameplay Options";
-HVR_PARTICLES 			= "Fancy Particles";
+HVR_PARTICLES 			= "Fancy Effects";
 HVR_LESSPARTICLE 		= "Reduce Particles";
 HVR_PICKUP_MODEL 		= "Pickup Models";
 HVR_DIST_MODEL 			= "Distant Pickups";

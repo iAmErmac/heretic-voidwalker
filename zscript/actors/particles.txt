@@ -1,16 +1,29 @@
 
 mixin Class particleConfig
 {
+	protected bool showParticles;
 	protected bool reduceParticles;
 	protected hvr_Settings _settings;
 	
 	override void PostBeginPlay()
 	{
-		PlayerInfo player = players[consoleplayer];
-		if(!player) return;
+		//for hundreds of particles spawning, it's better to read config from player instead of quering cvars directly
+		Playerinfo player = Players[ConsolePlayer];
+		if(!player)
+		{
+			Super.PostBeginPlay();
+			return;
+		}
 		
-		_settings = hvr_Settings.of();
-		reduceParticles = _settings.lessParticles();
+		let pmo = player.mo;
+		let configItem = HVRConfigItem(pmo.findinventory("HVRConfigItem"));
+		if(configItem)
+		{
+			showParticles = configItem.showParticles;
+			reduceParticles = configItem.lessParticles;
+		}
+		
+		Super.PostBeginPlay();
 	}
 }
 
@@ -48,6 +61,74 @@ Class RocketTrailParticle : Actor
 	Spawn:
 		TNT1 A 3;
 		SPRK AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 BRIGHT A_SetScale(scalex*0.96);
+		Stop;
+	}
+}
+
+Class ExplosionParticle1 : RocketTrailParticle
+{
+	Default
+	{
+	scale 0.06;
+	Gravity 0.5;
+	Speed 10;
+	+DOOMBOUNCE
+	}
+
+	States
+	{
+	Spawn:
+		SPRK AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 BRIGHT A_SetScale(scalex*0.96);
+		Stop;
+	}
+}
+
+Class ExplosionSmoke1 : ExplosionParticle1
+{
+	Default
+	{
+	Speed 4;
+	Scale 1.2;
+	Alpha 0.24;
+	Renderstyle "Translucent";
+	+NOGRAVITY
+	-DOOMBOUNCE
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		SMO2 A 1 A_FadeOut(0.005);
+		Loop;
+	}
+}
+
+Class FairyDustTrail : MageWandSmoke
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Renderstyle "Add";
+	Alpha 1;
+	Scale 0.7;
+	+NOGRAVITY
+	+DONTSPLASH
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		FXFD ABCD 3 Bright A_FadeOut(0.1);
+		FXFD ABCD 2 A_Fadeout(0.2);
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	Bounce:
+		TNT1 A 0 ThrustThingZ(0,25,0,0);
+		FXFD ABCD 2;
+		TNT1 A 0 A_Remove(0);
 		Stop;
 	}
 }
@@ -147,7 +228,7 @@ Class HVRPoweredStaffPuff : Actor
 	XDeath:
 		TNT1 A 0 A_PlaySound("STAFPNCH");
 	Puff:
-		TNT1 AAAAAAAA 0 A_CustomMissile ("BlueExplosionParticle2", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 AAAAAAAA 0 A_SpawnProjectile ("BlueExplosionParticle2", 3, 0, random (0, 360), 2, random (0, 360));
 		PUF4 AABBCCDDEEFF 1 Bright A_SpawnItemEx("BlueStaffPuffFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
 		Stop;
 	}
@@ -167,33 +248,6 @@ Class BlueExplosionParticle2 : RocketTrailParticle
 	{
 	Spawn:
 		SPKB AAAAAAAAAAAAAAAAAA 1 BRIGHT A_SetScale(scalex*0.92);
-		Stop;
-	}
-}
-
-Class FairyDustTrail : MageWandSmoke
-{
-	mixin particleConfig;
-	
-	Default
-	{
-	Renderstyle "Add";
-	Alpha 1;
-	Scale 0.7;
-	+DONTSPLASH
-	}
-	
-	States
-	{
-	Spawn:
-		FXFD ABCD 3 Bright A_FadeOut(0.1);
-		FXFD ABCD 2 A_Fadeout(0.2);
-		TNT1 A 0 A_Remove(0);
-		Stop;
-	Bounce:
-		TNT1 A 0 ThrustThingZ(0,25,0,0);
-		FXFD ABCD 2;
-		TNT1 A 0 A_Remove(0);
 		Stop;
 	}
 }
@@ -231,6 +285,7 @@ Class GoldWandTracer : FastProjectile
 		Loop;
 	Death:
 		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
+		TNT1 A 0 A_SpawnItemEx("GoldWandFlare");
 		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GoldWandParticle",0,0,0,frandom(-6,6),frandom(-6,6),frandom(-6,6),0,SXF_NOCHECKPOSITION, 32);
 		TNT1 AA 1 Light("GOLDWANDSHOT2");
 		TNT1 AA 1 Light("GOLDWANDSHOT3");
@@ -317,7 +372,10 @@ Class GoldWandFX3 : GoldWandFX2
 	States
 	{
 	Spawn:
-		FX01 CCCDDD 1 Bright A_SpawnItemEX("GoldWandSlowAfterImage");
+		FX01 CCCDDD 1 Bright {
+			A_SpawnItemEX("GoldWandSlowAfterImage");
+			A_SpawnItemEX("GoldWandFlare");
+		}
 		Loop;
 	Death:
 		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
@@ -364,6 +422,18 @@ Class GoldWandSlowAfterImage : FairyDustTrail
 				A_SpawnItemEX("FairyDustYellowLite",0,0,0,frandom(-2.0,2.0),frandom(-2.0,2.0),frandom(-2.0,2.0),0,SXF_NOCHECKPOSITION, 220);
 			}
 		}
+		Stop;
+	}
+}
+
+Class FairyDustTrailYellow : FairyDustTrail
+{
+	States
+	{
+	Spawn:
+		FXFD EFGH 3 Bright A_FadeOut(0.1);
+		FXFD EFGH 2 A_Fadeout(0.2);
+		TNT1 A 0 A_Remove(0);
 		Stop;
 	}
 }
@@ -450,6 +520,790 @@ Class GoldWandSparks : Actor
 			if(random(0,10) > 3) A_SpawnParticle("FFFF96", SPF_FULLBRIGHT, 10, random(2, 4), 0, 0,0,0, frandom(-6,6),frandom(-6,6),frandom(-6,6), 0,0,0, 1.0, 0.05);
 		}
 		TNT1 A 1;
+		Stop;
+	}
+}
+
+Class GauntletSparks : ExplosionParticle1
+{
+	Default
+	{
+	Renderstyle "Add";
+	Alpha 0.9;
+	Scale 0.4;
+	Speed 4;
+	gravity 0.2;
+	BounceFactor 0.3;
+	+RANDOMIZE
+	+ROLLSPRITE
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SetRoll(frandom(0.0,359.0));
+	Spark1:
+		GSPK AABBCCDDEE 1 Bright A_SetScale(scalex*0.9,scaley*0.9);
+		GSPK DDCCBBAA 1;
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	Spark2:
+		GSPK HHGGFF 1 Bright A_SetScale(scalex*0.9,scaley*0.9);
+		GSPK EE 1 A_SetScale(scalex*0.9,scaley*0.9);
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	}
+}
+
+Class GauntletSparkParticles : Actor
+{
+	Default
+	{
+	height 1;
+	radius 1;
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAAAA 0 A_SpawnParticle("77ff6f", SPF_FULLBRIGHT, 8, random(4,6), 0, 0,0,0, frandom(-5,5),frandom(-5,5),frandom(-5,5), 0,0,0, 0.8, 0.1);
+		TNT1 A 1 A_Jump(128, "ExtraSparks1", "ExtraSparks2");
+		Stop;
+	ExtraSparks1:
+		TNT1 A 0 A_SpawnProjectile ("GauntletSparks", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 1;
+		Stop;
+	ExtraSparks2:
+		TNT1 AA 0 A_SpawnProjectile ("GauntletSparks", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+Class GauntletSparksRed : GauntletSparks
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SetRoll(frandom(0.0,359.0));
+	Spark1:
+		GSPK FFGGHHIIJJ 1 Bright A_SetScale(scalex*0.9,scaley*0.9);
+		GSPK IIHHGGFF 1;
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	Spark2:
+		GSPK PPOONN 1 Bright A_SetScale(scalex*0.9,scaley*0.9);
+		GSPK MM 1 A_SetScale(scalex*0.9,scaley*0.9);
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	}
+}
+
+Class GauntletRedSparkParticles : Actor
+{
+	Default
+	{
+	height 1;
+	radius 1;
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAAAA 0 A_SpawnParticle("ff5f5f", SPF_FULLBRIGHT, 8, random(4, 6), 0, 0,0,0, frandom(-5,5),frandom(-5,5),frandom(-5,5), 0,0,0, 0.8, 0.1);
+		TNT1 A 1 A_Jump(128, "ExtraSparks1", "ExtraSparks2");
+		Stop;
+	ExtraSparks1:
+		TNT1 AA 0 A_SpawnProjectile ("GauntletSparksRed", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 1;
+		Stop;
+	ExtraSparks2:
+		TNT1 AAA 0 A_SpawnProjectile ("GauntletSparksRed", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+Class BlasterTracer : FastProjectile
+{
+	mixin particleConfig;
+
+	Default
+	{
+	Radius 2;
+	Height 2;
+	Speed 125;
+	Decal "PlasmaScorchLower";
+	Projectile;
+	Renderstyle "Add";
+	Alpha 0.90;
+	Scale 1.4;
+	DeathSound "GWANDHIT";
+	MissileType "BlasterParticleTrailSpawner";
+	MissileHeight 8;
+	DamageType "DragonClaw";
+	+RANDOMIZE;
+	+SPECTRAL
+	+FORCEXYBILLBOARD
+	+BLOODSPLATTER
+	+SPECTRAL
+	+CANNOTPUSH
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_SetScale(1,1);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		FX98 CCCDDD 1 Bright {
+			A_SpawnItemEx("LightningSparkSpreader",0,0,0,frandom(-1,1),frandom(-1,1),frandom(-1,1));
+			A_SpawnItem("BlasterFlare",0,0);
+		}
+		Loop;
+	SpawnReduced:
+		FX98 CCCDDD 1 Bright {
+			A_SpawnParticle("50c4fc", SPF_FULLBRIGHT, 14, frandom(0.2, 0.5), 0, 0,0,0, frandom(-1,1),frandom(-1,1),frandom(-1,1), 0,0,0, 1.0, 0.01, 0.05);
+			A_SpawnParticle("50c4fc", SPF_FULLBRIGHT, 14, frandom(0.2, 0.5), 0, 0,0,0, frandom(-1,1),frandom(-1,1),frandom(-1,1), 0,0,0, 1.0, 0.01, 0.05);
+			A_SpawnItem("BlasterFlare",0,0);
+		}
+		Loop;
+	Death:
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
+		TNT1 AAAAAAAAAAAAAAAAAAAAA 0  A_SpawnItemEx("LightningSparkSpreader",0,0,0,frandom(-3,3),frandom(-3,3),frandom(-3,3));
+		TNT1 A 2 Light("BLASTERSHOT2");
+		TNT1 B 2 Light("BLASTERSHOT3");
+		TNT1 C 2 Light("BLASTERSHOT4");
+		TNT1 DE 1 Light("BLASTERSHOT5");
+		Stop;
+	DeathAlt:
+		TNT1 A 0 A_SpawnItemEx("BlasterSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 2 Light("BLASTERSHOT2");
+		TNT1 B 2 Light("BLASTERSHOT3");
+		TNT1 C 2 Light("BLASTERSHOT4");
+		TNT1 DE 1 Light("BLASTERSHOT5");
+		Stop;
+	}
+}
+
+Class PoweredBlasterTracer : FastProjectile
+{
+	mixin particleConfig;
+
+	Default
+	{
+	Radius 2;
+	Height 2;
+	Speed 184;
+	Damage 2;
+	Decal "PlasmaScorchLower";
+	Projectile;
+	Renderstyle "Add";
+	Alpha 0.90;
+	Scale 1;
+	DeathSound "GWANDHIT";
+	MissileType "BlasterParticleTrailSpawner";
+	MissileHeight 8;
+	DamageType "DragonClawPowered";
+	+RANDOMIZE
+	+SPECTRAL
+	+FORCEXYBILLBOARD
+	+BLOODSPLATTER
+	+NOBOSSRIP
+	+DONTSPLASH
+	+CANNOTPUSH
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		FX05 AAABBBCCC 1 Bright {
+			A_SpawnItemEx("LightningSparkSpreader",0,0,0,frandom(-1,1),frandom(-1,1),frandom(-1,1));
+			A_SpawnItemEx("LightningSparkSpreader",0,0,0,frandom(-1,1),frandom(-1,1),frandom(-1,1));
+			A_SpawnItem("BlasterFlare",0,0);
+		}
+		Loop;
+	SpawnReduced:
+		FX05 AAABBBCCC 1 Bright {
+			A_SpawnParticle("50c4fc", SPF_FULLBRIGHT, 14, frandom(0.2, 0.5), 0, 0,0,0, frandom(-1,1),frandom(-1,1),frandom(-1,1), 0,0,0, 1.0, 0.01, 0.05);
+			A_SpawnParticle("50c4fc", SPF_FULLBRIGHT, 14, frandom(0.2, 0.5), 0, 0,0,0, frandom(-1,1),frandom(-1,1),frandom(-1,1), 0,0,0, 1.0, 0.01, 0.05);
+			A_SpawnParticle("50c4fc", SPF_FULLBRIGHT, 14, frandom(0.2, 0.5), 0, 0,0,0, frandom(-1,1),frandom(-1,1),frandom(-1,1), 0,0,0, 1.0, 0.01, 0.05);
+			A_SpawnItem("BlasterFlare",0,0);
+		}
+		Loop;
+	Death:
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
+		TNT1 AAAAAAAAAAAAAAAAAAAAA 0  A_SpawnItemEx("LightningSparkSpreader",0,0,0,frandom(-3,3),frandom(-3,3),frandom(-3,3));
+		TNT1 A 2 Light("BLASTERSHOT2");
+		TNT1 A 2 Light("BLASTERSHOT3");
+		TNT1 A 2 Light("BLASTERSHOT4");
+		TNT1 A 2 Light("BLASTERSHOT5");
+		Stop;
+	DeathAlt:
+		TNT1 A 0 A_SpawnItemEx("BlasterElectricSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 2 Light("BLASTERSHOT2");
+		TNT1 A 2 Light("BLASTERSHOT3");
+		TNT1 A 2 Light("BLASTERSHOT4");
+		TNT1 A 2 Light("BLASTERSHOT5");
+		Stop;
+	}
+}
+
+Class BlasterParticleTrailSpawner : Actor
+{
+	mixin particleConfig;
+
+	Default
+	{
+	Radius 0;
+	Height 0;
+	+NOINTERACTION
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(192,"Stopped");
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		TNT1 AAA 0 A_SpawnItemEx("BlasterParticle",0,0,0,frandom(-0.4,0.4),frandom(-0.4,0.4),frandom(-0.4,0.4),0,SXF_NOCHECKPOSITION);
+		Stop;
+	SpawnReduced:
+		TNT1 AAA 0 A_SpawnParticle("5088fc", SPF_FULLBRIGHT, 14, random(1, 2), 0, 0,0,0, frandom(-0.4,0.4),frandom(-0.4,0.4),frandom(-0.4,0.4), 0,0,0, 1.0, 0.01, 0.05);
+	Stopped:
+		TNT1 A 0;
+		Stop;
+	}
+}
+
+Class LightningSparkSpreader : FairyDustTrail
+{
+	Default
+	{
+	RenderStyle "Translucent";
+	Gravity 0;
+	Scale 0.08;
+	Alpha 0.8;
+	+NOINTERACTION;
+	}
+	
+	States
+	{
+	Spawn:
+		TFOG CDEFGHI 2 Bright;
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	}
+}
+
+Class BlasterParticle : Actor
+{
+	Default
+	{
+	Scale 0.026;
+	Gravity 0.02;
+	Radius 0;
+	Height 0;
+	Damage 0;
+	Renderstyle "Add";
+	Alpha 0.8;
+	Speed 0;
+	+DOOMBOUNCE
+	+MISSILE
+	+CLIENTSIDEONLY
+	+NOTELEPORT
+	+NOBLOCKMAP
+	+CORPSE
+	+BLOODLESSIMPACT 
+	+FORCEXYBILLBOARD
+	+NODAMAGETHRUST
+	+MOVEWITHSECTOR
+	+NOBLOCKMONST
+	-SOLID
+	+THRUACTORS
+	+DONTSPLASH
+	-NOGRAVITY
+	+DONTBLAST
+	}
+	
+	States
+	{
+	Spawn:
+		SPKB AAAAAAAA 1 Bright A_SetScale(scalex*0.94);
+		Stop;
+	}
+}
+
+Class BlasterParticle2 : BlasterParticle
+{
+	Default
+	{
+	Scale 0.07;
+	}
+
+	States
+	{
+	Spawn:
+		SPKB AAAAAAAAA 1 Bright A_SetScale(scalex*0.86);
+		Stop;
+	}
+}
+
+Class BlasterSparks : Actor
+{
+	Default
+	{
+	Radius 1;
+	Height 1;
+	Speed 0;
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAA 0 {
+			if(random(0,10) > 3) A_SpawnParticle("98fcfc", SPF_FULLBRIGHT, 14, random(2, 4), 0, 0,0,0, frandom(-6,6),frandom(-6,6),frandom(-6,6), 0,0,0, 1.0, 0.01);
+		}
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+Class BlasterElectricSparks : BlasterSparks
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAAAAAA 0 A_SpawnParticle("50c4fc", SPF_FULLBRIGHT, 14, frandom(0.2, 0.5), 0, 0,0,0, frandom(-3,3),frandom(-3,3),frandom(-3,3), 0,0,0, 1.0, -1, 0.05);
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+Class HellShotTrail : Actor
+{
+	mixin particleConfig;
+
+	Default
+	{
+	Radius 2;
+	Height 2;
+	Speed 22;
+	Projectile;
+	RenderStyle "Add";
+	+WINDTHRUST
+	+SPECTRAL
+	-NOBLOCKMAP
+	+NOGRAVITY
+	+CANNOTPUSH
+	}
+	
+	States
+	{
+	Spawn:
+		FX00 AAAAAABBBBBB 1 Bright {
+			A_SpawnItemEx("HellStaffFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEx("HellShotFade",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		}
+		Loop;
+	Death:
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
+		TNT1 A 0 A_SetScale(1.0);
+		TNT1 AAAAAAAAA 0 A_SpawnProjectile("ExplosionParticle1",0,0,random(1,360),2,random(1,360));
+		TNT1 AAA 0 A_SpawnProjectile("PlasmaSmoke",0,0,random(1,360),2,random(1,360));
+		FIRH AB 1 Bright A_SpawnItemEx("HRedFlareMedium",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FIRH CDE 1 Bright A_SpawnItemEx("HRedFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FIRH FGHIJKLMNOP 1 Bright A_SpawnItemEx("HRedFlareBig",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Stop;
+	DeathAlt:
+		TNT1 A 0 A_SetScale(1.0);
+		TNT1 A 0 A_SpawnItemEx("HellShotSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 AAA 0 A_SpawnProjectile("PlasmaSmoke",0,0,random(1,360),2,random(1,360));
+		FIRH AB 1 Bright A_SpawnItemEx("HRedFlareMedium",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FIRH CDE 1 Bright A_SpawnItemEx("HRedFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FIRH FGHIJKLMNOP 1 Bright A_SpawnItemEx("HRedFlareBig",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Stop;
+	}
+}
+
+Class HellShotFade : FairyDustTrail
+{
+	Default
+	{
+	Scale 0.5;
+	Gravity 0;
+	-SOLID
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		FX00 AAAABBBBAAAAAABBBBAA 1 A_FadeOut(0.05);
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	}
+}
+
+Class PlasmaSmoke : ExplosionSmoke1
+{
+	Default
+	{
+	Speed 1;
+	Scale 0.5;
+	Alpha 0.15;
+	}
+	
+	States
+	{
+	Spawn:
+		PUF2 D 1;
+		Goto Death;
+	Death:
+		SMOC ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 A_FadeOut(0.002);
+		SM7C AB 2 A_FadeOut(0.002);
+		SMOC ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 A_FadeOut(0.002);
+		SM7C AB 2 A_FadeOut(0.002);
+	}
+}
+
+Class HellShotSparks : Actor
+{
+	Default
+	{
+	Radius 1;
+	Height 1;
+	Speed 0;
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAA 0 {
+			if(random(0,10) > 3) A_SpawnParticle("ffd7d7", SPF_FULLBRIGHT, 30, random(2, 4), 0, 0,0,0, frandom(-4,4),frandom(-4,4),frandom(-4,4), 0,0,0, 1.0);
+		}
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+Class HellRainSpawner : MinotaurFX2
+{
+	int rainCount;
+	
+	Default
+	{
+	Radius 5;
+	Height 12;
+	Speed 20;
+	//Damage 1;
+	XScale 12;
+	YScale 3;
+	Alpha 0.5;
+	Renderstyle "Add";
+	+THRUACTORS
+	+NODAMAGETHRUST
+	+CEILINGHUGGER
+	-FLOORHUGGER
+	+CANNOTPUSH
+	}
+	
+	override void PostBeginPlay()
+	{
+		rainCount = random (40, 60);
+		Super.PostBeginPlay();
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 1;
+		TNT1 A 1 A_SpawnProjectile("HellStaffRainTracer",-1,random(-64,64),random(0,359),CMF_AIMDIRECTION|CMF_TRACKOWNER,90);
+		TNT1 A 0 {
+			invoker.rainCount--;
+			if(invoker.rainCount < 1) SetStateLabel("Death");
+		}
+		loop;
+	Death:
+		TNT1 A 0;
+		Stop;
+	}
+}
+
+Class HellStaffRainTracer : FastProjectile
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Radius 8;
+	Height 8;
+	Speed 25;
+	Damage 0;
+	Decal "PlasmaScorchLower";
+	Projectile;
+	Renderstyle "Add";
+	Alpha 0.90;
+	Scale 1.0;
+	DeathSound "GWANDHIT";
+	MissileHeight 8;
+	+FORCEXYBILLBOARD
+	+NODAMAGETHRUST
+	+BLOODSPLATTER
+	+CANNOTPUSH
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 1;
+		TNT1 A 0 A_SetScale(1.25,4);
+		FX00 N 5 Bright;
+		Loop;
+	Death:
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("HellRainParticle2",0,0,0,frandom(-6,6),frandom(-6,6),frandom(-6,6),0,SXF_NOCHECKPOSITION);
+		TNT1 A 0 A_SpawnItemEx("HellRainExplosions",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 0 A_SetScale(0.9,0.9);
+		FX00 H 2 Light("HELLRAINSHOT2");
+		FX00 I 2 Light("HELLRAINSHOT3");
+		FX00 J 2 Light("HELLRAINSHOT4");
+		FX00 K 2 Light("HELLRAINSHOT5");
+		FX00 LM 2;
+		Stop;
+	DeathAlt:
+		TNT1 A 0 A_SpawnItemEx("HellShotSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 0 A_SpawnItemEx("HellRainExplosions",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 2 Light("HELLRAINSHOT2");
+		TNT1 A 2 Light("HELLRAINSHOT3");
+		TNT1 A 2 Light("HELLRAINSHOT4");
+		TNT1 A 2 Light("HELLRAINSHOT5");
+		Stop;
+	}
+}
+
+Class HellRainParticle2 : BlasterParticle
+{
+	Default
+	{
+	Scale 0.15;
+	}
+	
+	States
+	{
+	Spawn:
+		TELS AAAAAAAAA 1 Bright A_SetScale(scalex*0.86);
+		Stop;
+	}
+}
+
+Class HellRainExplosions : Actor
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Radius 0;
+	Height 0;
+	+NOTELEPORT
+	+NODAMAGETHRUST
+	+THRUACTORS
+	+DONTSPLASH
+	+NOGRAVITY
+	+DONTBLAST
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_QuakeEx (1,1,1,35,0,720,"world/quake",QF_SCALEDOWN,0,0,0,100);
+		TNT1 A 0 A_PlaySound("DSBAREXP",1);
+		TNT1 A 0 A_SpawnItemEx("SkullRainExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		TNT1 AAAAAAAAAA 0 A_SpawnProjectile ("RedExplosionParticle2", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 5 Thing_Stop(0);
+		//TNT1 A 7 A_Explode(60,96,0);
+		Stop;
+	SpawnReduced:
+		TNT1 A 0 A_SpawnItemEx("RedExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 5 Thing_Stop(0);
+		Stop;
+	Stopped:
+		TNT1 A 0;
+		Stop;
+	}
+}
+
+Class RedExplosionParticle2 : RocketTrailParticle
+{
+	Default
+	{
+	scale 0.13;
+	Gravity 0.17;
+	Speed 7;
+	+DOOMBOUNCE
+	}
+	
+	States
+	{
+	Spawn:
+		TELS AAAAAAAAAAAAAAAAAA 1 BRIGHT A_SetScale(scalex*0.92);
+		Stop;
+	}
+}
+
+Class RedExplosionSparks : RocketTrailParticle
+{
+	Default
+	{
+	scale 0.13;
+	Gravity 0.17;
+	Speed 0;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAAAAAA 1 {
+			if(random(0,10) > 3) A_SpawnParticle("ffd7d7", SPF_FULLBRIGHT, 30, random(2, 4), 0, 0,0,0, frandom(-4,4),frandom(-4,4),frandom(0,4), 0,0,0, 1.0);
+		}
+		Stop;
+	}
+}
+
+Class PhoenixMissileTrail : FastProjectile
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Radius 5;
+	Height 5;
+	Speed 20;
+	Damage 0;
+	DamageType "Phoenix";
+	Decal "Scorch";
+	Projectile;
+	Scale 2.3;
+	MissileHeight 8;
+	-SPECTRAL
+	+RANDOMIZE
+	+FORCEXYBILLBOARD
+	+BLOODSPLATTER
+	+NOBLOOD
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 1 A_SpawnItem("GoldWandFlare",0,0);
+		TNT1 AA 0 A_SpawnItemEX("PhoenixSmokeTrail",-20,-2,0,0,-4,0);
+		TNT1 AA 0 A_SpawnItemEX("PhoenixSmokeTrail",-20,2,0,0,4,0);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "Spawn");
+		TNT1 AA 0 A_SpawnItemEX("PhoenixSmokeTrail",-10,-2,0,0,-4,0);
+		TNT1 AA 0 A_SpawnItemEX("PhoenixSmokeTrail",-10,2,0,0,4,0);
+		Loop;
+	Death:
+		TNT1 AAAAAAA 0 A_SpawnProjectile ("HDBallBoom", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0);
+		TNT1 A 0 A_PlaySound("DSBAREXP");
+		TNT1 A 0 A_QuakeEx (1,1,1,20,0,440,"world/quake",QF_SCALEDOWN,0,0,0,144);
+		TNT1 AAAA 0 A_SpawnProjectile ("PlasmaSmoke", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnProjectile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+		FXPR CDEFGH 6 A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		Stop;
+	DeathAlt:
+		TNT1 A 1 A_SpawnItemEx ("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0);
+		Stop;
+	}
+}
+
+Class PhoenixSmokeTrail : FairyDustTrail
+{
+	Default
+	{
+	Renderstyle "translucent";
+	Scale 0.7;
+	Alpha 0.5;
+	-SOLID
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		FX04 BCDEF 3 A_FadeOut(0.1);
+		TNT1 A 0 A_Remove(0);
+		Stop;
+	}
+}
+
+Class ExplosionSparks : Actor
+{
+	Default
+	{
+	Radius 1;
+	Height 1;
+	Speed 0;
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAAAAAAAAAAAAA 0 {
+			if(random(0,10) > 2) A_SpawnParticle("FFFF96", SPF_FULLBRIGHT, 30, random(6, 8), 0, 0,0,0, frandom(-5,5),frandom(-5,5),frandom(-5,5), 0,0,0, 1.0);
+		}
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+Class SmallEmber : Actor
+{
+	Default
+	{
+	Radius 20;
+	Height 24;
+	Renderstyle "Add";
+	Mass 1;
+	Alpha 0.5;
+	Scale 0.05;
+	+NOGRAVITY;
+	+RANDOMIZE
+	+DONTTHRUST
+	+NODAMAGETHRUST
+	+DONTSPLASH
+	+PIERCEARMOR
+	//+FORCERADIUSDMG
+	+BLOODLESSIMPACT
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_SetScale(frandom(0.05, 0.09));
+	Ember:
+		FXFP CBABC 2;
+		TNT1 A 0 A_Jump(190, "Death");
+		loop;
+	Death:
+		FXFP DEF 2 Bright;
 		Stop;
 	}
 }

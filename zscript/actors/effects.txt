@@ -1,28 +1,4 @@
 
-Class HVR_CrossbowFX1 : CrossbowFX1 replaces CrossbowFX1
-{
-	Default
-	{
-	RenderStyle "Normal";
-	}
-}
-
-Class HVR_CrossbowFX2 : CrossbowFX2 replaces CrossbowFX2
-{
-	Default
-	{
-	RenderStyle "Normal";
-	}
-}
-
-Class HVR_CrossbowFX3 : CrossbowFX3 replaces CrossbowFX3
-{
-	Default
-	{
-	RenderStyle "Normal";
-	}
-}
-
 Class HVR_MummyFX1 : MummyFX1 replaces MummyFX1
 {
 	Default
@@ -30,8 +6,6 @@ Class HVR_MummyFX1 : MummyFX1 replaces MummyFX1
 	RenderStyle "Normal";
 	}
 }
-
-
 
 Class Flare_General : Actor
 {
@@ -52,6 +26,38 @@ Class Flare_General : Actor
 	}
 }
 
+Class FlameTrails : Actor
+{
+	Default
+	{
+	Radius 1;
+	Height 1;
+	Speed 3;
+	RenderStyle "Add";
+	DamageType "Flames";
+	Scale 0.5;
+	Alpha 1;
+	+NOBLOCKMAP
+	+NOTELEPORT
+	+DONTSPLASH
+	+MISSILE
+	+FORCEXYBILLBOARD
+	+CLIENTSIDEONLY
+	+NOINTERACTION
+	+NOCLIP
+	+THRUACTORS
+	+DONTBLAST
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 2;
+		FRPR ABCDEFGH 3 BRIGHT;
+		Stop;
+	}
+}
+
 Class BlueStaffPuffFlare : Flare_General
 {
 	Default
@@ -65,6 +71,682 @@ Class BlueStaffPuffFlare : Flare_General
 	Spawn:
 		TNT1 A 0;
 		L2NB A 1 Bright;
+		Stop;
+	}
+}
+
+Class GoldWandFlare : Flare_General
+{
+	Default
+	{
+	scale 0.20;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,2);
+		LENY A 1 bright;
+		stop;
+		TNT1 A 0;
+		LENY B 1 bright;
+		stop;
+	}
+}
+Class GreenGauntletPuff : Actor replaces GauntletPuff1
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+PUFFONACTORS
+	RenderStyle "Add";
+	Alpha 0.9;
+	VSpeed 0.8;
+	Damagetype "Gauntlets";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(invoker.showParticles == false, 22);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnProjectile ("GauntletSparks", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 AAAAAAAA 0 A_PlaySound("GNTHIT",CHAN_BODY,1.0,True);
+		GPUF AAABBBCCCDDD 1 Bright A_SpawnItemEx("GreenGauntletFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Stop;
+	SpawnReduced:
+		TNT1 A 0 A_SpawnItemEx("GauntletSparkParticles");
+		TNT1 AAAAAAAA 0 A_PlaySound("GNTHIT",CHAN_BODY,1.0,True);
+		GPUF AAABBBCCCDDD 1 Bright A_SpawnItemEx("GreenGauntletFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Stop;
+	}
+}
+
+Class RedGauntletPuff : Actor replaces GauntletPuff2
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+PUFFONACTORS
+	RenderStyle "Add";
+	Alpha 0.9;
+	VSpeed 0.8;
+	Damagetype "BrutalGauntlets";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(invoker.showParticles == false, 22);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnProjectile ("GauntletSparksRed", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 AAAAAAAA 0 A_PlaySound("GNTHIT",CHAN_BODY,1.0,True);
+		GPUF EEEFFFGGGHHH 1 Bright A_SpawnItemEx("RedGauntletFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Stop;
+	SpawnReduced:
+		TNT1 A 0 A_SpawnItemEx("GauntletRedSparkParticles");
+		TNT1 AAAAAAAA 0 A_PlaySound("GNTHIT",CHAN_BODY,1.0,True);
+		GPUF EEEFFFGGGHHH 1 Bright A_SpawnItemEx("RedGauntletFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Stop;
+	}
+}
+
+Class GreenGauntletFlare : Flare_General
+{
+	Default
+	{
+	alpha 0.2;
+	scale 0.08;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		L2NG A 1 Bright;
+		Stop;
+	}
+}
+
+Class RedGauntletFlare : Flare_General
+{
+	Default
+	{
+	alpha 0.2;
+	scale 0.08;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		L2NR A 1 Bright;
+		Stop;
+	}
+}
+
+Class EtherealFlare1 : Flare_General
+{
+	Default
+	{
+	alpha 0.2;
+	scale 0.16;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,2);
+		LENG A 1 bright;
+		stop;
+		TNT1 A 0;
+		LENG B 1 bright;
+		stop;
+	}
+}
+
+Class EtherealFlare2 : Flare_General
+{
+	Default
+	{
+	alpha 0.2;
+	scale 0.24;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,2);
+		LENG A 2 bright;
+		stop;
+		TNT1 A 0;
+		LENG B 2 bright;
+		stop;
+	}
+}
+
+Class HVR_CrossbowFX1 : CrossbowFX1 replaces CrossbowFX1
+{
+	Default
+	{
+	RenderStyle "Normal";
+	Decal "CrossbowScorch";
+	}
+}
+
+Class HVR_CrossbowFX2 : CrossbowFX2 replaces CrossbowFX2
+{
+	Default
+	{
+	RenderStyle "Normal";
+	Decal "CrossbowScorch";
+	}
+}
+
+Class HVR_CrossbowFX3 : CrossbowFX3 replaces CrossbowFX3
+{
+	Default
+	{
+	RenderStyle "Normal";
+	Decal "CrossbowScorch";
+	}
+}
+
+Class EtheralBolt1 : CrossbowFX1
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	RenderStyle "Normal";
+	Decal "CrossbowScorch";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		FX03 B 1 Bright A_SpawnItemEX("FairyDustTrail",random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1);
+		TNT1 AAAAAA 0 Bright A_SpawnItemEX("FairyDustTrailYellow",random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1,0,0,32);
+		TNT1 AAAAA 0 Bright A_SpawnItemEX("FairyDustTrail",random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1,0,0,16);
+		Loop;
+	SpawnReduced:
+		FX03 B 1 Bright { if(random(0,10) > 4) A_SpawnParticle("77ff6f", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1, 0,0,0, 1.0, 0.05); }
+		TNT1 AAA 0 Bright { if(random(0,10) > 4) A_SpawnParticle("f8b800", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1, 0,0,0, 0.9); }
+		TNT1 AA 0 Bright { if(random(0,10) > 4) A_SpawnParticle("77ff6f", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1, 0,0,0, 1.0, 0.05); }
+		Loop;
+	Death:
+		FX03 HI 3;
+		FX03 J 3 Bright A_SpawnItem("EtherealFlare2");
+		Stop;
+	}
+}
+
+Class EtheralBolt2 : CrossbowFX2
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	RenderStyle "Normal";
+	Decal "CrossbowScorch";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		TNT1 A 0 A_SpawnItem("EtherealFlare1");
+		FX03 B 1 Bright A_SpawnItemEX("FairyDustTrail",random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1);
+		TNT1 AAA 0 Bright A_SpawnItemEX("FairyDustTrailYellow",random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1,0,0,32);
+		TNT1 AA 0 Bright A_SpawnItemEX("FairyDustTrail",random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1,0,0,16);
+		Loop;
+	SpawnReduced:
+		TNT1 A 0 A_SpawnItem("EtherealFlare1");
+		FX03 B 1 Bright { if(random(0,10) > 4) A_SpawnParticle("77ff6f", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1, 0,0,0, 1.0, 0.05); }
+		TNT1 AAA 0 Bright { if(random(0,10) > 4) A_SpawnParticle("f8b800", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1, 0,0,0, 0.9); }
+		TNT1 AA 0 Bright { if(random(0,10) > 4) A_SpawnParticle("77ff6f", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(8,-8),random(5,-5),4+random(2,-2),0,random(1,-1),-1, 0,0,0, 1.0, 0.05); }
+		Loop;
+	Death:
+		FX03 HI 3;
+		FX03 J 3 Bright A_SpawnItem("EtherealFlare2");
+		Stop;
+	}
+}
+
+Class EtheralBolt3 : CrossbowFX3
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	RenderStyle "Normal";
+	Decal "CrossbowScorch";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		FX03 AA 1 Bright A_SpawnItemEX("FairyDustTrail",random(3,-3),random(3,-3),4,0,random(1,-1),-1);
+		Loop;
+	SpawnReduced:
+		FX03 AA 1 Bright A_SpawnParticle("77ff6f", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(3,-3),random(3,-3),3,0,random(1,-1),-1, 0,0,0, 1.0, 0.05);
+		Loop;
+	Death:
+		FX03 CDE 8 Bright;
+		Stop;
+	}
+}
+
+Class EtheralBolt4 : EtheralBolt3
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(invoker.reduceParticles, "SpawnReduced");
+		FX03 AA 1 Bright {
+			A_SpawnItemEX("FairyDustTrail",random(3,-3),random(3,-3),4,0,random(1,-1),-1);
+			A_SpawnItem("EtherealFlare1");
+		}
+		Loop;
+	SpawnReduced:
+		FX03 AA 1 Bright {
+			A_SpawnParticle("77ff6f", SPF_FULLBRIGHT, 10, random(3, 5), 0, random(3,-3),random(3,-3),3,0,random(1,-1),-1, 0,0,0, 1.0, 0.05);
+			A_SpawnItem("EtherealFlare1");
+		}
+		Loop;
+	Death:
+		FX03 CDE 8 Bright;
+		Stop;
+	}
+}
+
+Class BlasterFlare : Flare_General
+{
+	Default
+	{
+	scale 0.15;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,2);
+		LENB A 1 bright;
+		stop;
+		TNT1 A 0;
+		LENB B 1 bright;
+		stop;
+	}
+}
+
+Class BlasterFX2 : BlasterFX1 replaces BlasterFX1
+{
+	Default
+	{
+	RenderStyle "Add";
+	}
+}
+
+Class RipperFX : Ripper replaces Ripper
+{
+	mixin particleConfig;
+
+	States
+	{
+	Spawn:
+		FX18 MMMM 1 A_SpawnItemEx("BlasterFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FX18 NNNNN 1 A_SpawnItemEx("BlasterFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Loop;
+	Death:
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "DeathAlt");
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("BlasterParticle2",0,0,0,frandom(-6,6),frandom(-6,6),frandom(-6,6),0,SXF_NOCHECKPOSITION, 32);
+		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
+		FX18 OPQRS 4 Bright;
+		Stop;
+	DeathAlt:
+		TNT1 AAA 0 A_SpawnItemEx("BlasterSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
+		FX18 OPQRS 4 Bright;
+		Stop;
+	}
+}
+
+Class HellstaffFlare : Flare_General
+{
+	Default
+	{
+	alpha 0.3;
+	scale 0.15;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,2);
+		L2NR A 1 bright;
+		stop;
+		TNT1 A 0;
+		L2NR B 1 bright;
+		stop;
+	}
+}
+
+Class HRedFlare : Flare_General
+{
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,2);
+		LENR A 1 bright;
+		stop;
+		TNT1 A 0;
+		LENR B 1 bright;
+		stop;
+	}
+}
+
+Class HRedFlareMedium : HRedFlare
+{
+	Default
+	{
+	scale 0.25;
+	}
+}
+
+Class HRedFlareBig : HRedFlare
+{
+	Default
+	{
+	scale 0.9;
+	}
+}
+
+Class HornRodFX3 : HornRodFX1 replaces HornRodFX1
+{
+	Default
+	{
+	RenderStyle "Add";
+	Decal "HellStaffScorch";
+	}
+}
+
+Class HornRodFX4 : HornRodFX2 replaces HornRodFX2
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Decal "HornyRainMaker";
+	}
+	
+	States
+	{
+	Spawn:
+		FX00 C 3 Bright;
+		FX00 D 3 Bright A_SeekerMissile(10, 30);
+		FX00 E 3 Bright;
+		FX00 F 3 Bright A_SeekerMissile(10, 30);
+		Loop;
+	Death:
+		FX00 H 5 Bright A_AddPlayerRain;
+		FX00 I 5 Bright;
+		FX00 J 4 Bright;
+		FX00 KLM 3 Bright;
+		FX00 G 1 A_HideInCeiling;
+		TNT1 A 0 A_JumpIf(invoker.showParticles == false, 2);
+		TNT1 A 0 A_SpawnItemEx("HellRainSpawner");
+		FX00 G 1 A_SkullRodStorm;
+		Wait;
+	}
+}
+
+Class SkullRainExplosion : FlameTrails
+{
+	Default
+	{
+	Scale 0.7;
+	Radius 0;
+	Height 0;
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		EXPR AABBCCDDEEFFGG 1 BRIGHT A_SpawnItemEx("Axe2XPFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		Stop;
+	}
+}
+
+Class Axe2XPFlare : Flare_General
+{
+	Default
+	{
+	alpha 0.47;
+	scale 0.22;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		L2NR A 1 Bright;
+		Stop;
+	}
+}
+
+Class HDBallBoom : FlameTrails
+{
+	Default
+	{
+	Scale 1.0;
+	}
+	
+	States
+	{
+	Spawn:
+		EXBM ABCDEFGHI 2 BRIGHT;
+		Stop;
+	}
+}
+
+Class ExplosionFlareSpawner : Flare_General
+{
+	states
+	{
+	Spawn:
+		L2NR AAAA 1 BRIGHT A_SpawnItem("RedFlareLarge1x");
+		L2NR A 5;
+		stop;
+	}
+}
+
+Class RedFlareLarge1x : Flare_General
+{
+	Default
+	{
+	scale 1.0;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,2);
+		LENR A 2 bright;
+		stop;
+		TNT1 A 0;
+		LENR B 2 bright;
+		stop;
+	}
+}
+
+Class PhoenixFX3 : PhoenixFX2 replaces PhoenixFX2
+{
+	mixin particleConfig;
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(invoker.showParticles, "SpawnEmbers");
+		FX09 ABABA 2 Bright;
+		goto FlameDone;
+	SpawnEmbers:
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "SpawnLessEmbers");
+		FX09 AB 2 Bright;
+		FX09 AABBAA 1 Bright A_SpawnItemEx("SmallEmber",0,0,4,frandom(0.5,2.0),frandom(0.1, 0.2),frandom(0.4, 0.8),frandom(0,8),0,32);
+		goto FlameDone;
+	SpawnLessEmbers:
+		FX09 ABA 2 Bright;
+		FX09 BA 2 Bright A_SpawnItemEx("SmallEmber",0,0,4,frandom(0.5,2.0),frandom(0.1, 0.2),frandom(0.4, 0.8),frandom(0,8),0,32);
+	FlameDone:
+		FX09 B 2 Bright A_FlameEnd;
+		FX09 CDEF 2 Bright;
+		Stop;
+	}
+}
+
+Class MaceFX5 : MaceFX1 replaces MaceFX1
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Decal "WallCrackSmall";
+	}
+	
+	States
+	{
+	Death:
+		FX02 F 4 Bright A_MaceBallImpact;
+		TNT1 A 0 A_JumpIf(invoker.showParticles, "DeathAlt");
+		FX02 GHIJ 4 Bright;
+		Stop;
+	DeathAlt:
+		TNT1 A 0 A_QuakeEx (2,2,2,20,0,440,"world/quake",QF_SCALEDOWN,0,0,0,220);
+		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
+		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
+			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		}
+		Stop;
+	ReducedParticles:
+		TNT1 A 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		Stop;
+	}
+}
+
+Class MaceFX6 : MaceFX2 replaces MaceFX2
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Decal "WallCrackSmall";
+	}
+	
+	States
+	{
+	Death:
+		FX02 F 4 A_MaceBallImpact2;
+		TNT1 A 0 A_JumpIf(invoker.showParticles, "DeathAlt");
+		FX02 GHIJ 4 Bright;
+		Stop;
+	DeathAlt:
+		TNT1 A 0 A_QuakeEx (2,2,2,20,0,440,"world/quake",QF_SCALEDOWN,0,0,0,220);
+		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
+		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
+			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		}
+		Stop;
+	ReducedParticles:
+		TNT1 A 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		Stop;
+	}
+}
+
+Class MaceFX7 : MaceFX3 replaces MaceFX3
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Decal "WallCrackSmall";
+	}
+	
+	States
+	{
+	Death:
+		FX02 F 4 Bright A_MaceBallImpact;
+		TNT1 A 0 A_JumpIf(invoker.showParticles, "DeathAlt");
+		FX02 GHIJ 4 Bright;
+		Stop;
+	DeathAlt:
+		TNT1 A 0 A_QuakeEx (2,2,2,20,0,440,"world/quake",QF_SCALEDOWN,0,0,0,220);
+		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
+		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
+			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		}
+		Stop;
+	ReducedParticles:
+		TNT1 A 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		Stop;
+	}
+}
+
+Class MaceFX8 : MaceFX4 replaces MaceFX4
+{
+	mixin particleConfig;
+	
+	Default
+	{
+	Decal "WallCrack";
+	}
+	
+	States
+	{
+	Death:
+		FX02 C 4 A_DeathBallImpact;
+		TNT1 A 0 A_JumpIf(invoker.showParticles, "DeathAlt");
+		FX02 GHIJ 4 Bright;
+		Stop;
+	DeathAlt:
+		TNT1 AAA 0 A_CustomMissile ("HDBallBoom", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 A 0 A_PlaySound("DSBAREXP", 1);
+		TNT1 A 0 A_QuakeEx (2,2,2,20,0,440,"world/quake",QF_SCALEDOWN,0,0,0,220);
+		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
+		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
+		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
+			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		}
+		Stop;
+	ReducedParticles:
+		TNT1 AAA 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		Stop;
 	}
 }

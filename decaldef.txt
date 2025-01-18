@@ -1,0 +1,70 @@
+
+decal HellStaffLightning1
+{
+	pic BFGLITE1
+	shade "ff 16 16"
+	fullbright
+	randomflipx
+	animator GoAway2
+	lowerdecal BFGScorch
+}
+
+decal HellStaffLightning2
+{
+	pic BFGLITE2
+	shade "ff 16 16"
+	fullbright
+	randomflipy
+	animator GoAway2
+	lowerdecal BFGScorch
+}
+
+decalgroup HellStaffScorch
+{
+	HellStaffLightning1	1
+	HellStaffLightning2	1
+}
+
+decal WallCrack1
+{
+	pic BFGLITE1
+	shade "00 00 00"
+	randomflipx
+	//translucent 0.4
+}
+decal WallCrack2
+{
+	pic BFGLITE2
+	shade "00 00 00"
+	randomflipy
+	//translucent 0.4
+}
+decalgroup WallCrack
+{
+	WallCrack1	1
+	WallCrack2	1
+}
+
+decal WallCrackSmall1
+{
+	pic BFGLITE1
+	shade "00 00 00"
+    	x-scale 0.4
+    	y-scale 0.4
+	randomflipx
+	//translucent 0.4
+}
+decal WallCrackSmall2
+{
+	pic BFGLITE2
+	shade "00 00 00"
+    	x-scale 0.4
+    	y-scale 0.4
+	randomflipy
+	//translucent 0.4
+}
+decalgroup WallCrackSmall
+{
+	WallCrackSmall1	1
+	WallCrackSmall2	1
+}

@@ -30,6 +30,8 @@ Class HVRPhoenixRod : HereticVRWeapon replaces PhoenixRod
 				return;
 		}
 		SpawnPlayerMissile ("PhoenixFX1", aimflags: alflags);
+		if(invoker.showParticles) SpawnPlayerMissile ("PhoenixMissileTrail", aimflags: alflags);
+		
 		if(vr_recoil == 1) Thrust(4, angle + 180);
 	}
 

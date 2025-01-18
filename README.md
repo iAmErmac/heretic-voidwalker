@@ -4,7 +4,7 @@
 
 - Get Heretic (1994): [Steam](https://store.steampowered.com/app/2390/Heretic_Shadow_of_the_Serpent_Riders/) | [GOG](https://www.gog.com/en/game/heretic_shadow_of_the_serpent_riders)
 
-This addon aims to add 3D VR weapons and QoL improvements for VR in the game Heretic (1994). The mod uses assets and codes from heretic voxel mod by Nemo Reikall.
+This addon aims to add 3D VR weapons and QoL improvements for VR in the game Heretic (1994). The mod uses assets and codes from heretic voxel mod by Nemo Reikall and Brutal Heretic by Sergeant Mark IV.
 
 [![Download Now](https://raster.shields.io/github/downloads/iAmErmac/heretic-voidwalker/total)](https://github.com/iAmErmac/heretic-voidwalker/releases/latest)
 
@@ -161,6 +161,7 @@ If you don't own Heretic:
 ## Credits
 
 * Reikall - Voxel pickups, props and associated codes
+* Sergeant Mark IV - Scripts and assets for SFX
 * Dwars - HQ sound effects
 * Xeotroid - Remastered sound tracks
 * Cherno - Simsun Shader
