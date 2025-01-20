@@ -55,7 +55,82 @@ Model HVRStaff
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -7.0
 
-	FrameIndex STFF S 0 0	FrameIndex STFF S 1 8
+	FrameIndex SHLD A 0 0	FrameIndex SHLD A 1 8
+	FrameIndex SHLD B 0 8	FrameIndex SHLD B 1 8
+
+	Skin 0 "RuneShield2.png"
+	FrameIndex SHLD C 0 0	FrameIndex SHLD C 1 8
+	FrameIndex SHLD D 0 8	FrameIndex SHLD D 1 8
+
+	Skin 0 "RuneShield3.png"
+	FrameIndex SHLD E 0 0	FrameIndex SHLD E 1 8
+	FrameIndex SHLD F 0 8	FrameIndex SHLD F 1 8
+
+	Skin 0 "RuneShield4.png"
+	FrameIndex SHLD G 0 0	FrameIndex SHLD G 1 8
+	FrameIndex SHLD H 0 8	FrameIndex SHLD H 1 8
+
+	Skin 0 "RuneShield5.png"
+	FrameIndex SHLD I 0 0	FrameIndex SHLD I 1 8
+	FrameIndex SHLD J 0 8	FrameIndex SHLD J 1 8
+
+	Skin 0 "RuneShield0.png"
+	FrameIndex SHLD K 0 0	FrameIndex SHLD K 1 8
+}
+
+//shield without hand
+
+Model HVRStaff
+{ 
+	Path "models/weapons/staff"
+	Model 0 "shield.md3"
+	Skin 0 "RuneShield.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -7.0
+
+	FrameIndex SHNH A 0 0
+	FrameIndex SHNH B 0 8
+
+	Skin 0 "RuneShield2.png"
+	FrameIndex SHNH C 0 0
+	FrameIndex SHNH D 0 8
+
+	Skin 0 "RuneShield3.png"
+	FrameIndex SHNH E 0 0
+	FrameIndex SHNH F 0 8
+
+	Skin 0 "RuneShield4.png"
+	FrameIndex SHNH G 0 0
+	FrameIndex SHNH H 0 8
+
+	Skin 0 "RuneShield5.png"
+	FrameIndex SHNH I 0 0
+	FrameIndex SHNH J 0 8
+
+	Skin 0 "RuneShield0.png"
+	FrameIndex SHNH K 0 0
+}
+
+//Shield Slap ovelay
+
+Model HVRStaff
+{ 
+	Path "models/weapons/staff"
+	Model 0 "shield.md3"
+	Skin 0 "RuneShieldWhite.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -7.0
+
+	FrameIndex SLAP A 0 9
+	
+	Offset 0.0 -22 -7.0
+	FrameIndex SLAP B 0 10
+	
+	Offset 0.0 -32 -7.0
+	FrameIndex SLAP C 0 11
+	
+	Offset 0.0 -42 -7.0
+	FrameIndex SLAP D 0 12
 }
 
 Model HVRStaffPowered
@@ -110,8 +185,6 @@ Model HVRStaffPowered
 	FrameIndex NHST H 0 7	FrameIndex NHST H 1 7	FrameIndex NHST H 2 7
 }
 
-//Shield mode
-
 Model HVRStaffPowered
 { 
 	Path "models/weapons/staff"
@@ -122,7 +195,82 @@ Model HVRStaffPowered
 	Scale -0.82 0.82 0.82
 	Offset 0.0 -22 -7.0
 
-	FrameIndex STFF S 0 0	FrameIndex STFF S 1 8
+	FrameIndex SHLD A 0 0	FrameIndex SHLD A 1 8
+	FrameIndex SHLD B 0 8	FrameIndex SHLD B 1 8
+
+	Skin 0 "RuneShield2.png"
+	FrameIndex SHLD C 0 0	FrameIndex SHLD C 1 8
+	FrameIndex SHLD D 0 8	FrameIndex SHLD D 1 8
+
+	Skin 0 "RuneShield3.png"
+	FrameIndex SHLD E 0 0	FrameIndex SHLD E 1 8
+	FrameIndex SHLD F 0 8	FrameIndex SHLD F 1 8
+
+	Skin 0 "RuneShield4.png"
+	FrameIndex SHLD G 0 0	FrameIndex SHLD G 1 8
+	FrameIndex SHLD H 0 8	FrameIndex SHLD H 1 8
+
+	Skin 0 "RuneShield5.png"
+	FrameIndex SHLD I 0 0	FrameIndex SHLD I 1 8
+	FrameIndex SHLD J 0 8	FrameIndex SHLD J 1 8
+
+	Skin 0 "RuneShield0.png"
+	FrameIndex SHLD K 0 0	FrameIndex SHLD K 1 8
+}
+
+//shield without hand
+
+Model HVRStaffPowered
+{ 
+	Path "models/weapons/staff"
+	Model 0 "shield.md3"
+	Skin 0 "RuneShield.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -7.0
+
+	FrameIndex SHNH A 0 0
+	FrameIndex SHNH B 0 8
+
+	Skin 0 "RuneShield2.png"
+	FrameIndex SHNH C 0 0
+	FrameIndex SHNH D 0 8
+
+	Skin 0 "RuneShield3.png"
+	FrameIndex SHNH E 0 0
+	FrameIndex SHNH F 0 8
+
+	Skin 0 "RuneShield4.png"
+	FrameIndex SHNH G 0 0
+	FrameIndex SHNH H 0 8
+
+	Skin 0 "RuneShield5.png"
+	FrameIndex SHNH I 0 0
+	FrameIndex SHNH J 0 8
+
+	Skin 0 "RuneShield0.png"
+	FrameIndex SHNH K 0 0
+}
+
+//Shield Slap ovelay
+
+Model HVRStaffPowered
+{ 
+	Path "models/weapons/staff"
+	Model 0 "shield.md3"
+	Skin 0 "RuneShieldWhite.png"
+	Scale -0.82 0.82 0.82
+	Offset 0.0 -22 -7.0
+
+	FrameIndex SLAP A 0 9
+	
+	Offset 0.0 -22 -7.0
+	FrameIndex SLAP B 0 10
+	
+	Offset 0.0 -32 -7.0
+	FrameIndex SLAP C 0 11
+	
+	Offset 0.0 -42 -7.0
+	FrameIndex SLAP D 0 12
 }
 
 //overlay

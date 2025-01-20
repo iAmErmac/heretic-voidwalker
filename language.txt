@@ -17,6 +17,18 @@ HVR_WEAPON_SWITCH 		= "Weapon Switching";
 HVR_GAUNTLET 			= "Gauntlet Equip On";
 HVR_HOLO_HUD 			= "Holo HUD";
 
+HVR_SHIELD_OPT 			= "Rune Shield";
+HVR_SHIELD 			= "Enable Rune Shield";
+HVR_SHIELD_NOTE 		= "Rune Shield is Only available when using Combat Staff";
+HVR_SHIELD_START 		= "Start with Shield";
+HVR_SHIELD_BREAK 		= "Shield Breaks on Hit";
+HVR_SHIELD_STR 			= "Max Hit Before Break";
+HVR_SHIELD_REGEN 		= "Shield Regeneration (Sec)";
+HVR_SHIELD_SLAP 		= "Shield Slap";
+HVR_SHIELD_SLAP_NOTE 		= "Shield slaps nearby enemies and then breaks when this option turned on";
+HVR_SLAP_DIST 			= "Slap Range (Meter)";
+HVR_SLAP_MULT 			= "Slap Damage Multiplier";
+
 HVR_OPT_NOHAND 			= "Without Hands";
 HVR_OPT_HAND 			= "With Hands";
 

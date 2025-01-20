@@ -119,4 +119,18 @@ OptionMenu "HVROptionsMenu" {
 	Option "$HVR_WEAPON_SWITCH", 		"hvr_fastswitch", 		"HVR_WeaponSwitch_Option"
 	Option "$HVR_GAUNTLET", 		"hvr_gauntlet", 		"HVR_Gauntlet_Options"
 	Option "$HVR_HOLO_HUD", 		"hvr_holohud", 			"HVR_HoloHUD_Options"
+	
+	StaticText " "
+	StaticText "$HVR_SHIELD_OPT", "Gold"
+	Option "$HVR_SHIELD", 			"hvr_shield", 			"YesNo"
+	StaticText "$HVR_SHIELD_NOTE", "DarkGrey"
+	Option "$HVR_SHIELD_START", 		"hvr_shield_start", 		"YesNo"
+	Option "$HVR_SHIELD_BREAK", 		"hvr_shield_break", 		"YesNo"
+	Slider "$HVR_SHIELD_STR", 		"hvr_shield_str", 		1, 5, 1, 0
+	Slider "$HVR_SHIELD_REGEN", 		"hvr_shield_regen", 		2.0, 30.0, 0.5, 1
+	StaticText " "
+	Option "$HVR_SHIELD_SLAP", 		"hvr_shield_slap", 		"OnOff"
+	StaticText "$HVR_SHIELD_SLAP_NOTE", "DarkGrey"
+	Slider "$HVR_SLAP_DIST", 		"hvr_slap_dist", 		1, 3, 1, 0
+	Slider "$HVR_SLAP_MULT", 		"hvr_slap_mult", 		1.0, 10.0, 0.5, 1
 }

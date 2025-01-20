@@ -7,8 +7,15 @@ Class HereticVRWeapon : HereticWeapon
 	protected int modelDist;
 	protected bool showFLashSprite;
 	protected bool showParticles;
+	protected bool reduceParticles;
 	protected bool fastSwitchWeapon;
 	protected int HoloHUD;
+	protected bool useShield;
+	protected bool shieldStart;
+	protected bool shieldBreaks;
+	protected bool shieldSlap;
+	protected int shieldSlapDist;
+	protected double shieldSlapMult;
 	protected int vrControlScheme;
 	protected hvr_Settings _settings;
 	
@@ -49,8 +56,15 @@ Class HereticVRWeapon : HereticWeapon
 		pickupModel 			= _settings.pickupModel();
 		showFLashSprite 		= _settings.flashSprite();
 		showParticles 			= _settings.showParticles();
+		reduceParticles 		= _settings.lessParticles();
 		fastSwitchWeapon 		= _settings.weaponSwitch();
 		HoloHUD 			= _settings.holoHUD();
+		useShield 			= _settings.hasShield();
+		shieldStart 			= _settings.shieldStart();
+		shieldBreaks 			= _settings.shieldBreaks();
+		shieldSlap 			= _settings.shieldSlap();
+		shieldSlapDist 			= _settings.shieldSlapDist();
+		shieldSlapMult 			= _settings.shieldSlapMult();
 		
 		//vrControlScheme 		= _settings.vrControlScheme();
 	}

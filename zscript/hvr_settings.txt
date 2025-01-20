@@ -27,6 +27,14 @@ class hvr_Settings
   int gauntletHand()   					{ return gauntletCvar.getInt();   	}
   bool distModel()   					{ return distModelCvar.getBool();   	}
   int modelDist()   					{ return modelDistCvar.getInt();   	}
+  bool hasShield()   					{ return shieldCVar.getBool();   	}
+  bool shieldStart()   					{ return shieldStartCVar.getBool();   	}
+  bool shieldBreaks()   				{ return shieldBreakCvar.getBool();   	}
+  int shieldStrength()   				{ return shieldStrengthCvar.getInt();   }
+  double shieldRegen()   				{ return shieldRegenCvar.getDouble();   }
+  bool shieldSlap()   					{ return shieldSlapCvar.getBool();   	}
+  int shieldSlapDist()   				{ return shieldSlapDistCvar.getInt();   }
+  double shieldSlapMult()   				{ return shieldSlapMultCvar.getDouble(); }
   
   //int vrControlScheme() 				{ return controlSchemeCvar.isDefined() ? controlSchemeCvar.getInt() : 0; }
 
@@ -44,6 +52,14 @@ class hvr_Settings
     result.holoHUDCvar   				= hvr_CVar.of("hvr_holohud");
     result.distModelCvar   				= hvr_CVar.of("hvr_loadsprite");
     result.modelDistCvar   				= hvr_CVar.of("hvr_model_dist");
+    result.shieldCVar   				= hvr_CVar.of("hvr_shield");
+    result.shieldStartCVar   				= hvr_CVar.of("hvr_shield_start");
+    result.shieldBreakCvar   				= hvr_CVar.of("hvr_shield_break");
+    result.shieldStrengthCvar   			= hvr_CVar.of("hvr_shield_str");
+    result.shieldRegenCvar   				= hvr_CVar.of("hvr_shield_regen");
+    result.shieldSlapCvar   				= hvr_CVar.of("hvr_shield_slap");
+    result.shieldSlapDistCvar   			= hvr_CVar.of("hvr_slap_dist");
+    result.shieldSlapMultCvar   			= hvr_CVar.of("hvr_slap_mult");
 
     return result;
   }
@@ -58,6 +74,14 @@ class hvr_Settings
   private hvr_CVar gauntletCvar;
   private hvr_CVar distModelCvar;
   private hvr_CVar modelDistCvar;
+  private hvr_CVar shieldCVar;
+  private hvr_CVar shieldStartCVar;
+  private hvr_CVar shieldBreakCvar;
+  private hvr_CVar shieldStrengthCvar;
+  private hvr_CVar shieldRegenCvar;
+  private hvr_CVar shieldSlapCvar;
+  private hvr_CVar shieldSlapDistCvar;
+  private hvr_CVar shieldSlapMultCvar;
   
   private hvr_CVar controlSchemeCvar;
 

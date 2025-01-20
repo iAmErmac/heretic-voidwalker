@@ -141,6 +141,9 @@ Class HVRConfigHandler : Eventhandler
 			int modelDist 			= _settings.modelDist();
 			bool showParticles 		= _settings.showParticles();
 			bool lessParticles 		= _settings.lessParticles();
+			bool shieldBreaks 		= _settings.shieldBreaks();
+			int shieldStrength 		= _settings.shieldStrength();
+			double shieldRegen 		= _settings.shieldRegen();
 			
 			if(!pmo.countinv("HVRConfigItem")) pmo.giveinventory("HVRConfigItem", 1);
 			
@@ -151,6 +154,9 @@ Class HVRConfigHandler : Eventhandler
 			configItem.modelDist = modelDist;
 			configItem.showParticles = showParticles;
 			configItem.lessParticles = lessParticles;
+			configItem.shieldBreaks = shieldBreaks;
+			configItem.shieldStrength = shieldStrength;
+			configItem.shieldRegen = shieldRegen;
 			
 			if(developer > 0)
 			{
@@ -181,6 +187,9 @@ Class HVRConfigItem : Inventory
 	int modelDist;
 	bool showParticles;
 	bool lessParticles;
+	bool shieldBreaks;
+	int shieldStrength;
+	double shieldRegen;
 }
 
 Class HVRHapticHelper : EventHandler
