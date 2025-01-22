@@ -17,6 +17,23 @@ This addon aims to add 3D VR weapons and QoL improvements for VR in the game Her
 * Shield mode for Combat Staff
 * Remastered Sound Tracks (by Xeotroid)
 
+### How to use the Rune Shield
+* To use the Rune Shield you need to equip the Combat Staff. Press Offhand-Alt-Attack (for off-hand) or Alt-Attack (for main hand) to toggle between shield and staff while using the Combat Staff
+  
+![HereticVR shield](https://i.imgflip.com/9hlcz3.gif)
+
+* When shield mode is on, press Offhand-Attack (for off-hand) or Attack (for main hand) to activate shield and deflect incoming projectiles. The shield deactivates after 1 sec. Everytime the shield deflects a projectiles it breaks down a bit.
+  
+![HereticVR shield activate](https://i.imgflip.com/9hldxc.gif)
+
+* When shield mode is on, get close to nearby enemies and press Offhand-Attack (for off-hand) or Attack (for main hand) to shield slap on them. A shield slap will deal massive melee damage in a short range and will completely break and deplete the shield.
+  
+![HereticVR shield slap](https://i.imgflip.com/9hldfa.gif)
+
+* When shield breaks down, it auto-regenerates to full strength in given time.
+  
+![HereticVR shield regeneration](https://i.imgflip.com/9hlfml.gif)
+
 ## Installation
 
 Load this mod after Heretic/Blasphemer wad.

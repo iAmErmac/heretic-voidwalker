@@ -91,6 +91,7 @@ ACHVZ = "ACHVZ"
 	Spin = 50
 }
 
+/*
 AMB1A = "AMB1A" //dragon claw ammo
 {
 	Spin = 50
@@ -116,6 +117,7 @@ AMB2C = "AMB2C"
 {
 	Spin = 50
 }
+*/
 
 AMMVA = "AMMVA" //Firemace ammo
 {
@@ -163,10 +165,12 @@ ckyv = "ckyv"
 
 //bobbers
 
+/*
 abnsa = "abnsa"
 {
 	spin = 183
 }
+*/
 
 ampva = "ampva"
 {
@@ -335,10 +339,12 @@ inrvd = "inrvd"
 	spin = 91
 }
 
+/*
 mrp2a = "mrp2a"
 {
 	spin = 183
 }
+*/
 
 ptnva = "ptnva"
 {
@@ -353,6 +359,7 @@ ptnvc = "ptnvc"
 	spin = 183
 }
 
+/*
 ptnvv = "ptnvv"
 {
 	spin = 183
@@ -369,6 +376,8 @@ ptnvy = "ptnvy"
 {
 	spin = 183
 }
+*/
+
 ptnvz = "ptnvz"
 {
 	spin = 183
@@ -387,6 +396,7 @@ pt2vc = "pt2vc"
 	spin = 91
 }
 
+/*
 pt2vv = "pt2vv"
 {
 	spin = 91
@@ -403,6 +413,8 @@ pt2vy = "pt2vy"
 {
 	spin = 91
 }
+*/
+
 pt2vz = "pt2vz"
 {
 	spin = 91

@@ -496,10 +496,16 @@ Class HornRodFX4 : HornRodFX2 replaces HornRodFX2
 	States
 	{
 	Spawn:
-		FX00 C 3 Bright;
-		FX00 D 3 Bright A_SeekerMissile(10, 30);
-		FX00 E 3 Bright;
-		FX00 F 3 Bright A_SeekerMissile(10, 30);
+		FX00 CCC 1 Bright A_SpawnItemEx("PoweredHellShotTrail",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FX00 DDD 1 Bright {
+			A_SeekerMissile(10, 30);
+			A_SpawnItemEx("PoweredHellShotTrail",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		}
+		FX00 EEE 1 Bright A_SpawnItemEx("PoweredHellShotTrail",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		FX00 FFF 1 Bright {
+			A_SeekerMissile(10, 30);
+			A_SpawnItemEx("PoweredHellShotTrail",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+		}
 		Loop;
 	Death:
 		FX00 H 5 Bright A_AddPlayerRain;
@@ -641,13 +647,13 @@ Class MaceFX5 : MaceFX1 replaces MaceFX1
 		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
 		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
 		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
-			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
-			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		}
 		Stop;
 	ReducedParticles:
 		TNT1 A 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
-		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		FX02 GHIJ 4 Bright A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		Stop;
 	}
 }
@@ -673,13 +679,13 @@ Class MaceFX6 : MaceFX2 replaces MaceFX2
 		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
 		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
 		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
-			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
-			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		}
 		Stop;
 	ReducedParticles:
 		TNT1 A 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
-		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		FX02 GHIJ 4 Bright A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		Stop;
 	}
 }
@@ -705,13 +711,13 @@ Class MaceFX7 : MaceFX3 replaces MaceFX3
 		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
 		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
 		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
-			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
-			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		}
 		Stop;
 	ReducedParticles:
 		TNT1 A 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
-		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		FX02 GHIJ 4 Bright A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		Stop;
 	}
 }
@@ -733,20 +739,66 @@ Class MaceFX8 : MaceFX4 replaces MaceFX4
 		FX02 GHIJ 4 Bright;
 		Stop;
 	DeathAlt:
-		TNT1 AAA 0 A_CustomMissile ("HDBallBoom", 3, 0, random (0, 360), 2, random (0, 360));
+		TNT1 AAA 0 A_SpawnProjectile ("HDBallBoom", 3, 0, random (0, 360), 2, random (0, 360));
 		TNT1 A 0 A_PlaySound("DSBAREXP", 1);
 		TNT1 A 0 A_QuakeEx (2,2,2,20,0,440,"world/quake",QF_SCALEDOWN,0,0,0,220);
 		TNT1 A 0 A_SetRenderStyle(1.0, STYLE_Add);
 		TNT1 A 0 A_JumpIf(invoker.reduceParticles, "ReducedParticles");
 		FX02 GGGGHHHHIIIIJJJJ 1 Bright {
-			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
-			A_CustomMissile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
-			A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_SpawnProjectile ("ExplosionParticle1", 3, 0, random (0, 360), 2, random (0, 360));
+			A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		}
 		Stop;
 	ReducedParticles:
 		TNT1 AAA 0 A_SpawnItemEx("ExplosionSparks",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
-		FX02 GHIJ 4 Bright A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
+		FX02 GHIJ 4 Bright A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160));
 		Stop;
+	}
+}
+
+Class BluePotionFX1 : Flare_General
+{
+	Default
+	{
+	Alpha 0.2;
+	Scale 0.15;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(240,2);
+		TNT1 A 0 A_SpawnProjectile("CrystalParticle1",4,0,random(0,359),2,random(0,359));
+		TNT1 A 0 A_Jump(128,2);
+		LENB A 1 bright;
+		stop;
+		TNT1 A 0;
+		LENB B 1 bright;
+		stop;
+	}
+}
+
+Class PurplePotionFX1 : Flare_General
+{
+	Default
+	{
+	Alpha 0.2;
+	Scale 0.15;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(240,2);
+		TNT1 A 0 A_SpawnProjectile("QuartzParticle1",4,0,random(0,359),2,random(0,359));
+		TNT1 A 0 A_Jump(128,2);
+		LENP A 1 bright;
+		stop;
+		TNT1 A 0;
+		LENP B 1 bright;
+		stop;
 	}
 }

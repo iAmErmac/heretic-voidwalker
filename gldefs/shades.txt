@@ -144,22 +144,22 @@ material texture "models/weapons/mace/hand.png"
 
 //items
 
-material texture "models/pickups/Items/shield/shield1.png"
+material texture "models/pickups/Items/shield/shield1.pcx"
 {
 	shader "shaders/SimSun.fp"
 }
 
-material texture "models/pickups/Items/shield/shield2.png"
+material texture "models/pickups/Items/shield/shield2.pcx"
 {
 	shader "shaders/SimSun.fp"
 }
 
-material texture "models/pickups/Items/bag/bag.png"
+material texture "models/pickups/Items/bag/bag.pcx"
 {
 	shader "shaders/SimSun.fp"
 }
 
-material texture "models/pickups/Items/map/map.png"
+material texture "models/pickups/Items/map/map.pcx"
 {
 	shader "shaders/SimSun.fp"
 }
@@ -243,7 +243,7 @@ material texture "models/props/Pillar/Small/plrsmall.png"
 	shader "shaders/SimSun.fp"
 }
 
-material texture "models/props/Stalagmite/stalag.png"
+material texture "models/props/Stalagmite/stalag.jpg"
 {
 	shader "shaders/SimSun.fp"
 }

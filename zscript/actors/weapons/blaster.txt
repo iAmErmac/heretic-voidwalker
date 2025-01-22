@@ -132,8 +132,8 @@ Class HVRBlasterPowered : HVRBlaster
 	Hold:
 		#### # 0 A_GunFlash("Flash");
 		#### # 0 A_JumpIf(invoker.showParticles == false, 2);
-		#### # 0 A_FireCustomMissile("PoweredBlasterTracer");
-		#### # 3 A_FireCustomMissile("BlasterFX1");
+		#### # 0 A_FireProjectile("PoweredBlasterTracer");
+		#### # 3 A_FireProjectile("BlasterFX1");
 		#### # 8;
 		#### A 0 A_ReFire;
 		Goto Ready;

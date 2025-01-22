@@ -180,7 +180,7 @@ Class HVRStaff : HereticVRWeapon replaces Staff
 		if(_puff)
 		{
 			if(reduceParticles)
-				A_SpawnParticle("FFFFFF", SPF_FULLBRIGHT, 2, 2, 0, _puff.x, _puff.y, _puff.z);
+				A_SpawnParticle("FFFFFF", SPF_FULLBRIGHT, 2, 2, 0, _puff.pos.x, _puff.pos.y, _puff.pos.z);
 			else
 				Actor.Spawn((owner.player.mo.countinv("PowerWeaponLevel2") ? "PoweredStaffSparkSmall" : "StaffSparkSmall"), _puff.pos);
 		}

@@ -150,7 +150,7 @@ Class HVRGauntlets : HereticVRWeapon replaces Gauntlets
 		#### # 1 A_Raise (120);
 		Loop;
 	Fire:
-		GAUN B 4 A_PlayWeaponSound("weapons/gauntletsuse");
+		GAUN B 4 A_StartSound("weapons/gauntletsuse", CHAN_WEAPON);
 		GAUN C 4;
 	Hold:
 		GAUN DEFGHIJDEFGH 1 Bright A_GauntletAttackX(0);
@@ -199,7 +199,7 @@ Class HVRGauntletsPowered : HVRGauntlets
 		#### ABC 2 A_Raise (120);
 		Loop;
 	Fire:
-		GAUN D 4 A_PlayWeaponSound("weapons/gauntletsuse");
+		GAUN D 4 A_StartSound("weapons/gauntletsuse", CHAN_WEAPON);
 		GAUN E 4;
 	Hold:
 		GAUN FGHIJKLFGHIK 1 Bright A_GauntletAttackX(1);

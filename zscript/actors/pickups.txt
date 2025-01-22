@@ -16,6 +16,7 @@ Class HVR_CustomPickups : CustomInventory
 		{
 			distModel = configItem.distModel;
 			modelDist = configItem.modelDist;
+			showParticles = configItem.showParticles;
 			
 			if(distModel)
 			{
@@ -36,6 +37,7 @@ Class HVR_CustomPickups : CustomInventory
 	protected int pickupModel;
 	protected bool distModel;
 	protected int modelDist;
+	protected bool showParticles;
 }
 
 
@@ -45,6 +47,12 @@ Class HVR_CrystalVial : HVR_CustomPickups
 	{
 	+FLOATBOB
 	Inventory.PickupMessage "$TXT_ITEMHEALTH"; // "CRYSTAL VIAL"
+	}
+	
+	override void Tick()
+	{
+		if(showParticles) A_SpawnItemEx("BluePotionFX1",0,0,32,0,0,0,0,SXF_NOCHECKPOSITION);
+		Super.Tick();
 	}
 	
 	States
@@ -281,8 +289,14 @@ Class HVR_ArtiHealth : HVR_CustomPickups
 	Inventory.PickupSound "misc/p_pkup";
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	+INVENTORY.FANCYPICKUPSOUND
+	}
+	
+	override void Tick()
+	{
+		if(showParticles) A_SpawnItemEx("PurplePotionFX1",0,0,26,0,0,0,0,SXF_NOCHECKPOSITION);
+		Super.Tick();
 	}
 	
 	States
@@ -438,7 +452,7 @@ Class HVR_ArtiSuperHealth : HVR_CustomPickups
 	Inventory.PickupSound "misc/p_pkup";
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	+INVENTORY.FANCYPICKUPSOUND
 	}
 	
@@ -469,7 +483,7 @@ Class HVR_ArtiEgg : HVR_CustomPickups
 	Inventory.PickupSound "misc/p_pkup";
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	+INVENTORY.FANCYPICKUPSOUND
 	}
 	
@@ -514,7 +528,7 @@ Class HVR_ArtiFly : HVR_CustomPickups
 	Inventory.PickupMessage "$TXT_ARTIFLY"; // "WINGS OF WRATH"
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	Inventory.RespawnTics 4230;
 	}
 	
@@ -544,7 +558,7 @@ Class HVR_ArtiInvisibility : HVR_CustomPickups
 	Inventory.PickupMessage "$TXT_ARTIINVISIBILITY";
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	RenderStyle "Translucent";
 	Alpha 0.4;
 	Inventory.RespawnTics 4230;
@@ -576,7 +590,7 @@ Class HVR_ArtiInvulnerability : HVR_CustomPickups
 	Inventory.PickupMessage "$TXT_ARTIINVULNERABILITY"; // "RING OF INVINCIBILITY"
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	Inventory.RespawnTics 4230;
 	}
 	
@@ -607,7 +621,7 @@ Class HVR_ArtiTeleport : HVR_CustomPickups
 	Inventory.PickupSound "misc/p_pkup";
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	+INVENTORY.FANCYPICKUPSOUND
 	}
 	
@@ -638,7 +652,7 @@ Class HVR_ArtiTimeBomb : HVR_CustomPickups
 	Inventory.PickupSound "misc/p_pkup";
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	+INVENTORY.FANCYPICKUPSOUND
 	}
 	
@@ -877,7 +891,7 @@ Class HVR_ArtiTomeOfPower : HVR_CustomPickups
 	Inventory.PickupMessage "$TXT_ARTITOMEOFPOWER";
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	}
 	
 	States
@@ -906,7 +920,7 @@ Class HVR_ArtiTorch : HVR_CustomPickups
 	Inventory.PickupMessage "$TXT_ARTITORCH"; // "TORCH"
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.PickupFlash "PickupFlash";
 	}
 	
 	States
