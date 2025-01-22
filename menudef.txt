@@ -83,6 +83,11 @@ OptionValue "HVR_DistModel_Option" {
 	1, "$HVR_OPT_DIST_SPRITE"
 }
 
+OptionValue "HVR_Hud_Option" {
+	11, "$HVR_HUD_SHOW"
+	12, "$HVR_HUD_HIDE"
+}
+
 OptionValue "HVR_WeaponSwitch_Option" {
 	0, "$HVR_OPT_DEFAULT"
 	1, "$HVR_OPT_FAST"
@@ -111,6 +116,18 @@ OptionMenu "HVROptionsMenu" {
 	Option "$HVR_DIST_MODEL", 		"hvr_loadsprite", 		"HVR_DistModel_Option", hvr_pickupmodel
 	Slider "$HVR_MODEL_DIST", 		"hvr_model_dist", 		100, 5000, 100.0, 0, hvr_loadsprite
 	Option "$HVR_REMASTERED_TRACK", 	"hvr_music", 			"OnOff"
+	SafeCommand "$OPTMNU_DEFAULTS", "resetcvar hvr_particles hvr_lessparticle hvr_pickupmodel hvr_loadsprite hvr_model_dist hvr_music"
+	
+	StaticText " "
+	StaticText "$HVR_HUD_OPT", "Gold"
+	Option "$HVR_SHOW_HUD", 		"screenblocks", 		"HVR_Hud_Option"
+	ScaleSlider "$HVR_HUD_SCALE", 		"hud_scale", 			-1.0, 8.0, 1.0, "$SCALEMNU_USEUI", "$SCALEMNU_USEFS", "hud_oldscale"
+	Option "$HVR_HOLO_HUD", 		"hvr_holohud", 			"HVR_HoloHUD_Options"
+	StaticText " "
+	ScaleSlider "$HVR_MSG_SCALE", 		"con_scaletext", 		0.0, 8.0, 1.0, "$SCALEMNU_USEUI"
+	ScaleSlider "$HVR_CON_SCALE", 		"con_scale", 			0.0, 8.0, 1.0, "$SCALEMNU_USEUI"
+	Option "$HVR_SHOW_FPS", 		"vid_fps", 			"OnOff"
+	SafeCommand "$OPTMNU_DEFAULTS", "resetcvar hvr_holohud screenblocks hud_scale con_scaletext con_scale vid_fps"
 	
 	StaticText " "
 	StaticText "$HVR_WEAPONS", "Gold"
@@ -118,7 +135,7 @@ OptionMenu "HVROptionsMenu" {
 	Option "$HVR_WEAPON_FLASH", 		"hvr_flashsprite", 		"YesNo"
 	Option "$HVR_WEAPON_SWITCH", 		"hvr_fastswitch", 		"HVR_WeaponSwitch_Option"
 	Option "$HVR_GAUNTLET", 		"hvr_gauntlet", 		"HVR_Gauntlet_Options"
-	Option "$HVR_HOLO_HUD", 		"hvr_holohud", 			"HVR_HoloHUD_Options"
+	SafeCommand "$OPTMNU_DEFAULTS", "resetcvar hvr_weaponmodel hvr_flashsprite hvr_fastswitch hvr_gauntlet"
 	
 	StaticText " "
 	StaticText "$HVR_SHIELD_OPT", "Gold"
@@ -133,4 +150,5 @@ OptionMenu "HVROptionsMenu" {
 	StaticText "$HVR_SHIELD_SLAP_NOTE", "DarkGrey"
 	Slider "$HVR_SLAP_DIST", 		"hvr_slap_dist", 		1, 3, 1, 0
 	Slider "$HVR_SLAP_MULT", 		"hvr_slap_mult", 		1.0, 10.0, 0.5, 1
+	SafeCommand "$OPTMNU_DEFAULTS", "resetcvar hvr_shield hvr_shield_start hvr_shield_break hvr_shield_str hvr_shield_regen hvr_shield_slap hvr_slap_dist hvr_slap_mult"
 }

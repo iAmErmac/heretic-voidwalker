@@ -10,12 +10,19 @@ HVR_DIST_MODEL 			= "Distant Pickups";
 HVR_MODEL_DIST 			= "Model Load Distance";
 HVR_REMASTERED_TRACK 		= "Remastered Sound tracks";
 
-HVR_WEAPONS 			= "VR Weapon";
+HVR_HUD_OPT			= "HUD Options";
+HVR_SHOW_HUD 			= "Classic HUD";
+HVR_HUD_SCALE 			= "Classic HUD Scale";
+HVR_HOLO_HUD 			= "Holo HUD";
+HVR_MSG_SCALE 			= "Message Scale";
+HVR_CON_SCALE 			= "Console Message Scale";
+HVR_SHOW_FPS 			= "Show FPS";
+
+HVR_WEAPONS 			= "VR Weapons";
 HVR_WEAPON_MODEL 		= "Weapon Models";
 HVR_WEAPON_FLASH 		= "Show Flash Sprite";
 HVR_WEAPON_SWITCH 		= "Weapon Switching";
 HVR_GAUNTLET 			= "Gauntlet Equip On";
-HVR_HOLO_HUD 			= "Holo HUD";
 
 HVR_SHIELD_OPT 			= "Rune Shield";
 HVR_SHIELD 			= "Enable Rune Shield";
@@ -38,6 +45,9 @@ HVR_OPT_3D 			= "3D Model";
 
 HVR_OPT_DIST_SPRITE 		= "Load as Sprite";
 HVR_OPT_DIST_MODEL 		= "Load as Voxel/Model";
+
+HVR_HUD_SHOW 			= "Show";
+HVR_HUD_HIDE 			= "Hide";
 
 HVR_OPT_DEFAULT 		= "Default";
 HVR_OPT_FAST 			= "Fast";
