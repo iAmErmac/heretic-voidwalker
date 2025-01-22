@@ -121,7 +121,7 @@ OptionMenu "HVROptionsMenu" {
 	StaticText " "
 	StaticText "$HVR_HUD_OPT", "Gold"
 	Option "$HVR_SHOW_HUD", 		"screenblocks", 		"HVR_Hud_Option"
-	ScaleSlider "$HVR_HUD_SCALE", 		"hud_scale", 			-1.0, 8.0, 1.0, "$SCALEMNU_USEUI", "$SCALEMNU_USEFS", "hud_oldscale"
+	ScaleSlider "$HVR_HUD_SCALE", 		"hud_scale", 			-1.0, 8.0, 1.0, "$SCALEMNU_USEUI", "$SCALEMNU_USEFS"
 	Option "$HVR_HOLO_HUD", 		"hvr_holohud", 			"HVR_HoloHUD_Options"
 	StaticText " "
 	ScaleSlider "$HVR_MSG_SCALE", 		"con_scaletext", 		0.0, 8.0, 1.0, "$SCALEMNU_USEUI"
